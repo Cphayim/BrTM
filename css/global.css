@@ -1,0 +1,36 @@
+/* Icon */
+.mui-icon-extra-people:before { font-weight: bold; }
+
+.u-icon-class { background-image: url("img/class-sprite.png"); }
+
+.u-icon-class-wage { background-position: 0 0; }
+
+.u-icon-class-traffic { background-position: -42px 0; }
+
+.u-icon-class-home { background-position: 0 -42px; }
+
+.u-icon-class-food { background-position: -42px -42px; }
+
+.u-icon-class-entertainment { background-position: -84px 0; }
+
+.u-icon-class-communication { background-position: -84px -42px; }
+
+/* Title */
+.mui-h3, h3 { font-size: 30px; }
+
+.mui-h4, h4 { margin: 0; line-height: 21px; font-size: 16px; color: #333; }
+
+/* Bar(nav, tab) */
+.mui-bar.mui-bar-nav { background-color: #45BCF9; box-shadow: none; }
+
+.mui-bar-nav .mui-title { color: #fff; }
+.mui-bar-nav a { color: #fff; }
+
+/* List */
+.mui-table-view-divider { color: #666; }
+.mui-table-view-divider h3 { display: inline-block; }
+
+.mui-table-view .mui-table-view-cell i { display: inline-block; width: 42px; }
+.mui-table-view .mui-table-view-cell p { width: 140px; }
+
+/*# sourceMappingURL=global.css.map */
