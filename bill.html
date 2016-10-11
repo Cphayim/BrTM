@@ -3,39 +3,52 @@
 	<head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-	<title></title>
+	<title>流水</title>
 	<link rel="stylesheet" href="css/mui.min.css" />
-	<link rel="stylesheet" href="css/global.css"/>
+	<link rel="stylesheet" href="css/global.css" />
 	</head>
 	<body>
-		<!--头部-->
+		<!-- 头部 -->
 		<header class="mui-bar mui-bar-nav">
-		<h1 class="mui-title" style="color: fff;">流水账单</h1>
+		<h1 class="mui-title">流水账单</h1>
 		</header>
-		<!--/头部-->
-		<!--主体-->
+		<!-- /头部 -->
+		<!-- 主体 -->
 		<div class="mui-content">
-			<!--区域滚动容器-->
+			<!-- 区域滚动容器 -->
 			<div class="mui-scroll-wrapper">
-				<!--滚动区-->
+				<!-- 滚动区 -->
 				<div class="mui-scroll">
-					<div style="height: 216px;background-color: #45BCF9;">
+					<!--  面板  -->
+					<div class="m-billPanel">
+						<div>
+							<label>收入</label>
+							<span class="u-in">10000.00</span>
+							<label>支出</label>
+							<span class="u-out">5000.00</span>
+						</div>
+						<div class="m-surplus">
+							<label>结余</label>
+							<h3 class="u-surplus">5000.00</h3>
+						</div>
 					</div>
-					<!--流水列表容器-->
-					<ul id="containner" class="mui-table-view">
-						<!--月份表头-->
-						<li class="mui-table-view-divider">
+					<!--  /面板  -->
+					<!-- 流水列表容器 -->
+					<ul class="m-billList mui-table-view">
+						<!-- 月份表头 -->
+						<li class="monthItem mui-table-view-divider">
 							<h3>10</h3><span>月</span>
 						</li>
-						<!--/月份表头-->
-						<!--日期账单-->
-						<div style="display: flex;">
-							<!--日期-->
-							<div style="width: 20%;background-color: #f8f8f8;">
+						<!-- /月份表头 -->
+						<!-- 月份账单 -->
+						<div class="monthList">
+							<!-- 日期 -->
+							<div class="dateItem" style="width: 20%;background-color: #f8f8f8;">
+								<span class="date">10</span><span class="day">周一</span>
 							</div>
-							<!--/日期-->
-							<!--当日流水列表-->
-							<ul style="flex: 1;width:80%;background-color: #f8f8f8;" class="mui-table-view">
+							<!-- /日期 -->
+							<!-- 当日流水列表 -->
+							<ul class="dateList mui-table-view">
 								<li class="mui-table-view-cell mui-media">
 									<a href="javascript:;">
 										<i class="mui-media-object mui-pull-left u-icon-class u-icon-class-food"></i>
@@ -46,21 +59,31 @@
 									</a>
 								</li>
 							</ul>
-							<!--/当日流水列表-->
+							<!-- /当日流水列表 -->
 						</div>
-						<!--/日期账单列表-->
+						<!-- /月份账单 -->
 					</ul>
-					<!--/流水列表容器-->
+					<!-- /流水列表容器 -->
 				</div>
-				<!--/滚动区-->
+				<!-- /滚动区 -->
 			</div>
-			<!--/区域滚动容器-->
+			<!-- /区域滚动容器 -->
 		</div>
-		<!--/主体-->
+		<!-- /主体 -->
 		<script src="js/mui.min.js"></script>
 		<script>
-			mui.init();
-			var ul = document.querySelector('#containner .mui-table-view');
+			mui.init({
+				gestureConfig: {
+					tap: true, //默认为true
+					doubletap: true, //默认为false
+					longtap: true, //默认为false
+					swipe: true, //默认为true
+					drag: true, //默认为true
+					hold: false, //默认为false，不监听
+					release: false //默认为false，不监听
+				}
+			});
+			var ul = document.querySelector('.m-billList .mui-table-view');
 			for (var i = 0; i < 100; i++) {
 				ul.innerHTML += '<li class="mui-table-view-cell mui-media"><a href="javascript:;"><i class="mui-media-object mui-pull-left u-icon-class u-icon-class-' + 'food' + '"></i><div class="mui-media-body"><h4>Item ' + i + '</h4><p class="mui-ellipsis">备注 ' + i + '</p></div></a></li>';
 			}
@@ -68,6 +91,9 @@
 				deceleration: 0.001, //阻尼系数
 				bounce: false //是否启用回弹
 			});
+			mui('.mui-bar').on('tap', 'h1', function() {
+				mui('.mui-scroll-wrapper').scroll().scrollTo(0, 0, 500);
+			})
 		</script>
 	</body>
 </html>

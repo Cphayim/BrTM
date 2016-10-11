@@ -208,7 +208,8 @@
 					"css/global.css",
 					"css/icons-extra.css",
 					"subpages/home.html",
-					"home.html"
+					"home.html",
+					"bill.html"
 				],
 				"priority": 0,
 				"refer": [
@@ -217,7 +218,6 @@
 					"list2.html",
 					"subpages/user.html",
 					"subpages/bill.html",
-					"bill.html",
 					"user.html"
 				]
 			},
@@ -312,7 +312,8 @@
 				"resources": [
 					"css/global.css",
 					"css/mui.min.css",
-					"js/mui.min.js"
+					"js/mui.min.js",
+					"img/class-sprite.png"
 				],
 				"refer": [],
 				"priority": 0
@@ -321,7 +322,11 @@
 				"resources": [
 					"css/mui.min.css",
 					"js/mui.min.js",
-					"css/global.css"
+					"css/global.css",
+					"img/defualtPicture.png",
+					"img/class-sprite.png",
+					"img/sprite.png",
+					"fonts/mui.ttf"
 				],
 				"refer": [],
 				"priority": 0
@@ -343,5 +348,5 @@
 				"css/mui.css"
 			]
 		}
-	}
+	},"fullscreen":false
 }
