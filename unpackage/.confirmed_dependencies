@@ -8,7 +8,8 @@
       "css/icons-extra.css",
       "subpages/home.html",
       "home.html",
-      "bill.html"
+      "bill.html",
+      "js/mui.js"
     ],
     "refer": [
       "subpages/home.html",
@@ -41,7 +42,8 @@
       "img/banner2.jpg",
       "img/banner4.jpg",
       "img/banner1.jpg",
-      "img/banner3.jpg"
+      "img/banner3.jpg",
+      "js/mui.js"
     ],
     "refer": [
       "record.html"
@@ -52,7 +54,8 @@
       "css/global.css",
       "css/mui.min.css",
       "js/mui.min.js",
-      "img/class-sprite.png"
+      "img/class-sprite.png",
+      "js/mui.js"
     ],
     "refer": []
   },
@@ -64,13 +67,25 @@
       "img/defualtPicture.png",
       "img/class-sprite.png",
       "img/sprite.png",
-      "fonts/mui.ttf"
+      "fonts/mui.ttf",
+      "js/mui.js"
     ],
-    "refer": []
+    "refer": [
+      "about.html"
+    ]
   },
   "record.html": {
     "resources": [
       "fonts/mui.ttf",
+      "js/mui.min.js",
+      "css/global.css",
+      "css/mui.min.css",
+      "js/mui.js"
+    ],
+    "refer": []
+  },
+  "about.html": {
+    "resources": [
       "js/mui.min.js",
       "css/global.css",
       "css/mui.min.css"

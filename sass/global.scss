@@ -33,13 +33,13 @@ $maincolor: #45BCF9;
 .u-icon-money {
     background-position: 0 0;
 }
-.u-icon-user{
+.u-icon-user {
     background-position: 0 -50px;
 }
-.u-icon-setup{
+.u-icon-setup {
     background-position: -92px 0;
 }
-.u-icon-about{
+.u-icon-about {
     background-position: -134px -42px;
 }
 .u-icon-class {
@@ -107,7 +107,7 @@ h4 {
     }
 }
 /* Tab */
-.mui-bar-tab{
+.mui-bar-tab {
     background-color: #fff;
 }
 .mui-bar-tab .mui-tab-item.mui-active {
@@ -186,7 +186,7 @@ h4 {
     display: flex;
     align-items: center;
     width: 100%;
-    height: 120px;
+    height: 110px;
     border-bottom: 1px solid #ccc;
 }
 .m-info {
@@ -319,10 +319,77 @@ h4 {
         }
     }
 }
-.m-userList{
-    h4{
+.m-userList {
+    h4 {
         line-height: 42px;
         color: #666;
     }
 }
 /* Record Module */
+.m-record {
+    .mui-slider {
+        height: auto;
+        .mui-segmented-control.mui-segmented-control-inverted {
+            .mui-control-item.mui-active {
+                color: $maincolor;
+            }
+        }
+        .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-progress-bar {
+            background-color: $maincolor;
+        }
+        .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item{
+            border-bottom: none;
+        }
+        .mui-slider-group {
+            label {
+                display: block;
+                padding: 10px 20px 0;
+                font-size: 16px;
+                line-height: 16px;
+                color: #888;
+            }
+            .mui-input-row {
+                border-bottom: 1px solid #CCCCCC;
+                label,
+                input {
+                    display: block;
+                    width: 100%;
+                }
+                input,select{
+                    color: #555;
+                }
+                label {
+                    padding: 10px 20px 0;
+                    font-size: 16px;
+                }
+                input {
+                    height: 60px;
+                    padding: 10px 20px;
+                    line-height: 40px;
+                }
+                .u-num{
+                    font-size: 28px;
+                }
+                .u-date{
+                    font-size: 20px;
+                }
+            }
+            .u-select {
+                border-bottom: 1px solid #CCCCCC;
+            }
+            select.mui-btn.mui-btn-block {
+                position: relative;
+                height: 60px;
+                padding: 10px 20px;
+                margin: 0;
+                background: none;
+                font-size: 20px;
+                line-height: 40px;
+                option {
+                    font-size: 16px;
+                }
+            }
+            
+        }
+    }
+}

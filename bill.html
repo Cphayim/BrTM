@@ -70,7 +70,7 @@
 			<!-- /区域滚动容器 -->
 		</div>
 		<!-- /主体 -->
-		<script src="js/mui.min.js"></script>
+		<script src="js/mui.js"></script>
 		<script>
 			mui.init({
 				gestureConfig: {
@@ -91,7 +91,7 @@
 				deceleration: 0.001, //阻尼系数
 				bounce: false //是否启用回弹
 			});
-			mui('.mui-bar').on('tap', 'h1', function() {
+			mui('.mui-bar').on('doubletap', 'h1', function() {
 				mui('.mui-scroll-wrapper').scroll().scrollTo(0, 0, 500);
 			})
 		</script>

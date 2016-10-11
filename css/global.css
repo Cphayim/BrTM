@@ -83,7 +83,7 @@ h1, h2, h3, h4, h5, h6, .mui-h1, .mui-h2, .mui-h3, .mui-h4, .mui-h5, .mui-h6 { f
 .mui-btn.mui-btn-blue { width: 95%; height: 50px; margin: 10px auto 0; border-color: #45BCF9; border-radius: 8px; background-color: #45BCF9; line-height: 0; font-size: 24px; }
 
 /* Homeinfo */
-.m-info .m-info-today, .m-info .m-info-month { display: flex; align-items: center; width: 100%; height: 120px; border-bottom: 1px solid #ccc; }
+.m-info .m-info-today, .m-info .m-info-month { display: flex; align-items: center; width: 100%; height: 110px; border-bottom: 1px solid #ccc; }
 
 .m-info { padding: 10px; }
 .m-info i, .m-info h3 { flex: 0.5; color: #666; }
@@ -123,5 +123,20 @@ h1, h2, h3, h4, h5, h6, .mui-h1, .mui-h2, .mui-h3, .mui-h4, .mui-h5, .mui-h6 { f
 .m-userList h4 { line-height: 42px; color: #666; }
 
 /* Record Module */
+.m-record .mui-slider { height: auto; }
+.m-record .mui-slider .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active { color: #45BCF9; }
+.m-record .mui-slider .mui-segmented-control.mui-segmented-control-inverted ~ .mui-slider-progress-bar { background-color: #45BCF9; }
+.m-record .mui-slider .mui-segmented-control.mui-segmented-control-inverted ~ .mui-slider-group .mui-slider-item { border-bottom: none; }
+.m-record .mui-slider .mui-slider-group label { display: block; padding: 10px 20px 0; font-size: 16px; line-height: 16px; color: #888; }
+.m-record .mui-slider .mui-slider-group .mui-input-row { border-bottom: 1px solid #CCCCCC; }
+.m-record .mui-slider .mui-slider-group .mui-input-row label, .m-record .mui-slider .mui-slider-group .mui-input-row input { display: block; width: 100%; }
+.m-record .mui-slider .mui-slider-group .mui-input-row input, .m-record .mui-slider .mui-slider-group .mui-input-row select { color: #555; }
+.m-record .mui-slider .mui-slider-group .mui-input-row label { padding: 10px 20px 0; font-size: 16px; }
+.m-record .mui-slider .mui-slider-group .mui-input-row input { height: 60px; padding: 10px 20px; line-height: 40px; }
+.m-record .mui-slider .mui-slider-group .mui-input-row .u-num { font-size: 28px; }
+.m-record .mui-slider .mui-slider-group .mui-input-row .u-date { font-size: 20px; }
+.m-record .mui-slider .mui-slider-group .u-select { border-bottom: 1px solid #CCCCCC; }
+.m-record .mui-slider .mui-slider-group select.mui-btn.mui-btn-block { position: relative; height: 60px; padding: 10px 20px; margin: 0; background: none; font-size: 20px; line-height: 40px; }
+.m-record .mui-slider .mui-slider-group select.mui-btn.mui-btn-block option { font-size: 16px; }
 
 /*# sourceMappingURL=global.css.map */
