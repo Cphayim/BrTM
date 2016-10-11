@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title></title>
+	<link rel="stylesheet" href="css/mui.min.css" />
+	<link rel="stylesheet" href="css/global.css"/>
+	</head>
+	<body>
+		<!--头部-->
+		<header class="mui-bar mui-bar-nav">
+		<h1 class="mui-title" style="color: fff;">流水账单</h1>
+		</header>
+		<!--/头部-->
+		<!--主体-->
+		<div class="mui-content">
+			<!--区域滚动容器-->
+			<div class="mui-scroll-wrapper">
+				<!--滚动区-->
+				<div class="mui-scroll">
+					<div style="height: 216px;background-color: #45BCF9;">
+					</div>
+					<!--流水列表容器-->
+					<ul id="containner" class="mui-table-view">
+						<!--月份表头-->
+						<li class="mui-table-view-divider">
+							<h3>10</h3><span>月</span>
+						</li>
+						<!--/月份表头-->
+						<!--日期账单-->
+						<div style="display: flex;">
+							<!--日期-->
+							<div style="width: 20%;background-color: #f8f8f8;">
+							</div>
+							<!--/日期-->
+							<!--当日流水列表-->
+							<ul style="flex: 1;width:80%;background-color: #f8f8f8;" class="mui-table-view">
+								<li class="mui-table-view-cell mui-media">
+									<a href="javascript:;">
+										<i class="mui-media-object mui-pull-left u-icon-class u-icon-class-food"></i>
+										<div class="mui-media-body">
+											<h4>	一日三餐</h4>
+											<p class="mui-ellipsis">晚餐吃了这个那个这个那个这个那个这个那个这个那个</p>
+										</div>
+									</a>
+								</li>
+							</ul>
+							<!--/当日流水列表-->
+						</div>
+						<!--/日期账单列表-->
+					</ul>
+					<!--/流水列表容器-->
+				</div>
+				<!--/滚动区-->
+			</div>
+			<!--/区域滚动容器-->
+		</div>
+		<!--/主体-->
+		<script src="js/mui.min.js"></script>
+		<script>
+			mui.init();
+			var ul = document.querySelector('#containner .mui-table-view');
+			for (var i = 0; i < 100; i++) {
+				ul.innerHTML += '<li class="mui-table-view-cell mui-media"><a href="javascript:;"><i class="mui-media-object mui-pull-left u-icon-class u-icon-class-' + 'food' + '"></i><div class="mui-media-body"><h4>Item ' + i + '</h4><p class="mui-ellipsis">备注 ' + i + '</p></div></a></li>';
+			}
+			mui('.mui-scroll-wrapper').scroll({
+				deceleration: 0.001, //阻尼系数
+				bounce: false //是否启用回弹
+			});
+		</script>
+	</body>
+</html>

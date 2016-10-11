@@ -1,11 +1,41 @@
+$maincolor: #45BCF9;
+/* Function */
+.f-mask {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.2);
+}
+.f-tac {
+    text-align: center;
+}
+.f-tar {
+    text-align: right;
+}
+/* Unit */
+.u-in {
+    color: #669900;
+}
+.u-out {
+    color: #FF3300;
+}
 /* Icon */
 .mui-icon-extra-people {
     &:before {
         font-weight: bold;
     }
 }
+.u-icon{
+    background-image: url(../img/sprite.png);
+}
+.u-icon-money{
+    background-position: 0 -50px;
+}
 .u-icon-class {
     background-image: url("img/class-sprite.png");
+    background-repeat: no-repeat;
 }
 .u-icon-class-wage {
     background-position: 0 0;
@@ -26,9 +56,23 @@
     background-position: -84px -42px;
 }
 /* Title */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.mui-h1,
+.mui-h2,
+.mui-h3,
+.mui-h4,
+.mui-h5,
+.mui-h6 {
+    font-weight: normal;
+}
 .mui-h3,
 h3 {
-    font-size: 30px;
+    font-size: 28px;
 }
 .mui-h4,
 h4 {
@@ -38,10 +82,13 @@ h4 {
     color: #333;
 }
 /* Bar(nav, tab) */
-.mui-bar.mui-bar-nav {
-    background-color: #45BCF9;
+.mui-bar {
     box-shadow: none;
 }
+.mui-bar.mui-bar-nav {
+    background-color: #45BCF9;
+}
+/* Nav */
 .mui-bar-nav {
     .mui-title {
         color: #fff;
@@ -49,6 +96,10 @@ h4 {
     a {
         color: #fff;
     }
+}
+/* Tab */
+.mui-bar-tab .mui-tab-item.mui-active {
+    color: $maincolor;
 }
 /* List */
 .mui-table-view-divider {
@@ -65,6 +116,88 @@ h4 {
         }
         p {
             width: 140px;
+        }
+    }
+}
+/* Slider */
+.mui-slider {
+    width: 100%;
+    height: 260px;
+    img {
+        height: 260px;
+    }
+    .m-display {
+        position: absolute;
+        bottom: 0;
+        margin: 15px;
+        div {
+            float: left;
+            margin-right: 20px;
+            h3,
+            span {
+                color: #fff;
+                font-weight: normal;
+            }
+            span {
+                font-size: 16px;
+            }
+        }
+    }
+}
+/* Block button */
+.mui-btn.mui-btn-blue {
+    width: 95%;
+    height: 50px;
+    margin: 10px auto 0;
+    border-color: $maincolor;
+    border-radius: 8px;
+    background-color: $maincolor;
+    line-height: 0;
+    font-size: 24px;
+}
+/* Homeinfo */
+%m-info-div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 120px;
+    border-bottom: 1px solid #ccc;
+}
+.m-info {
+    padding: 10px;
+    i,
+    h3 {
+        flex: 0.5;
+        color: #666;
+    }
+    i {
+        width: 50px;
+        max-width: 50px;
+        height: 50px;
+        margin: 0 10px 0 30px;
+    }
+    div {
+        flex: 1;
+    };
+    .m-info-today {
+        @extend %m-info-div;
+    }
+    .m-info-month {
+        @extend %m-info-div;
+        border: none;
+    }
+    .m-info-wrap {
+        width: 200px;
+        max-width: 200px;
+        height: 80px;
+        div {
+            box-sizing: border-box;
+            height: 40px;
+            padding: 10px;
+        }
+        span {
+            float: right;
+            line-height: 20px;
         }
     }
 }
