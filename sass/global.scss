@@ -1,0 +1,395 @@
+$maincolor: #45BCF9;
+/* Function */
+.f-mask {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.2);
+}
+.f-tac {
+    text-align: center;
+}
+.f-tar {
+    text-align: right;
+}
+/* Unit */
+.u-in {
+    color: #669900;
+}
+.u-out {
+    color: #FF3300;
+}
+/* Icon */
+.mui-icon-extra-people {
+    &:before {
+        font-weight: bold;
+    }
+}
+.u-icon {
+    background-image: url("../img/sprite.png");
+}
+.u-icon-money {
+    background-position: 0 0;
+}
+.u-icon-user {
+    background-position: 0 -50px;
+}
+.u-icon-setup {
+    background-position: -92px 0;
+}
+.u-icon-about {
+    background-position: -134px -42px;
+}
+.u-icon-class {
+    background-image: url("../img/class-sprite.png");
+    background-repeat: no-repeat;
+}
+.u-icon-class-wage {
+    background-position: 0 0;
+}
+.u-icon-class-traffic {
+    background-position: -42px 0;
+}
+.u-icon-class-home {
+    background-position: 0 -42px;
+}
+.u-icon-class-food {
+    background-position: -42px -42px;
+}
+.u-icon-class-entertainment {
+    background-position: -84px 0;
+}
+.u-icon-class-communication {
+    background-position: -84px -42px;
+}
+/* Title */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.mui-h1,
+.mui-h2,
+.mui-h3,
+.mui-h4,
+.mui-h5,
+.mui-h6 {
+    font-weight: normal;
+}
+.mui-h3,
+h3 {
+    font-size: 28px;
+}
+.mui-h4,
+h4 {
+    margin: 0;
+    line-height: 21px;
+    font-size: 16px;
+    color: #333;
+}
+/* Bar(nav, tab) */
+.mui-bar {
+    box-shadow: none;
+}
+.mui-bar.mui-bar-nav {
+    background-color: $maincolor;
+}
+/* Nav */
+.mui-bar-nav {
+    .mui-title {
+        color: #fff;
+    }
+    a {
+        color: #fff;
+    }
+}
+/* Tab */
+.mui-bar-tab {
+    background-color: #fff;
+}
+.mui-bar-tab .mui-tab-item.mui-active {
+    color: $maincolor;
+}
+/* List */
+.mui-table-view-divider {
+    color: #666;
+    background-color: #efeff4;
+    h3 {
+        display: inline-block;
+    }
+}
+.mui-table-view {
+    .mui-table-view-cell {
+        i {
+            display: inline-block;
+            width: 42px;
+        }
+        p {
+            width: 140px;
+        }
+    }
+    &:before {
+        background: none;
+    }
+    .mui-table-view-divider {
+        color: #333;
+    }
+    .mui-table-view-divider:before {
+        background: none;
+    }
+}
+/* Scroll */
+.mui-scroll-wrapper {
+    top: 44px;
+}
+/* Slider */
+.mui-slider {
+    width: 100%;
+    height: 260px;
+    img {
+        height: 260px;
+    }
+    .m-display {
+        position: absolute;
+        bottom: 0;
+        margin: 15px;
+        div {
+            float: left;
+            margin-right: 20px;
+            h3,
+            span {
+                color: #fff;
+                font-weight: normal;
+            }
+            span {
+                font-size: 16px;
+            }
+        }
+    }
+}
+/* Block button */
+.mui-btn.mui-btn-blue {
+    width: 95%;
+    height: 50px;
+    margin: 10px auto 0;
+    border-color: $maincolor;
+    border-radius: 8px;
+    background-color: $maincolor;
+    line-height: 0;
+    font-size: 24px;
+}
+/* Homeinfo */
+%m-info-div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 110px;
+    border-bottom: 1px solid #ccc;
+}
+.m-info {
+    padding: 10px;
+    i,
+    h3 {
+        flex: 0.5;
+        color: #666;
+    }
+    i {
+        width: 50px;
+        max-width: 50px;
+        height: 50px;
+        margin: 0 10px 0 30px;
+    }
+    div {
+        flex: 1;
+    };
+    .m-info-today {
+        @extend %m-info-div;
+    }
+    .m-info-month {
+        @extend %m-info-div;
+        border: none;
+    }
+    .m-info-wrap {
+        width: 200px;
+        max-width: 200px;
+        height: 80px;
+        div {
+            box-sizing: border-box;
+            height: 40px;
+            padding: 10px;
+        }
+        span {
+            float: right;
+            line-height: 20px;
+        }
+    }
+}
+/* Panel */
+.m-billPanel,
+.m-userPanel {
+    height: 216px;
+    background-color: $maincolor;
+}
+/* Bill Module */
+.m-billPanel {
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    >div {
+        flex: 1;
+    }
+    label,
+    .u-in,
+    .u-out,
+    h3 {
+        display: block;
+        margin: 10px 0;
+        color: #fff;
+    }
+    label {
+        font-size: 16px;
+    }
+    .u-in,
+    .u-out {
+        font-size: 20px;
+    }
+    .m-surplus {
+        label {
+            font-size: 24px;
+        }
+        h3 {
+            font-size: 35px;
+        }
+    }
+}
+.m-billList {
+    .monthItem {}
+    .monthList {
+        display: flex;
+        .dateItem {
+            padding: 10px 20px;
+            .date,
+            .day {
+                display: block;
+                color: #666666;
+            }
+            .date {
+                font-size: 20px;
+            }
+            .day {
+                font-size: 14px;
+            }
+        }
+        .dateList {
+            flex: 1;
+            width: 80%;
+        }
+    }
+}
+/* User Module */
+.m-userPanel {
+    .u-picture {
+        padding: 10px;
+        img {
+            display: block;
+            width: 120px;
+            height: 120px;
+            margin: auto;
+            border-radius: 50%;
+            background-color: #fff;
+        }
+    }
+    .m-login {
+        text-align: center;
+        h4 {
+            padding-bottom: 10px;
+            color: #fff;
+        }
+        .mui-btn-grey {
+            width: 25%;
+            height: 30px;
+            line-height: 14px;
+            margin: 0 10px;
+            border-color: #fff;
+            background-color: #fff;
+            color: $maincolor;
+        }
+    }
+}
+.m-userList {
+    h4 {
+        line-height: 42px;
+        color: #666;
+    }
+}
+/* Record Module */
+.m-record {
+    .mui-slider {
+        height: auto;
+        .mui-segmented-control.mui-segmented-control-inverted {
+            .mui-control-item.mui-active {
+                color: $maincolor;
+            }
+        }
+        .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-progress-bar {
+            background-color: $maincolor;
+        }
+        .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item{
+            border-bottom: none;
+        }
+        .mui-slider-group {
+            label {
+                display: block;
+                padding: 10px 20px 0;
+                font-size: 16px;
+                line-height: 16px;
+                color: #888;
+            }
+            .mui-input-row {
+                border-bottom: 1px solid #CCCCCC;
+                label,
+                input {
+                    display: block;
+                    width: 100%;
+                }
+                input,select{
+                    color: #555;
+                }
+                label {
+                    padding: 10px 20px 0;
+                    font-size: 16px;
+                }
+                input {
+                    height: 60px;
+                    padding: 10px 20px;
+                    line-height: 40px;
+                }
+                .u-num{
+                    font-size: 28px;
+                }
+                .u-date{
+                    font-size: 20px;
+                }
+            }
+            .u-select {
+                border-bottom: 1px solid #CCCCCC;
+            }
+            select.mui-btn.mui-btn-block {
+                position: relative;
+                height: 60px;
+                padding: 10px 20px;
+                margin: 0;
+                background: none;
+                font-size: 20px;
+                line-height: 40px;
+                option {
+                    font-size: 16px;
+                }
+            }
+            
+        }
+    }
+}

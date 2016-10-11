@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+
+	<head>
+	<meta charset="UTF-8">
+	<title>账户</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link rel="stylesheet" href="css/mui.min.css" />
+	<link rel="stylesheet" href="css/global.css" />
+	</head>
+
+	<body>
+		<!--头部-->
+		<header class="mui-bar mui-bar-nav">
+		<h1 class="mui-title" style="color: fff;">账户设置</h1>
+		</header>
+		<!--/头部-->
+		<div class="mui-content">
+			<!--区域滚动容器-->
+			<div class="mui-scroll-wrapper">
+				<!--滚动区-->
+				<div class="mui-scroll">
+					<!--用户面板-->
+					<div class="m-userPanel">
+						<!--头像区-->
+						<div class="u-picture">
+							<img id="j-picture" src="img/defualtPicture.png" />
+						</div>
+						<!--/头像区-->
+						<!--登录注册-->
+						<div class="m-login">
+							<h4>未登录</h4>
+							<button id="j-loginBtn" type="button" class=" mui-btn mui-btn-grey">登录</button>
+							<button id="j-register" type="button" class=" mui-btn mui-btn-grey">注册</button>
+						</div>
+						<!--/登录注册-->
+					</div>
+					<!--/用户面板-->
+					<!--列表-->
+					<ul class="m-userList mui-table-view">
+						<li class="mui-table-view-cell mui-media">
+							<a href="javascript:;" class="u-userRoom mui-navigate-right">
+								<i class="mui-media-object mui-pull-left u-icon u-icon-user"></i>
+								<div class="mui-media-body">
+									<h4>	个人中心</h4>
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media">
+							<a href="javascript:;" class="u-setup mui-navigate-right">
+								<i class="mui-media-object mui-pull-left u-icon u-icon-setup"></i>
+								<div class="mui-media-body">
+									<h4>	设置</h4>
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media">
+							<a href="javascript:;" class="u-about mui-navigate-right">
+								<i class="mui-media-object mui-pull-left u-icon u-icon-about"></i>
+								<div class="mui-media-body">
+									<h4>	关于</h4>
+								</div>
+							</a>
+						</li>
+					</ul>
+					<!--/列表-->
+				</div>
+				<!--/滚动区-->
+			</div>
+			<!--/区域滚动容器-->
+		</div>
+		<!--/主体-->
+		<script src="js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			var openAbout = function() {
+				mui.openWindow({
+					url: 'about.html',
+					id: 'about.html',
+					show: {
+						autoShow: true,
+						aniShow: 'slide-in-right',
+						duration: 300
+					},
+					waiting: {
+						autoShow: false
+					}
+				});
+			};
+			mui('.mui-table-view-cell').on('tap','.u-about',function(){
+				openAbout();
+			});
+		</script>
+	</body>
+
+</html>

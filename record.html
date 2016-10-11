@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+
+	<head>
+	<meta charset="UTF-8">
+	<title>记一笔</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link rel="stylesheet" href="css/mui.min.css" />
+	<link rel="stylesheet" href="css/global.css" />
+	</head>
+
+	<body class="m-record">
+		<!--头部-->
+		<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">记一笔</h1>
+		</header>
+		<!--/头部-->
+		<!--主体-->
+		<div class="mui-content">
+			<!--滑动Tab容器-->
+			<div class="mui-slider">
+				<!--滑动Tab-->
+				<div class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<a class="mui-control-item mui-active" href="#form1">支出</a>
+					<a class="mui-control-item" href="#form2">收入</a>
+				</div>
+				<!--滑动Tab-->
+				<!--滑动指示器-->
+				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-6"></div>
+				<!--/滑动指示器-->
+				<!--表单-->
+				<div class="mui-slider-group">
+					<!--表1-->
+					<div id="form1" class="mui-slider-item mui-control-content mui-active">
+						<div class="mui-input-row">
+							<label>金额:</label>
+							<input class="u-num" type="text" placeholder="0.00" maxlength="6">
+						</div>
+						<div class="u-select">
+							<label>分类:</label>
+							<select class="mui-btn mui-btn-block">
+								<option value="0">一日三餐</option>
+								<option value="1">交通出行</option>
+								<option value="2">衣服饰品</option>
+								<option value="3">交流通讯</option>
+								<option value="4">休闲娱乐</option>
+							</select>
+						</div>
+						<div class="u-select">
+							<label>账户:</label>
+							<select class="mui-btn mui-btn-block">
+								<option value="0" selected="">现金</option>
+							</select>
+						</div>
+						<div class="mui-input-row">
+							<label>时间:</label>
+							<input class="u-date" type="date" placeholder="普通输入框">
+						</div>
+						<div class="mui-input-row">
+							<label>备注:</label>
+							<input type="text" placeholder="钱花哪了呢?">
+						</div>
+						<button id="j-save-out" type="button" class="mui-btn mui-btn-blue mui-btn-block">保存</button>
+					</div>
+					<!--/表1-->
+					<!--表2-->
+					<div id="form2" class="mui-slider-item mui-control-content">
+						<div class="mui-input-row">
+							<label>金额:</label>
+							<input class="u-num" type="text" placeholder="0.00" maxlength="6">
+						</div>
+						<div class="u-select">
+							<label>分类:</label>
+							<select class="mui-btn mui-btn-block">
+								<option value="0">工资到手</option>
+							</select>
+						</div>
+						<div class="u-select">
+							<label>账户:</label>
+							<select class="mui-btn mui-btn-block">
+								<option value="0" selected="">现金</option>
+							</select>
+						</div>
+						<div class="mui-input-row">
+							<label>时间:</label>
+							<input class="u-date" type="date" placeholder="普通输入框">
+						</div>
+						<div class="mui-input-row">
+							<label>备注:</label>
+							<input type="text" placeholder="拿到工资的感想？">
+						</div>
+						<button id="j-save-in" type="button" class="mui-btn mui-btn-blue mui-btn-block">保存</button>
+					</div>
+					<!--/表2-->
+				</div>
+				<!--/列表-->
+			</div>
+			<!--/滑动Tab卡-->
+		</div>
+		<!--/主体-->
+		<script src="js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init()
+				//模块初始化
+				(function() {
+					//获取系统时间填充表单默认值
+					var date = new Date();
+					var currentDate = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate();
+					var aDate = document.querySelectorAll('.u-date');
+					for(var i=0;i<aDate.length;i++){
+						aDate[i].value = currentDate;
+					}
+				})();
+		</script>
+	</body>
+
+</html>
