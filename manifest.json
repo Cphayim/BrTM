@@ -316,7 +316,8 @@
 					"css/mui.min.css",
 					"js/mui.min.js",
 					"img/class-sprite.png",
-					"js/mui.js"
+					"js/mui.js",
+					"js/bill.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -353,7 +354,8 @@
 				"resources": [
 					"js/mui.min.js",
 					"css/global.css",
-					"css/mui.min.css"
+					"css/mui.min.css",
+					"fonts/mui.ttf"
 				],
 				"refer": [],
 				"priority": 0
