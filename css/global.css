@@ -107,6 +107,8 @@ h1, h2, h3, h4, h5, h6, .mui-h1, .mui-h2, .mui-h3, .mui-h4, .mui-h5, .mui-h6 { f
 .m-billPanel .m-surplus label { font-size: 24px; }
 .m-billPanel .m-surplus h3 { font-size: 35px; }
 
+.listNull h1 { line-height: 200px; text-align: center; font-size: 24px; color: #666666; }
+
 .m-billList .dateList { display: flex; }
 .m-billList .dateList .dateItem { width: 20%; padding: 10px 20px; background-color: #f8f8f8; }
 .m-billList .dateList .dateItem .date, .m-billList .dateList .dateItem .day { display: block; color: #666666; }

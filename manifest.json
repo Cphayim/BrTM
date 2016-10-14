@@ -317,7 +317,8 @@
 					"js/mui.min.js",
 					"img/class-sprite.png",
 					"js/mui.js",
-					"js/bill.js"
+					"js/bill.js",
+					"js/tools.js"
 				],
 				"refer": [],
 				"priority": 0
