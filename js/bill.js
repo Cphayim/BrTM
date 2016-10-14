@@ -63,7 +63,6 @@
 	//BillLitst数据加载
 	(function() {
 		var billList = document.getElementById('billList');
-		var flag = true;
 		for (var i in list) {
 			//创建月份账单容器
 			var monthList = document.createElement('div');
@@ -73,10 +72,6 @@
 				catStr = year + '-' + month;
 			//创建月份表头
 			var monthItem = document.createElement('li');
-			if(flag){
-				monthItem.id = 'catch';
-				flag = false;
-			}
 			monthItem.className = 'monthItem mui-table-view-divider'
 			monthItem.innerHTML += '<span>' + year + ' / </span><h3>' + month + '</h3>';
 			for (var j in list[i]) {
@@ -85,7 +80,9 @@
 				dateList.className = 'dateList';
 
 				var date = format(j);
+				console.log(j);
 				var day = getDay(catStr + '-' + j);
+				console.log(day);
 				//插入日期/星期
 				dateList.innerHTML += '<div class="dateItem"><span class="date">' + date + '</span><span class="day">' + day + '</span></div>';
 
@@ -108,9 +105,6 @@
 			}
 			billList.insertBefore(monthList, billList.childNodes[0]);
 		}
-		mui.init()
-		var catchs = document.getElementById('catch');
-		console.log(catchs.class);
 	})();
 
 })();
