@@ -139,6 +139,7 @@ h1, h2, h3, h4, h5, h6, .mui-h1, .mui-h2, .mui-h3, .mui-h4, .mui-h5, .mui-h6 { f
 .m-record .mui-slider .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active { color: #45BCF9; }
 .m-record .mui-slider .mui-segmented-control.mui-segmented-control-inverted ~ .mui-slider-progress-bar { background-color: #45BCF9; }
 .m-record .mui-slider .mui-segmented-control.mui-segmented-control-inverted ~ .mui-slider-group .mui-slider-item { border-bottom: none; padding: 0 10px; }
+.m-record .mui-slider .mui-slider-item.mui-control-content { background-color: #F7F7F7; }
 .m-record .mui-slider .mui-slider-group { background-color: #F7F7F7; }
 .m-record .mui-slider .mui-slider-group label { display: block; padding: 10px 20px 0; font-size: 16px; line-height: 16px; color: #888; }
 .m-record .mui-slider .mui-slider-group .select .mui-btn.mui-btn-block { color: #666; }
