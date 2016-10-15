@@ -21,7 +21,6 @@
 	mui('.mui-bar').on('doubletap', 'h1', function() {
 		mui('.mui-scroll-wrapper').scroll().scrollTo(0, 0, 500);
 	});
-	//	console.log(1)
 })();
 //数据载入
 (function() {
@@ -33,19 +32,17 @@
 	//JSON --> JS 对象
 	var list = JSON.parse(localStorage.getItem('data'));
 	//BillPanel数据加载
-	(function() {
+	mui.plusReady(function(){
+		(function() {
 		var date = new Date();
 		var curYear = String(date.getFullYear()),
 			curMonth = String(format(date.getMonth() + 1));
-		console.log('curYear:' + curYear)
-		console.log('curMonth:' + curMonth)
 		var curMonthIn = 0,
 			curMonthOut = 0,
 			surplus = 0; //当月收支,
 		var curList = list[curYear + curMonth];
 		for (var k in curList) {
 			for (var j in curList[k]) {
-				console.log("curList[k][j].money:" + curList[k][j].money)
 				if (curList[k][j].type == 1) {
 					curMonthIn += Number(curList[k][j].money);
 				} else {
@@ -80,8 +77,7 @@
 				dateList.className = 'dateList';
 
 				var date = format(j);
-				console.log(j);
-				var day = getDay(catStr + '-' + j);
+				var day = getDay(catStr + '-' + date);
 				console.log(day);
 				//插入日期/星期
 				dateList.innerHTML += '<div class="dateItem"><span class="date">' + date + '</span><span class="day">' + day + '</span></div>';
@@ -106,5 +102,5 @@
 			billList.insertBefore(monthList, billList.childNodes[0]);
 		}
 	})();
-
+	})
 })();
