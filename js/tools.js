@@ -68,7 +68,7 @@ var ajax = function(opts) {
  */
 function format(d) {
 	d = Number(d);
-	return d < 10 ? '0' + d : d;
+	return d < 10 ? '0' + String(d) : String(d);
 }
 
 /**

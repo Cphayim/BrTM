@@ -98,9 +98,7 @@
 					release: false 
 				}
 			});
-			mui('.mui-slider').slider({
-				interval: 5000
-			});
+			mui('.mui-slider').slider({interval: 5000});
 			var recordBtn = document.getElementById('j-openRecord');
 			var openRecord = function() {
 				mui.openWindow({
@@ -109,23 +107,16 @@
 					show: {
 						autoShow: true,
 						aniShow: 'slide-in-right',
-						duration: 300
+						duration: 200
 					},
 					waiting: {
 						autoShow: false
 					}
 				});
 			};
-			console.log(localStorage.getItem('a'));
 			//事件监听
 			recordBtn.addEventListener('tap', function() {
 				openRecord();
-			});
-			recordBtn.addEventListener('longtap', function() {
-				openRecord();
-			});
-			recordBtn.addEventListener('click', function() {
-				mui.trigger(recordBtn, 'tap');
 			});
 		</script>
 	</body>

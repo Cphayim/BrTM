@@ -25,15 +25,14 @@
 //数据载入
 (function() {
 	//判断本地是否有数据
-	if (!localStorage.getItem('data')){
+	if (!localStorage.getItem('data')) {
 		document.querySelector('.listNull').style.display = 'block';
 		return;
 	};
 	//JSON --> JS 对象
 	var list = JSON.parse(localStorage.getItem('data'));
 	//BillPanel数据加载
-	mui.plusReady(function(){
-		(function() {
+	(function() {
 		var date = new Date();
 		var curYear = String(date.getFullYear()),
 			curMonth = String(format(date.getMonth() + 1));
@@ -53,9 +52,9 @@
 		curMonthIn = curMonthIn.toFixed(2);
 		curMonthOut = curMonthOut.toFixed(2);
 		surplus = (curMonthIn - curMonthOut).toFixed(2);
-		mui('.m-billPanel .u-in')[0].innerHTML = curMonthIn;
-		mui('.m-billPanel .u-out')[0].innerHTML = curMonthOut;
-		mui('.m-billPanel .u-surplus')[0].innerHTML = surplus;
+		mui('.m-billPanel .u-in')[0].innerHTML = '￥'+curMonthIn;
+		mui('.m-billPanel .u-out')[0].innerHTML = '￥'+curMonthOut;
+		mui('.m-billPanel .u-surplus')[0].innerHTML = '￥'+surplus;
 	})();
 	//BillLitst数据加载
 	(function() {
@@ -75,10 +74,9 @@
 				//创建日账单容器
 				var dateList = document.createElement('div');
 				dateList.className = 'dateList';
-
+				//date在json中为自动排序首位不补0，应用场景中补0
 				var date = format(j);
 				var day = getDay(catStr + '-' + date);
-				console.log(day);
 				//插入日期/星期
 				dateList.innerHTML += '<div class="dateItem"><span class="date">' + date + '</span><span class="day">' + day + '</span></div>';
 
@@ -90,8 +88,7 @@
 					var type = detail.type == 1 ? "in" : "out",
 						money = Number(detail.money).toFixed(2), //str->num+两位小数
 						classType = getClassTypeStr(detail.classType);
-					oneList.innerHTML += '<li class="one mui-table-view-cell mui-media"><a href="javascript:;"><i class="mui-media-object mui-pull-left u-icon-class u-icon-class-' + detail.classType + '"></i><div class="mui-media-body"><h4>' + classType + '</h4><span class="u-' + type + '">' + money + '</span><p class="mui-ellipsis">' + detail.remark + '</p></div></a></li>';
-
+					oneList.innerHTML += '<li class="one mui-table-view-cell mui-media"><a href="javascript:;"><i class="mui-media-object mui-pull-left u-icon-class u-icon-class-' + detail.classType + '"></i><div class="mui-media-body"><h4>' + classType + '</h4><span class="u-' + type + '">￥' + money + '</span><p class="mui-ellipsis">' + detail.remark + '</p></div></a></li>';
 				}
 				dateList.appendChild(oneList);
 				//将日账单容器插入月份账单容器
@@ -102,5 +99,4 @@
 			billList.insertBefore(monthList, billList.childNodes[0]);
 		}
 	})();
-	})
 })();

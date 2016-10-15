@@ -64,6 +64,9 @@ $maincolor: #45BCF9;
 .u-icon-class-communication {
     background-position: -84px -42px;
 }
+.u-icon-class-clothing {
+    background-position: 0 -84px;
+}
 /* Title */
 h1,
 h2,
@@ -81,7 +84,7 @@ h6,
 }
 .mui-h3,
 h3 {
-    font-size: 28px;
+    font-size: 24px;
 }
 .mui-h4,
 h4 {
@@ -122,9 +125,6 @@ h4 {
     }
 }
 .mui-table-view {
-    &:after {
-        background: none;
-    }
     .mui-table-view-cell {
         i {
             display: inline-block;
@@ -192,19 +192,43 @@ h4 {
     height: 80px;
     border-bottom: 1px solid #ccc;
 }
+%border {
+    position: absolute;
+    right: 0;
+    left: 0;
+    height: 1px;
+    content: '';
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+    background-color: #c8c7cc;
+}
 .m-info {
-    padding: 10px;
+    position: relative;
+    margin: 10px 0;
+    padding: 0 10px;
+    background-color: #FFF;
+    &::before,
+    &::after {
+        @extend %border;
+    }
+    &::before {
+        top: 0;
+    }
+    &::after {
+        bottom: 0;
+    }
     i,
     h3 {
         flex: 0.5;
         color: #666;
-        font-size: 26px;
+        font-size: 24px;
     }
     i {
         width: 50px;
         max-width: 50px;
         height: 50px;
-        margin: 0 10px 0 30px;
+        margin: 0 2px 0 30px;
+        transform: scale(0.8);
     }
     div {
         flex: 1;
@@ -262,15 +286,15 @@ h4 {
     }
     .m-surplus {
         label {
-            font-size: 24px;
+            font-size: 20px;
         }
         h3 {
-            font-size: 35px;
+            font-size: 30px;
         }
     }
 }
-.listNull{
-    h1{
+.listNull {
+    h1 {
         line-height: 200px;
         text-align: center;
         font-size: 24px;
@@ -284,7 +308,7 @@ h4 {
         .dateItem {
             width: 20%;
             padding: 10px 20px;
-            background-color: #f8f8f8;
+            background-color: #F3F3F3;
             .date,
             .day {
                 display: block;
@@ -306,6 +330,7 @@ h4 {
             h4,
             span {
                 display: inline-block;
+                font-size: 16px;
             }
             span {
                 float: right;
@@ -351,6 +376,7 @@ h4 {
 }
 /* Record Module */
 .m-record {
+    background-color: #f7f7f7;
     .mui-slider {
         height: auto;
         .mui-segmented-control.mui-segmented-control-inverted {
@@ -363,8 +389,10 @@ h4 {
         }
         .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item {
             border-bottom: none;
+            padding: 0 10px;
         }
         .mui-slider-group {
+            background-color: #F7F7F7;
             label {
                 display: block;
                 padding: 10px 20px 0;
@@ -372,16 +400,17 @@ h4 {
                 line-height: 16px;
                 color: #888;
             }
+            .select{
+            .mui-btn.mui-btn-block {
+                color: #666;
+            }
+            }
             .mui-input-row {
                 border-bottom: 1px solid #CCCCCC;
                 label,
                 input {
                     display: block;
                     width: 100%;
-                }
-                input,
-                select {
-                    color: #555;
                 }
                 label {
                     padding: 10px 20px 0;
@@ -391,9 +420,11 @@ h4 {
                     height: 60px;
                     padding: 10px 20px;
                     line-height: 40px;
+                    font-size: 20px;
+                    color: #666;
                 }
-                .u-num {
-                    font-size: 28px;
+                .u-money {
+                    font-size: 30px;
                 }
                 .u-date {
                     font-size: 20px;

@@ -332,7 +332,8 @@
 					"img/class-sprite.png",
 					"img/sprite.png",
 					"fonts/mui.ttf",
-					"js/mui.js"
+					"js/mui.js",
+					"img/defualtPicture2.png"
 				],
 				"refer": [
 					"about.html"
@@ -346,7 +347,9 @@
 					"css/global.css",
 					"css/mui.min.css",
 					null,
-					"js/mui.js"
+					"js/mui.js",
+					"js/record.js",
+					"js/tools.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -355,7 +358,8 @@
 				"resources": [
 					"js/mui.min.js",
 					"css/global.css",
-					"css/mui.min.css"
+					"css/mui.min.css",
+					"fonts/mui.ttf"
 				],
 				"refer": [],
 				"priority": 0
