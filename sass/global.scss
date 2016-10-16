@@ -1,4 +1,47 @@
-$maincolor: #45BCF9;
+$bgColor: #45BCF9;
+$bgColor2: #45BCF9; 
+//$bgColor:#2a3c54;
+//$bgColor2:#ae3c5c;
+$fontColor: #666666;
+@font-face {
+    font-family: "iconfont";
+    src: url('../fonts/iconfont.ttf') format('truetype');
+    /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+}
+@font-face {
+    font-family: "iconfont";
+    src: url('../fonts/iconfont.ttf') format('truetype');
+    /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+}
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+}
+.icon-money:before {
+    content: "\e60c";
+}
+.icon-money1:before {
+    content: "\e60b";
+}
+.icon-setting:before {
+    content: "\e665";
+}
+.icon-user:before {
+    content: "\e703";
+}
+.icon-about:before {
+    content: "\e6d9";
+}
+.icon-password:before {
+    content: "\e648";
+}
+.icon-sync:before {
+    content: "\e68f";
+}
 /* Function */
 .f-mask {
     position: absolute;
@@ -91,14 +134,17 @@ h4 {
     margin: 0;
     line-height: 21px;
     font-size: 16px;
-    color: #666;
+    color: $fontColor;
 }
 /* Bar(nav, tab) */
 .mui-bar {
     box-shadow: none;
+    .mui-btn-link {
+        color: #fff;
+    }
 }
 .mui-bar.mui-bar-nav {
-    background-color: $maincolor;
+    background-color: $bgColor;
 }
 /* Nav */
 .mui-bar-nav {
@@ -114,11 +160,11 @@ h4 {
     background-color: #fff;
 }
 .mui-bar-tab .mui-tab-item.mui-active {
-    color: $maincolor;
+    color: $bgColor;
 }
 /* List */
 .mui-table-view-divider {
-    color: #666;
+    color: $fontColor;
     background-color: #efeff4;
     h3 {
         display: inline-block;
@@ -134,11 +180,14 @@ h4 {
             width: 200px;
         }
     }
+    &:after {
+        background: none;
+    }
     &:before {
         background: none;
     }
     .mui-table-view-divider {
-        color: #666;
+        color: $fontColor;
     }
     .mui-table-view-divider:before {
         background: none;
@@ -178,13 +227,21 @@ h4 {
     width: 95%;
     height: 50px;
     margin: 10px auto 0;
-    border-color: $maincolor;
+    border-color: $bgColor2;
     border-radius: 8px;
-    background-color: $maincolor;
+    background-color: $bgColor2;
     line-height: 0;
     font-size: 24px;
 }
-/* Homeinfo */
+.mui-btn.mui-btn-grey {
+    width: 95%;
+    height: 50px;
+    margin: 10px auto 0;
+    border-radius: 8px;
+    line-height: 0;
+    font-size: 20px;
+}
+/* Home Module */
 %m-info-div {
     display: flex;
     align-items: center;
@@ -220,7 +277,7 @@ h4 {
     i,
     h3 {
         flex: 0.5;
-        color: #666;
+        color: $fontColor;
         font-size: 24px;
     }
     i {
@@ -228,7 +285,8 @@ h4 {
         max-width: 50px;
         height: 50px;
         margin: 0 2px 0 30px;
-        transform: scale(0.8);
+        line-height: 50px;
+        font-size: 35px;
     }
     div {
         flex: 1;
@@ -255,11 +313,11 @@ h4 {
         }
     }
 }
-/* Panel */
+/* Panel Module*/
 .m-billPanel,
 .m-userPanel {
     height: 216px;
-    background-color: $maincolor;
+    background-color: $bgColor;
 }
 /* Bill Module */
 .m-billPanel {
@@ -298,7 +356,7 @@ h4 {
         line-height: 200px;
         text-align: center;
         font-size: 24px;
-        color: #666666;
+        color: $fontColor;
     };
 }
 .m-billList {
@@ -313,7 +371,7 @@ h4 {
             .date,
             .day {
                 display: block;
-                color: #666666;
+                color: $fontColor;
             }
             .date {
                 font-size: 20px;
@@ -365,14 +423,18 @@ h4 {
             margin: 0 10px;
             border-color: #fff;
             background-color: #fff;
-            color: $maincolor;
+            color: $bgColor;
         }
     }
 }
 .m-userList {
+    .iconfont {
+        font-size: 25px;
+        color: #666;
+    }
     h4 {
         line-height: 42px;
-        color: #666;
+        color: $fontColor;
     }
 }
 /* Record Module */
@@ -380,13 +442,16 @@ h4 {
     background-color: #f7f7f7;
     .mui-slider {
         height: auto;
+        .mui-slider-indicator.mui-segmented-control {}
         .mui-segmented-control.mui-segmented-control-inverted {
+            .mui-control-item {}
             .mui-control-item.mui-active {
-                color: $maincolor;
+                color: $bgColor;
             }
         }
         .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-progress-bar {
-            background-color: $maincolor;
+            height: 2px;
+            background-color: $bgColor2;
         }
         .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item {
             border-bottom: none;
@@ -406,7 +471,7 @@ h4 {
             }
             .select {
                 .mui-btn.mui-btn-block {
-                    color: #666;
+                    color: $fontColor;
                 }
             }
             .mui-input-row {
@@ -425,7 +490,7 @@ h4 {
                     padding: 10px 20px;
                     line-height: 40px;
                     font-size: 20px;
-                    color: #666;
+                    color: $fontColor;
                 }
                 .u-money {
                     font-size: 30px;
@@ -448,6 +513,68 @@ h4 {
                 option {
                     font-size: 16px;
                 }
+            }
+        }
+    }
+}
+/* About Module */
+.m-about {
+    color: #666;
+    .mui-scroll-wrapper {
+        top: 0;
+    }
+    background-color: #F7F7F7;
+    .mui-content {
+        background-color: #F7F7F7;
+    }
+    .mui-scroll {}
+    .m-appInfo {
+        text-align: center;
+        >div {
+            height: 0.1px;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            border-radius: 20px;
+        }
+        h3 {
+            color: #333;
+            font-weight: bold;
+        }
+        span {
+            display: block;
+            margin-top: 10px;
+            font-size: 15px;
+        }
+    }
+    .m-dev {
+        margin: 20px;
+        h3 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+        a {
+            display: block;
+            text-indent: 1em;
+            font-size: 14px;
+            text-decoration: underline;
+        }
+        .u-pP {
+            margin-bottom: 15px;
+        }
+        .u-team {
+            margin-bottom: 15px;
+            h4,
+            span {
+                display: inline-block;
+                text-indent: 1em;
+            }
+            h4 {
+                width: 170px;
+            }
+            p {
+                padding: 5px 15px;
             }
         }
     }

@@ -1,6 +1,5 @@
 <!doctype html>
 <html>
-
 	<head>
 	<meta charset="UTF-8">
 	<title>关于</title>
@@ -8,104 +7,44 @@
 	<link href="css/mui.min.css" rel="stylesheet" />
 	<link rel="stylesheet" href="css/global.css" />
 	</head>
-
-	<body>
-		<!--头部-->
-		<header class="mui-bar mui-bar-nav">
-		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-		<h1 class="mui-title">关于</h1>
-		</header>
-		<!--/头部-->
+	<body class="m-about">
 		<!--主体-->
-		<div class="mui-content">
-			<ul id="OA_task_1" class="mui-table-view">
-				<li class="mui-table-view-cell">
-					<div class="mui-slider-right mui-disabled">
-						<a class="mui-btn mui-btn-red">删除</a>
-					</div>
-					<div class="mui-slider-handle">
-						左滑显示删除按钮
-					</div>
-				</li>
-				<li class="mui-table-view-cell">
-					<div class="mui-slider-left mui-disabled">
-						<a class="mui-btn mui-btn-red">删除</a>
-					</div>
-					<div class="mui-slider-handle">
-						右滑显示删除按钮
-					</div>
-				</li>
-				<li class="mui-table-view-cell">
-					<div class="mui-slider-left mui-disabled">
-						<a class="mui-btn mui-btn-red">删除</a>
-					</div>
-					<div class="mui-slider-right mui-disabled">
-						<a class="mui-btn mui-btn-red">删除</a>
-					</div>
-					<div class="mui-slider-handle">
-						左右滑动均可显示删除按钮
-					</div>
-				</li>
-			</ul>
-			<ul id="billList" class="m-billList mui-table-view">
-				<!--月份账单-->
-				<div class="monthList">
-					<!-- 月份表头 -->
-					<li class="monthItem mui-table-view-divider">
-						<span>2016/</span>
-						<h3>10</h3>
-					</li>
-					<!-- /月份表头 -->
-					<!-- 日账单 -->
-					<div class="dateList">
-						<!-- 日期 -->
-						<div class="dateItem">
-							<span class="date">10</span><span class="day">周一</span>
-						</div>
-						<!-- /日期 -->
-						<!-- 日账单列表 -->
-						<ul class="oneList mui-table-view">
-							<li class="one mui-table-view-cell mui-media">
-								<div class="mui-slider-right mui-disabled">
-									<a class="mui-btn mui-btn-red">删除</a>
-								</div>
-								<div class="mui-slider-handle">
-									<a href="javascript:;">
-										<i class="mui-media-object mui-pull-left u-icon-class u-icon-class-food"></i>
-										<div class="mui-media-body">
-											<h4>	一日三餐</h4><span class="u-out">50.00</span>
-											<p class="mui-ellipsis">晚餐吃了这个</p>
-										</div>
-									</a>
-								</div>
-							</li>
-						</ul>
-						<!-- /账单列表 -->
-					</div>
-					<!-- /日账单 -->
+		<div class="mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<!--app信息-->
+				<div class="m-appInfo">
+					<div></div>
+					<img width="120px" height="120px" src="img/iconBeta1.png" />
+					<h3>记个账</h3>
+					<span>Version: 0.1.16 (Beta 1)</span>
 				</div>
-				<!--月份账单-->
-			</ul>
+				<!--app信息-->
+				<!--开发人员信息-->
+				<div class="m-dev">
+					<div class="u-pP">
+						<h3>Project page : </h3>
+						<a href="https://github.com/Cphayim/BillRecords">https://github.com/Cphayim/BillRecords</a>
+					</div>
+					<div class="u-team">
+						<h3>Development Team :</h3>
+						<h4>Cphayim(李佳衡)</h4><span>前端开发工程师</span><p>负责该项目App用户界面，交互与本地数据操作业务逻辑的编码，以及前后端联调。</p>
+						<h4>迎風别葉(叶昭炳)</h4><span>PHP开发工程师</span><p>负责该项目服务器端的编码，以及前后端联调。</p>
+						<h4>守心(陈右晨)</h4><span>Android工程师</span><p>负责端茶送水。</p>
+						<h4>ChenWei(陈威)</h4><span>Java工程师</span><p>负责捶背捏肩。</p>
+					</div>
+				</div>
+				<!--开发人员信息-->
+			</div>
 		</div>
 		<!--/主体-->
 		<script src="js/mui.min.js"></script>
-		<script type="text/javascript">
-			mui.init()
-			mui('#billList').on('tap', '.mui-btn', function(event) {
-				var elem = this;
-				var li = elem.parentNode.parentNode;
-				mui.confirm('确认删除该条记录？', 'Hello MUI', btnArray, function(e) {
-					if (e.index == 0) {
-						li.parentNode.removeChild(li);
-					} else {
-						setTimeout(function() {
-							mui.swipeoutClose(li);
-						}, 0);
-					}
-				});
+		<script>
+			mui.init();
+			//列表滚动属性
+			mui('.mui-scroll-wrapper').scroll({
+				deceleration: 0.001, //阻尼系数
+				bounce: true //是否回弹
 			});
-			var btnArray = ['确认', '取消'];
 		</script>
 	</body>
-
 </html>

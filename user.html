@@ -15,6 +15,7 @@
 		<h1 class="mui-title" style="color: fff;">账户设置</h1>
 		</header>
 		<!--/头部-->
+		
 		<div class="mui-content">
 			<!--区域滚动容器-->
 			<div class="mui-scroll-wrapper">
@@ -40,15 +41,15 @@
 					<ul class="m-userList mui-table-view">
 						<li class="mui-table-view-cell mui-media">
 							<a href="javascript:;" class="u-userRoom mui-navigate-right">
-								<i class="mui-media-object mui-pull-left u-icon u-icon-user"></i>
+								<i class="mui-media-object mui-pull-left iconfont icon-user"></i>
 								<div class="mui-media-body">
 									<h4>	个人中心</h4>
 								</div>
 							</a>
 						</li>
 						<li class="mui-table-view-cell mui-media">
-							<a href="javascript:;" class="u-setup mui-navigate-right">
-								<i class="mui-media-object mui-pull-left u-icon u-icon-setup"></i>
+							<a href="javascript:;" class="u-setting mui-navigate-right">
+								<i class="mui-media-object mui-pull-left iconfont icon-setting"></i>
 								<div class="mui-media-body">
 									<h4>	设置</h4>
 								</div>
@@ -56,7 +57,7 @@
 						</li>
 						<li class="mui-table-view-cell mui-media">
 							<a href="javascript:;" class="u-about mui-navigate-right">
-								<i class="mui-media-object mui-pull-left u-icon u-icon-about"></i>
+								<i class="mui-media-object mui-pull-left iconfont icon-about"></i>
 								<div class="mui-media-body">
 									<h4>	关于</h4>
 								</div>
@@ -71,26 +72,6 @@
 		</div>
 		<!--/主体-->
 		<script src="js/mui.min.js"></script>
-		<script type="text/javascript">
-			mui.init()
-			var openAbout = function() {
-				mui.openWindow({
-					url: 'about.html',
-					id: 'about.html',
-					show: {
-						autoShow: true,
-						aniShow: 'slide-in-right',
-						duration: 300
-					},
-					waiting: {
-						autoShow: false
-					}
-				});
-			};
-			mui('.mui-table-view-cell').on('tap','.u-about',function(){
-				openAbout();
-			});
-		</script>
+		<script src="js/user.js"></script>
 	</body>
-
 </html>
