@@ -210,7 +210,8 @@
 					"subpages/home.html",
 					"home.html",
 					"bill.html",
-					"js/mui.js"
+					"js/mui.js",
+					null
 				],
 				"priority": 0,
 				"refer": [
@@ -303,7 +304,9 @@
 					"img/banner4.jpg",
 					"img/banner1.jpg",
 					"img/banner3.jpg",
-					"js/mui.js"
+					"js/mui.js",
+					"js/tools.js",
+					"js/home.js"
 				],
 				"refer": [
 					"record.html"
@@ -359,7 +362,8 @@
 					"js/mui.min.js",
 					"css/global.css",
 					"css/mui.min.css",
-					"fonts/mui.ttf"
+					"fonts/mui.ttf",
+					"img/class-sprite.png"
 				],
 				"refer": [],
 				"priority": 0

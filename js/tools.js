@@ -62,6 +62,23 @@ var ajax = function(opts) {
 		}
 	}
 };
+
+/**
+ * 判断对象是否为空
+ * @param {Object} obj 对象
+ */
+function isEmptyObject(obj){
+    for(var n in obj){return false} 
+    return true; 
+}
+/**
+ * 判断数组是否为空
+ * @param {Object} arr 数组
+ */
+function isEmptyArray(arr){
+	if(arr.length>0) return false;
+	return true;
+}
 /**
  *  返回格式化后的月份或日期(补0)
  * @param {Object} d 月份或日期

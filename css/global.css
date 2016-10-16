@@ -65,7 +65,7 @@ h1, h2, h3, h4, h5, h6, .mui-h1, .mui-h2, .mui-h3, .mui-h4, .mui-h5, .mui-h6 { f
 .mui-table-view-divider h3 { display: inline-block; }
 
 .mui-table-view .mui-table-view-cell i { display: inline-block; width: 42px; }
-.mui-table-view .mui-table-view-cell p { width: 140px; }
+.mui-table-view .mui-table-view-cell p { width: 200px; }
 .mui-table-view:before { background: none; }
 .mui-table-view .mui-table-view-divider { color: #666; }
 .mui-table-view .mui-table-view-divider:before { background: none; }
@@ -115,7 +115,7 @@ h1, h2, h3, h4, h5, h6, .mui-h1, .mui-h2, .mui-h3, .mui-h4, .mui-h5, .mui-h6 { f
 .listNull h1 { line-height: 200px; text-align: center; font-size: 24px; color: #666666; }
 
 .m-billList .dateList { display: flex; }
-.m-billList .dateList .dateItem { width: 20%; padding: 10px 20px; background-color: #F3F3F3; }
+.m-billList .dateList .dateItem { width: 20%; min-height: 64px; padding: 10px 20px; background-color: #F3F3F3; }
 .m-billList .dateList .dateItem .date, .m-billList .dateList .dateItem .day { display: block; color: #666666; }
 .m-billList .dateList .dateItem .date { font-size: 20px; }
 .m-billList .dateList .dateItem .day { font-size: 14px; }
@@ -152,5 +152,9 @@ h1, h2, h3, h4, h5, h6, .mui-h1, .mui-h2, .mui-h3, .mui-h4, .mui-h5, .mui-h6 { f
 .m-record .mui-slider .mui-slider-group .select { border-bottom: 1px solid #CCCCCC; }
 .m-record .mui-slider .mui-slider-group select.mui-btn.mui-btn-block { position: relative; height: 60px; padding: 10px 20px; margin: 0; background: none; font-size: 20px; line-height: 40px; }
 .m-record .mui-slider .mui-slider-group select.mui-btn.mui-btn-block option { font-size: 16px; }
+
+/* Popup */
+.mui-popup { color: #333; }
+.mui-popup .mui-popup-button.mui-popup-button-bold { font-weight: normal; }
 
 /*# sourceMappingURL=global.css.map */

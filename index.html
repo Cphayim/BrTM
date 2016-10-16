@@ -7,7 +7,7 @@
 	<title>入口</title>
 	<link href="css/mui.min.css" rel="stylesheet" />
 	<link rel="stylesheet" href="css/icons-extra.css" />
-	<link rel="stylesheet" type="text/css" href="css/global.css" />
+	<link rel="stylesheet" href="css/global.css" />
 	</head>
 	<body>
 		<!-- 底部选项卡 -->
@@ -72,7 +72,8 @@
 						var temp = {};
 						temp[targetTab] = 'true';
 						mui.extend(aniShow, temp);
-						plus.webview.show(targetTab, 'fade-in', 300);
+//						plus.webview.show(targetTab, 'fade-in', 300);
+						plus.webview.show(targetTab);
 					}
 					//隐藏当前
 					plus.webview.hide(activeTab);
@@ -95,7 +96,6 @@
 				if(!localStorage.getItem('nextId')){
 					localStorage.setItem('nextId','1100');
 				}
-//				localStorage.setItem('data','{"201603":{"3":{"1002":{"type":"0","money":"136","classType":"food","account":"cash","remark":"晚餐"},"1003":{"type":"0","money":"37","classType":"food","account":"cash","remark":"午餐"}},"10":{"1000":{"type":"1","money":"12000","classType":"wage","account":"cash","remark":"领工资"},"1001":{"type":"0","money":"1370","classType":"clothing","account":"cash","remark":"买衣服"}},"15":{"1002":{"type":"0","money":"30","classType":"food","account":"cash","remark":"晚餐"},"1003":{"type":"0","money":"35","classType":"food","account":"cash","remark":"午餐"}},"19":{"1002":{"type":"0","money":"29","classType":"food","account":"cash","remark":"晚餐"},"1003":{"type":"0","money":"33","classType":"food","account":"cash","remark":"午餐"}}},"201607":{"10":{"1000":{"type":"1","money":"12000","classType":"wage","account":"cash","remark":"领工资"},"1001":{"type":"0","money":"1000","classType":"clothing","account":"cash","remark":"买衣服"}},"17":{"1002":{"type":"0","money":"30","classType":"food","account":"cash","remark":"晚餐"},"1003":{"type":"0","money":"20","classType":"food","account":"cash","remark":"午餐"}},"19":{"1002":{"type":"0","money":"30","classType":"food","account":"cash","remark":"晚餐"},"1003":{"type":"0","money":"150","classType":"food","account":"cash","remark":"午餐"}},"23":{"1002":{"type":"0","money":"350","classType":"food","account":"cash","remark":"晚餐"},"1003":{"type":"0","money":"80","classType":"food","account":"cash","remark":"午餐"}}},"201609":{"10":{"900":{"type":"1","money":"12000","classType":"wage","account":"cash","remark":"领工资"}},"25":{"997":{"type":"0","money":"1550","classType":"home","account":"cash","remark":"家具"},"998":{"type":"0","money":"1000","classType":"entertainment","account":"cash","remark":"玩"}},"30":{"995":{"type":"0","money":"300","classType":"traffic","account":"cash","remark":"油费"},"996":{"type":"0","money":"200","classType":"communication","account":"cash","remark":"话费"}}},"201610":{"3":{"1002":{"type":"0","money":"50","classType":"food","account":"cash","remark":"晚餐"},"1003":{"type":"0","money":"50","classType":"food","account":"cash","remark":"午餐"}},"7":{"1002":{"type":"0","money":"50","classType":"food","account":"cash","remark":"晚餐"},"1003":{"type":"0","money":"50","classType":"food","account":"cash","remark":"午餐"}},"9":{"1002":{"type":"0","money":"50","classType":"food","account":"cash","remark":"晚餐"},"1003":{"type":"0","money":"50","classType":"food","account":"cash","remark":"午餐"}},"10":{"1000":{"type":"1","money":"12000","classType":"wage","account":"cash","remark":"领工资"},"1001":{"type":"0","money":"800","classType":"clothing","account":"cash","remark":"买衣服"}}}}');
 			})();
 		</script>
 		<!-- /JavaScript -->

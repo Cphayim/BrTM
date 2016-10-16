@@ -103,14 +103,5 @@
 		<script src="js/mui.min.js"></script>
 		<script src="js/tools.js"></script>
 		<script src="js/record.js"></script>
-		<script type="text/javascript">
-			var saveOut = document.getElementById('j-save-out');
-			saveOut.addEventListener('tap', function() {
-				localStorage.setItem('a', '123');
-				plus.webview.getWebviewById('home.html').reload();
-				plus.webview.currentWebview().close();
-			});
-		</script>
 	</body>
-
 </html>

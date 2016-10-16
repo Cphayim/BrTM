@@ -10,17 +10,101 @@
 	</head>
 
 	<body>
+		<!--头部-->
+		<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">关于</h1>
+		</header>
+		<!--/头部-->
+		<!--主体-->
 		<div class="mui-content">
-			<!--头部-->
-			<header class="mui-bar mui-bar-nav">
-			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-			<h1 class="mui-title">关于</h1>
-			</header>
-			<!--/头部-->
+			<ul id="OA_task_1" class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn mui-btn-red">删除</a>
+					</div>
+					<div class="mui-slider-handle">
+						左滑显示删除按钮
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-left mui-disabled">
+						<a class="mui-btn mui-btn-red">删除</a>
+					</div>
+					<div class="mui-slider-handle">
+						右滑显示删除按钮
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-left mui-disabled">
+						<a class="mui-btn mui-btn-red">删除</a>
+					</div>
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn mui-btn-red">删除</a>
+					</div>
+					<div class="mui-slider-handle">
+						左右滑动均可显示删除按钮
+					</div>
+				</li>
+			</ul>
+			<ul id="billList" class="m-billList mui-table-view">
+				<!--月份账单-->
+				<div class="monthList">
+					<!-- 月份表头 -->
+					<li class="monthItem mui-table-view-divider">
+						<span>2016/</span>
+						<h3>10</h3>
+					</li>
+					<!-- /月份表头 -->
+					<!-- 日账单 -->
+					<div class="dateList">
+						<!-- 日期 -->
+						<div class="dateItem">
+							<span class="date">10</span><span class="day">周一</span>
+						</div>
+						<!-- /日期 -->
+						<!-- 日账单列表 -->
+						<ul class="oneList mui-table-view">
+							<li class="one mui-table-view-cell mui-media">
+								<div class="mui-slider-right mui-disabled">
+									<a class="mui-btn mui-btn-red">删除</a>
+								</div>
+								<div class="mui-slider-handle">
+									<a href="javascript:;">
+										<i class="mui-media-object mui-pull-left u-icon-class u-icon-class-food"></i>
+										<div class="mui-media-body">
+											<h4>	一日三餐</h4><span class="u-out">50.00</span>
+											<p class="mui-ellipsis">晚餐吃了这个</p>
+										</div>
+									</a>
+								</div>
+							</li>
+						</ul>
+						<!-- /账单列表 -->
+					</div>
+					<!-- /日账单 -->
+				</div>
+				<!--月份账单-->
+			</ul>
 		</div>
+		<!--/主体-->
 		<script src="js/mui.min.js"></script>
 		<script type="text/javascript">
 			mui.init()
+			mui('#billList').on('tap', '.mui-btn', function(event) {
+				var elem = this;
+				var li = elem.parentNode.parentNode;
+				mui.confirm('确认删除该条记录？', 'Hello MUI', btnArray, function(e) {
+					if (e.index == 0) {
+						li.parentNode.removeChild(li);
+					} else {
+						setTimeout(function() {
+							mui.swipeoutClose(li);
+						}, 0);
+					}
+				});
+			});
+			var btnArray = ['确认', '取消'];
 		</script>
 	</body>
 
