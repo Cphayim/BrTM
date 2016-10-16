@@ -23,45 +23,52 @@
 					<div class="m-billPanel">
 						<div>
 							<label>收入</label>
-							<span class="u-in">10000.00</span>
+							<span class="u-in">￥0.00</span>
 							<label>支出</label>
-							<span class="u-out">5000.00</span>
+							<span class="u-out">￥0.00</span>
 						</div>
 						<div class="m-surplus">
 							<label>结余</label>
-							<h3 class="u-surplus">5000.00</h3>
+							<h3 class="u-surplus">￥0.00</h3>
 						</div>
 					</div>
 					<!--  /面板  -->
+					<div class="listNull" style="display: none;">
+						<h1>当前没有记录</h1>
+					</div>
 					<!-- 流水列表容器 -->
-					<ul class="m-billList mui-table-view">
-						<!-- 月份表头 -->
-						<li class="monthItem mui-table-view-divider">
-							<h3>10</h3><span>月</span>
-						</li>
-						<!-- /月份表头 -->
-						<!-- 月份账单 -->
-						<div class="monthList">
-							<!-- 日期 -->
-							<div class="dateItem" style="width: 20%;background-color: #f8f8f8;">
-								<span class="date">10</span><span class="day">周一</span>
-							</div>
-							<!-- /日期 -->
-							<!-- 当日流水列表 -->
-							<ul class="dateList mui-table-view">
-								<li class="mui-table-view-cell mui-media">
-									<a href="javascript:;">
-										<i class="mui-media-object mui-pull-left u-icon-class u-icon-class-food"></i>
-										<div class="mui-media-body">
-											<h4>	一日三餐</h4>
-											<p class="mui-ellipsis">晚餐吃了这个那个这个那个这个那个这个那个这个那个</p>
-										</div>
-									</a>
-								</li>
-							</ul>
-							<!-- /当日流水列表 -->
-						</div>
-						<!-- /月份账单 -->
+					<ul id="billList" class="m-billList mui-table-view">
+						<!--月份账单-->
+						<!--<div class="monthList">-->
+							<!-- 月份表头 -->
+							<!--<li class="monthItem mui-table-view-divider">
+								<span>2016/</span><h3>10</h3>
+							</li>-->
+							<!-- /月份表头 -->
+							<!-- 日账单 -->
+							<!--<div class="dateList">-->
+								<!-- 日期 -->
+								<!--<div class="dateItem">
+									<span class="date">10</span><span class="day">周一</span>
+								</div>-->
+								<!-- /日期 -->
+								<!-- 日账单列表 -->
+								<!--<ul class="oneList mui-table-view">
+									<li class="one mui-table-view-cell mui-media">
+										<a href="javascript:;">
+											<i class="mui-media-object mui-pull-left u-icon-class u-icon-class-food"></i>
+											<div class="mui-media-body">
+												<h4>	一日三餐</h4><span class="u-out">50.00</span>
+												<p class="mui-ellipsis">晚餐吃了这个</p>
+											</div>
+										</a>
+									</li>
+								</ul>-->
+								<!-- /账单列表 -->
+							<!--</div>-->
+							<!-- /日账单 -->
+						<!--</div>-->
+						<!--月份账单-->
 					</ul>
 					<!-- /流水列表容器 -->
 				</div>
@@ -70,30 +77,8 @@
 			<!-- /区域滚动容器 -->
 		</div>
 		<!-- /主体 -->
-		<script src="js/mui.js"></script>
-		<script>
-			mui.init({
-				gestureConfig: {
-					tap: true, //默认为true
-					doubletap: true, //默认为false
-					longtap: true, //默认为false
-					swipe: true, //默认为true
-					drag: true, //默认为true
-					hold: false, //默认为false，不监听
-					release: false //默认为false，不监听
-				}
-			});
-			var ul = document.querySelector('.m-billList .mui-table-view');
-			for (var i = 0; i < 100; i++) {
-				ul.innerHTML += '<li class="mui-table-view-cell mui-media"><a href="javascript:;"><i class="mui-media-object mui-pull-left u-icon-class u-icon-class-' + 'food' + '"></i><div class="mui-media-body"><h4>Item ' + i + '</h4><p class="mui-ellipsis">备注 ' + i + '</p></div></a></li>';
-			}
-			mui('.mui-scroll-wrapper').scroll({
-				deceleration: 0.001, //阻尼系数
-				bounce: false //是否启用回弹
-			});
-			mui('.mui-bar').on('doubletap', 'h1', function() {
-				mui('.mui-scroll-wrapper').scroll().scrollTo(0, 0, 500);
-			})
-		</script>
+		<script src="js/mui.min.js"></script>
+		<script src="js/tools.js"></script>
+		<script src="js/bill.js"></script>
 	</body>
 </html>

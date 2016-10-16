@@ -42,7 +42,7 @@
 				<div class="m-display">
 					<div>
 						<span>预算余额</span>
-						<h3 class="u-balance">10000.00</h3>
+						<h3 class="u-balance">未设置预算</h3>
 					</div>
 				</div>
 				<!-- 计数模块 -->
@@ -59,11 +59,11 @@
 					<div id="j-todayInfo" class="m-info-wrap">
 						<div>
 							<label class="u-in f-tac">收入:</label>
-							<span class="u-in">10000.00</span>
+							<span class="u-in">0.00</span>
 						</div>
 						<div>
 							<label class="u-out f-tac">支出:</label>
-							<span class="u-out">5000.00</span>
+							<span class="u-out">0.00</span>
 						</div>
 					</div>
 				</div>
@@ -73,11 +73,11 @@
 					<div id="j-monthInfo" class="m-info-wrap">
 						<div>
 							<label class="u-in f-tac">收入:</label>
-							<span class="u-in">10000.00</span>
+							<span class="u-in">0.00</span>
 						</div>
 						<div>
 							<label class="u-out f-tac">支出:</label>
-							<span class="u-out">5000.00</span>
+							<span class="u-out">0.00</span>
 						</div>
 					</div>
 				</div>
@@ -85,47 +85,8 @@
 			<!-- 首页统计 -->
 		</div>
 		<!-- /主体 -->
-		<script src="js/mui.js"></script>
-		<script type="text/javascript">
-			mui.init({
-				gestureConfig: {
-					tap: true, 
-					doubletap: true,
-					longtap: true,
-					swipe: true, 
-					drag: true, 
-					hold: false, 
-					release: false 
-				}
-			});
-			mui('.mui-slider').slider({
-				interval: 5000
-			});
-			var recordBtn = document.getElementById('j-openRecord');
-			var openRecord = function() {
-				mui.openWindow({
-					url: 'record.html',
-					id: 'record.html',
-					show: {
-						autoShow: true,
-						aniShow: 'slide-in-right',
-						duration: 300
-					},
-					waiting: {
-						autoShow: false
-					}
-				});
-			};
-			//事件监听
-			recordBtn.addEventListener('tap', function() {
-				openRecord();
-			});
-			recordBtn.addEventListener('longtap', function() {
-				openRecord();
-			});
-			recordBtn.addEventListener('click', function() {
-				mui.trigger(recordBtn, 'tap');
-			});
-		</script>
+		<script src="js/mui.min.js"></script>
+		<script src="js/tools.js"></script>
+		<script src="js/home.js"></script>
 	</body>
 </html>

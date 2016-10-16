@@ -210,7 +210,8 @@
 					"subpages/home.html",
 					"home.html",
 					"bill.html",
-					"js/mui.js"
+					"js/mui.js",
+					null
 				],
 				"priority": 0,
 				"refer": [
@@ -303,7 +304,9 @@
 					"img/banner4.jpg",
 					"img/banner1.jpg",
 					"img/banner3.jpg",
-					"js/mui.js"
+					"js/mui.js",
+					"js/tools.js",
+					"js/home.js"
 				],
 				"refer": [
 					"record.html"
@@ -316,7 +319,9 @@
 					"css/mui.min.css",
 					"js/mui.min.js",
 					"img/class-sprite.png",
-					"js/mui.js"
+					"js/mui.js",
+					"js/tools.js",
+					"js/bill.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -330,7 +335,8 @@
 					"img/class-sprite.png",
 					"img/sprite.png",
 					"fonts/mui.ttf",
-					"js/mui.js"
+					"js/mui.js",
+					"img/defualtPicture2.png"
 				],
 				"refer": [
 					"about.html"
@@ -344,7 +350,9 @@
 					"css/global.css",
 					"css/mui.min.css",
 					null,
-					"js/mui.js"
+					"js/mui.js",
+					"js/record.js",
+					"js/tools.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -353,7 +361,9 @@
 				"resources": [
 					"js/mui.min.js",
 					"css/global.css",
-					"css/mui.min.css"
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"img/class-sprite.png"
 				],
 				"refer": [],
 				"priority": 0
