@@ -11,7 +11,7 @@
 			show: {
 				autoShow: true,
 				aniShow: 'slide-in-right',
-				duration: 300
+				duration: 200
 			},
 			waiting: {
 				autoShow: false
@@ -19,7 +19,7 @@
 		});
 	};
 	mui('.mui-table-view-cell').on('tap', '.u-userRoom', function() {
-		mui.toast('请先登录后操作');
+		mui.toast('请先登录');
 	});
 	mui('.mui-table-view-cell').on('tap', '.u-setting', function() {
 		open('setting.html');

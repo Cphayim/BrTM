@@ -1,76 +1,42 @@
 {
   "bill.html": {
     "href": "bill.html",
-    "resources": [
-      "fonts/mui.ttf",
-      "fonts/iconfont.ttf",
-      "img/sprite.png"
-    ],
-    "refer": [
-      "home.html"
-    ],
+    "resources": [],
+    "refer": [],
     "priority": 1
   },
   "record.html": {
     "href": "record.html",
-    "resources": [
-      "fonts/iconfont.ttf",
-      "img/sprite.png",
-      "img/class-sprite.png"
-    ],
-    "refer": [
-      "home.html",
-      "bill.html"
-    ],
+    "resources": [],
+    "refer": [],
     "priority": 0
   },
   "home.html": {
     "href": "home.html",
-    "resources": [
-      "fonts/mui.ttf",
-      "img/class-sprite.png"
-    ],
+    "resources": [],
     "refer": [],
     "priority": 0
   },
   "about.html": {
     "href": "about.html",
-    "resources": [
-      "fonts/iconfont.ttf",
-      "img/sprite.png"
-    ],
+    "resources": [],
     "priority": 1
   },
   "public.html": {
     "href": "public.html",
-    "resources": [
-      "fonts/iconfont.ttf",
-      "img/sprite.png",
-      "img/class-sprite.png"
-    ],
+    "resources": [],
     "refer": [],
     "priority": 1
   },
   "setting.html": {
     "href": "setting.html",
-    "resources": [
-      "fonts/iconfont.ttf",
-      "img/sprite.png",
-      "img/class-sprite.png"
-    ],
-    "refer": [
-      "home.html",
-      "bill.html"
-    ],
+    "resources": [],
+    "refer": [],
     "priority": 2
   },
   "index.html": {
     "href": "index.html",
-    "resources": [
-      "fonts/iconfont.ttf",
-      "img/sprite.png",
-      "img/class-sprite.png"
-    ],
+    "resources": [],
     "refer": [],
     "priority": 0
   }

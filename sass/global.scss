@@ -1,5 +1,5 @@
 $bgColor: #45BCF9;
-$bgColor2: #45BCF9; 
+$bgColor2: #45BCF9;
 //$bgColor:#2a3c54;
 //$bgColor2:#ae3c5c;
 $fontColor: #666666;
@@ -360,6 +360,30 @@ h4 {
     };
 }
 .m-billList {
+    .mui-table-view {
+        &:before {
+            position: absolute;
+            right: 0;
+            left: 0;
+            height: 1px;
+            content: '';
+            -webkit-transform: scaleY(.5);
+            transform: scaleY(.5);
+            background-color: #c8c7cc;
+            top: -1px;
+        }
+        &:after {
+            position: absolute;
+            right: 0;
+            left: 0;
+            height: 1px;
+            content: '';
+            -webkit-transform: scaleY(.5);
+            transform: scaleY(.5);
+            background-color: #c8c7cc;
+            top: -1px;
+        }
+    }
     .monthItem {}
     .dateList {
         display: flex;
@@ -407,7 +431,7 @@ h4 {
             height: 120px;
             margin: auto;
             border-radius: 50%;
-            background-color: #fff;
+            background-color: #eee;
         }
     }
     .m-login {
@@ -424,6 +448,7 @@ h4 {
             border-color: #fff;
             background-color: #fff;
             color: $bgColor;
+            font-size: 16px;
         }
     }
 }
