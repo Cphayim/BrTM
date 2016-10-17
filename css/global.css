@@ -138,6 +138,8 @@ h1, h2, h3, h4, h5, h6, .mui-h1, .mui-h2, .mui-h3, .mui-h4, .mui-h5, .mui-h6 { f
 
 .listNull h1 { line-height: 200px; text-align: center; font-size: 24px; color: #666666; }
 
+.m-billList .mui-table-view:before { position: absolute; right: 0; left: 0; height: 1px; content: ''; -webkit-transform: scaleY(0.5); transform: scaleY(0.5); background-color: #c8c7cc; top: -1px; }
+.m-billList .mui-table-view:after { position: absolute; right: 0; left: 0; height: 1px; content: ''; -webkit-transform: scaleY(0.5); transform: scaleY(0.5); background-color: #c8c7cc; top: -1px; }
 .m-billList .dateList { display: flex; }
 .m-billList .dateList .dateItem { width: 20%; min-height: 64px; padding: 10px 20px; background-color: #F3F3F3; }
 .m-billList .dateList .dateItem .date, .m-billList .dateList .dateItem .day { display: block; color: #666666; }
