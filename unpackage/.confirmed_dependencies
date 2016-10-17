@@ -1,104 +1,147 @@
 {
-	"index.html": {
-		"resources": [
-			"fonts/mui-icons-extra.ttf",
-			"js/mui.min.js",
-			"css/global.css",
-			"css/mui.min.css",
-			"css/icons-extra.css",
-			"subpages/home.html",
-			"home.html",
-			"bill.html",
-			"js/mui.js"
-		],
-		"refer": [
-			"subpages/home.html",
-			"subpages/user.html",
-			"subpages/bill.html",
-			"bill.html",
-			"home.html",
-			"user.html"
-		]
-	},
-	"subpages/home.html": {
-		"resources": [
-			"img/banner2.jpg",
-			"img/banner4.jpg",
-			"img/banner1.jpg",
-			"img/banner3.jpg",
-			"js/mui.min.js",
-			"css/global.css",
-			"css/mui.min.css",
-			"img/sprite.png"
-		],
-		"refer": []
-	},
-	"home.html": {
-		"resources": [
-			"img/sprite.png",
-			"js/mui.min.js",
-			"css/global.css",
-			"css/mui.min.css",
-			"img/banner2.jpg",
-			"img/banner4.jpg",
-			"img/banner1.jpg",
-			"img/banner3.jpg",
-			"js/mui.js",
-			"js/tools.js",
-			"js/home.js"
-		],
-		"refer": [
-			"record.html"
-		]
-	},
-	"bill.html": {
-		"resources": [
-			"css/global.css",
-			"css/mui.min.css",
-			"js/mui.min.js",
-			"img/class-sprite.png",
-			"js/mui.js",
-			"js/bill.js",
-			"js/tools.js"
-		],
-		"refer": []
-	},
-	"user.html": {
-		"resources": [
-			"css/mui.min.css",
-			"js/mui.min.js",
-			"css/global.css",
-			"img/defualtPicture.png",
-			"img/class-sprite.png",
-			"img/sprite.png",
-			"fonts/mui.ttf",
-			"js/mui.js",
-			"img/defualtPicture2.png"
-		],
-		"refer": [
-			"about.html"
-		]
-	},
-	"record.html": {
-		"resources": [
-			"fonts/mui.ttf",
-			"js/mui.min.js",
-			"css/global.css",
-			"css/mui.min.css",
-			"js/mui.js",
-			"js/record.js",
-			"js/tools.js"
-		],
-		"refer": []
-	},
-	"about.html": {
-		"resources": [
-			"js/mui.min.js",
-			"css/global.css",
-			"css/mui.min.css",
-			"fonts/mui.ttf",
-			"img/class-sprite.png"
-		],
-		"refer": []
-	}
+  "index.html": {
+    "resources": [
+      "fonts/mui-icons-extra.ttf",
+      "js/mui.min.js",
+      "css/global.css",
+      "css/mui.min.css",
+      "css/icons-extra.css",
+      "subpages/home.html",
+      "home.html",
+      "bill.html",
+      "js/mui.js",
+      "js/index.js"
+    ],
+    "refer": [
+      "subpages/home.html",
+      "subpages/user.html",
+      "subpages/bill.html",
+      "bill.html",
+      "home.html",
+      "user.html"
+    ]
+  },
+  "subpages/home.html": {
+    "resources": [
+      "img/banner2.jpg",
+      "img/banner4.jpg",
+      "img/banner1.jpg",
+      "img/banner3.jpg",
+      "js/mui.min.js",
+      "css/global.css",
+      "css/mui.min.css",
+      "img/sprite.png"
+    ],
+    "refer": []
+  },
+  "home.html": {
+    "resources": [
+      "img/sprite.png",
+      "js/mui.min.js",
+      "css/global.css",
+      "css/mui.min.css",
+      "img/banner2.jpg",
+      "img/banner4.jpg",
+      "img/banner1.jpg",
+      "img/banner3.jpg",
+      "js/mui.js",
+      "js/tools.js",
+      "js/home.js",
+      "fonts/iconfont.ttf"
+    ],
+    "refer": [
+      "record.html"
+    ]
+  },
+  "bill.html": {
+    "resources": [
+      "css/global.css",
+      "css/mui.min.css",
+      "js/mui.min.js",
+      "img/class-sprite.png",
+      "js/mui.js",
+      "js/bill.js",
+      "js/tools.js"
+    ],
+    "refer": [
+      "home.html"
+    ]
+  },
+  "user.html": {
+    "resources": [
+      "css/mui.min.css",
+      "js/mui.min.js",
+      "css/global.css",
+      "img/defualtPicture.png",
+      "img/class-sprite.png",
+      "img/sprite.png",
+      "fonts/mui.ttf",
+      "js/mui.js",
+      "img/defualtPicture2.png",
+      "js/user.js",
+      "fonts/iconfont.ttf"
+    ],
+    "refer": [
+      "about.html",
+      "setting.html",
+      "public.html"
+    ]
+  },
+  "record.html": {
+    "resources": [
+      "fonts/mui.ttf",
+      "js/mui.min.js",
+      "css/global.css",
+      "css/mui.min.css",
+      "js/mui.js",
+      "js/record.js",
+      "js/tools.js"
+    ],
+    "refer": [
+      "home.html",
+      "bill.html"
+    ]
+  },
+  "about.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/global.css",
+      "css/mui.min.css",
+      "fonts/mui.ttf",
+      "img/class-sprite.png",
+      "img/iconBeta1.png"
+    ],
+    "refer": []
+  },
+  "setting.html": {
+    "resources": [
+      "css/feedback.css",
+      "img/logo.png",
+      "js/feedback.js",
+      "js/mui.view.js",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/setting.js",
+      "css/global.css",
+      "css/setting.css",
+      "js/testData.js"
+    ],
+    "refer": [
+      "home.html",
+      "bill.html"
+    ]
+  },
+  "public.html": {
+    "resources": [
+      "about.html",
+      "js/mui.min.js",
+      "css/global.css",
+      "fonts/mui.ttf",
+      "css/mui.min.css"
+    ],
+    "refer": [
+      "about.html"
+    ]
+  }
 }

@@ -131,7 +131,7 @@
 					//删除空的父节点
 					if (isEmptyArray(dateList.querySelectorAll('.one'))) dateList.parentNode.removeChild(dateList);
 					billPanelLoad(); //刷新billPanel
-					plus.webview.getWebviewById('home.html').reload();
+					plus.webview.getWebviewById('home.html').reload();//刷新webview
 				} else {
 					setTimeout(function() {
 						mui.swipeoutClose(li);

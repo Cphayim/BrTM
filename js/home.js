@@ -44,7 +44,8 @@
 					//判断用户输入是否非法
 					if (isNaN(num)) {
 						mui.toast('设置失败，请输入数字！');
-					} else {
+					} else if(num==0){
+					}else {
 						localStorage.setItem('balance', num);
 						mui.toast('设置成功');
 						plus.webview.currentWebview().reload();
@@ -97,7 +98,7 @@
 
 	//显示预算余额
 	if (localStorage.balance) {
-		var balance = (Number(localStorage.balance) - curDateOut).toFixed(2);
+		var balance = (Number(localStorage.balance) - curMonthOut).toFixed(2);
 		mui('.u-balance')[0].innerHTML = '￥' + balance;
 	}
 })();
