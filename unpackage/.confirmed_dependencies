@@ -61,7 +61,8 @@
       "img/class-sprite.png",
       "js/mui.js",
       "js/bill.js",
-      "js/tools.js"
+      "js/tools.js",
+      "fonts/mui.ttf"
     ],
     "refer": [
       "home.html"
@@ -109,7 +110,8 @@
       "css/mui.min.css",
       "fonts/mui.ttf",
       "img/class-sprite.png",
-      "img/iconBeta1.png"
+      "img/iconBeta1.png",
+      "img/iconBeta2.png"
     ],
     "refer": []
   },
