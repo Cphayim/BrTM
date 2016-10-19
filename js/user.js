@@ -22,8 +22,10 @@
 			}
 		});
 	};
+	//预加载
 	document.addEventListener('plusready', function() {
 		createWebview('login.html');
+		createWebview('register.html');
 	});
 	//列表按钮事件绑定
 	mui('.mui-table-view-cell').on('tap', '.u-userRoom', function() {

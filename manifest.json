@@ -198,7 +198,8 @@
 					"js/index.js",
 					"fonts/iconfont.ttf",
 					"img/sprite.png",
-					"img/class-sprite.png"
+					"img/class-sprite.png",
+					"js/md5.js"
 				],
 				"priority": 0,
 				"refer": [
@@ -342,7 +343,8 @@
 					"about.html",
 					"setting.html",
 					"public.html",
-					"login.html"
+					"login.html",
+					"register.html"
 				],
 				"priority": 0
 			},
@@ -432,7 +434,23 @@
 					"js/login.js",
 					"img/iconBeta2.png",
 					"js/immersed.js",
-					"js/md5.js"
+					"js/md5.js",
+					"js/md5.min.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"register.html": {
+				"resources": [
+					"js/register.js",
+					"js/tools.js",
+					"js/mui.min.js",
+					"css/global.css",
+					"css/mui.min.css",
+					"img/iconBeta2.png",
+					"js/immersed.js",
+					"fonts/mui.ttf",
+					"js/md5.min.js"
 				],
 				"refer": [],
 				"priority": 0

@@ -10,7 +10,8 @@
 			"home.html",
 			"bill.html",
 			"js/mui.js",
-			"js/index.js"
+			"js/index.js",
+			"js/md5.js"
 		],
 		"refer": [
 			"subpages/home.html",
@@ -89,7 +90,8 @@
 			"about.html",
 			"setting.html",
 			"public.html",
-			"login.html"
+			"login.html",
+			"register.html"
 		]
 	},
 	"record.html": {
@@ -165,7 +167,21 @@
 			"js/login.js",
 			"img/iconBeta2.png",
 			"js/immersed.js",
-			"js/md5.js"
+			"js/md5.js",
+			"js/md5.min.js"
+		]
+	},
+	"register.html": {
+		"resources": [
+			"js/register.js",
+			"js/tools.js",
+			"js/mui.min.js",
+			"css/global.css",
+			"css/mui.min.css",
+			"img/iconBeta2.png",
+			"js/immersed.js",
+			"fonts/mui.ttf",
+			"js/md5.min.js"
 		]
 	}
 }

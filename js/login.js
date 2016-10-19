@@ -6,10 +6,11 @@
 	});
 	//修改返回事件
 	mui.back = function() {
-		plus.webview.hide('login.html', 'slide-out-bottom', 200);
+		reloadUserWebview();
 	};
 	//获取按钮
 	var loginSub = document.getElementById('j-loginSub');
+	var regBtn = document.getElementById('regBtn');
 	//登录事件绑定
 	loginSub.addEventListener('tap', function() {
 		//获取表单元素
@@ -28,7 +29,7 @@
 			method: 'POST',
 			data: {
 				username: username.value,
-				password: password.value
+				password: MD5(password.value)
 			},
 			success: function(data) {
 				if (data == 'T') {
@@ -47,4 +48,7 @@
 	});
 	
 	//前往注册页面
+	regBtn.addEventListener('click',function(){
+		plus.webview.show('register.html','slide-in-bottom',400);
+	});
 })();

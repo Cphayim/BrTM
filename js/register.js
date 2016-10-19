@@ -1,5 +1,13 @@
 (function() {
-	mui.init();
+	mui.init({
+		keyEventBind: {
+			backbutton: true
+		} //打开back按键监听
+	});
+	//修改返回事件
+	mui.back = function() {
+		reloadUserWebview();
+	};
 	//获取按钮和表单元素
 	var form = document.getElementById('j-regForm');
 	var inputs = form.getElementsByTagName('input');
@@ -36,14 +44,14 @@
 			data: {
 				username: inputs[0].value,
 				email: inputs[1].value,
-				password: md5(inputs[2].value)
+				password: MD5(inputs[2].value)
 			},
 			success: function(data) {
-				var arg = data[0].split(','); 
+				var arg = data[0].split(',');
 				if (arg[0] == 'DB_R') {
 					mui.toast('用户名或邮箱已被注册');
-				}else if(arg[0]=='DB_UNR'&&arg[1]=='RS'){
-					mui.toast(inputs[0].value+',注册成功');
+				} else if (arg[0] == 'DB_UNR' && arg[1] == 'RS') {
+					mui.toast(inputs[0].value + ',注册成功');
 				}
 			}
 		});
