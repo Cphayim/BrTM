@@ -168,7 +168,7 @@ function checkMail(mail) {
 }
 
 /**
- * 创建webview
+ * 预加载webview
  * @param {Object} url
  */
 function createWebview(url) {
@@ -198,5 +198,9 @@ function reloadBillWebview() {
  * 刷新 "user.html" webview
  */
 function reloadUserWebview() {
+	//关闭预加载的子webview
+	plus.webview.getWebviewById('login.html').close();
+	plus.webview.getWebviewById('register.html').close();
+	//刷新webview
 	plus.webview.getWebviewById('user.html').reload();
 }

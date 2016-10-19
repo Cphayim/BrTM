@@ -22,8 +22,10 @@
 			}
 		});
 	};
+	//预加载
 	document.addEventListener('plusready', function() {
 		createWebview('login.html');
+		createWebview('register.html');
 	});
 	//列表按钮事件绑定
 	mui('.mui-table-view-cell').on('tap', '.u-userRoom', function() {
@@ -35,10 +37,10 @@
 	mui('.mui-table-view-cell').on('tap', '.u-about', function() {
 		open('public.html');
 	});
-	mui('.box-login').on('tap', 'button', function(e) {
+	mui('.box-login').on('click', 'button', function(e) {
 		if (e.target.id == 'j-loginBtn') {
-			mui.toast('PHP工程师已醒，登录开放');
-			plus.webview.show('login.html', 'slide-in-bottom', 200);
+			mui.toast('PHP工程师已觉醒，登录开放');
+			plus.webview.show('login.html', 'slide-in-bottom', 400);
 		}
 	});
 })();

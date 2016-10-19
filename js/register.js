@@ -1,5 +1,13 @@
 (function() {
-	mui.init();
+	mui.init({
+		keyEventBind: {
+			backbutton: true
+		} //打开back按键监听
+	});
+	//修改返回事件
+	mui.back = function() {
+		reloadUserWebview();
+	};
 	//获取按钮和表单元素
 	var form = document.getElementById('j-regForm');
 	var inputs = form.getElementsByTagName('input');
