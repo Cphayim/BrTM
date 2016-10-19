@@ -207,9 +207,7 @@
 					"list2.html",
 					"subpages/user.html",
 					"subpages/bill.html",
-					"user.html",
-					"home.html",
-					"bill.html"
+					"user.html"
 				]
 			},
 			"index1.html": {
@@ -316,7 +314,8 @@
 					"js/bill.js",
 					"fonts/mui.ttf",
 					"fonts/iconfont.ttf",
-					"img/sprite.png"
+					"img/sprite.png",
+					"js/immersed.js"
 				],
 				"refer": [
 					"home.html"
@@ -335,12 +334,15 @@
 					"js/mui.js",
 					"img/defualtPicture2.png",
 					"js/user.js",
-					"fonts/iconfont.ttf"
+					"fonts/iconfont.ttf",
+					"js/immersed.js",
+					"js/tools.js"
 				],
 				"refer": [
 					"about.html",
 					"setting.html",
-					"public.html"
+					"public.html",
+					"login.html"
 				],
 				"priority": 0
 			},
@@ -356,7 +358,8 @@
 					"js/tools.js",
 					"fonts/iconfont.ttf",
 					"img/sprite.png",
-					"img/class-sprite.png"
+					"img/class-sprite.png",
+					"js/immersed.js"
 				],
 				"refer": [
 					"home.html",
@@ -394,7 +397,9 @@
 					"js/testData.js",
 					"fonts/iconfont.ttf",
 					"img/sprite.png",
-					"img/class-sprite.png"
+					"img/class-sprite.png",
+					"js/tools.js",
+					"js/immersed.js"
 				],
 				"refer": [
 					"home.html",
@@ -411,7 +416,23 @@
 					"css/mui.min.css",
 					"fonts/iconfont.ttf",
 					"img/sprite.png",
-					"img/class-sprite.png"
+					"img/class-sprite.png",
+					"js/immersed.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"login.html": {
+				"resources": [
+					"js/tools.js",
+					"js/mui.min.js",
+					"css/global.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"js/login.js",
+					"img/iconBeta2.png",
+					"js/immersed.js",
+					"js/md5.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -421,7 +442,6 @@
 			"resources": [
 				"css/global.css.map",
 				"sass/global.scss",
-				"js/md5.js",
 				"README.md"
 			]
 		}

@@ -104,7 +104,8 @@ h1, h2, h3, h4, h5, h6, .mui-h1, .mui-h2, .mui-h3, .mui-h4, .mui-h5, .mui-h6 { f
 .mui-slider .m-display div span { font-size: 16px; }
 
 /* Block button */
-.mui-btn.mui-btn-blue { width: 95%; height: 50px; margin: 10px auto 0; border-color: #2a3c54; border-radius: 8px; background-color: #2a3c54; line-height: 0; font-size: 24px; }
+.mui-btn-block { width: 95%; height: 50px; margin: 10px auto 0; border-radius: 8px; line-height: 0; font-size: 24px; }
+.mui-btn-block.mui-btn-blue { border-color: #2a3c54; background-color: #2a3c54; }
 
 .mui-btn.mui-btn-grey { width: 95%; height: 50px; margin: 10px auto 0; border-radius: 8px; line-height: 0; font-size: 20px; }
 
@@ -157,9 +158,9 @@ h1, h2, h3, h4, h5, h6, .mui-h1, .mui-h2, .mui-h3, .mui-h4, .mui-h5, .mui-h6 { f
 /* User Module */
 .m-userPanel .u-picture { padding: 10px; }
 .m-userPanel .u-picture img { display: block; width: 120px; height: 120px; margin: auto; border-radius: 50%; background-color: #eee; }
-.m-userPanel .m-login { text-align: center; }
-.m-userPanel .m-login h4 { padding-bottom: 10px; color: #fff; }
-.m-userPanel .m-login .mui-btn-grey { width: 25%; height: 30px; line-height: 14px; margin: 0 10px; border-color: #fff; background-color: #fff; color: #2a3c54; font-size: 16px; }
+.m-userPanel .box-login { text-align: center; }
+.m-userPanel .box-login h4 { padding-bottom: 10px; color: #fff; }
+.m-userPanel .box-login .mui-btn-grey { width: 25%; height: 30px; line-height: 0; margin: 0 10px; border-color: #fff; background-color: #fff; color: #2a3c54; font-size: 16px; }
 
 .m-userList .iconfont { font-size: 25px; color: #666; }
 .m-userList h4 { line-height: 42px; color: #2a3c54; }
@@ -185,10 +186,11 @@ h1, h2, h3, h4, h5, h6, .mui-h1, .mui-h2, .mui-h3, .mui-h4, .mui-h5, .mui-h6 { f
 .m-record .mui-slider .mui-slider-group select.mui-btn.mui-btn-block { position: relative; height: 60px; padding: 10px 20px; margin: 0; background: none; font-size: 20px; line-height: 40px; }
 .m-record .mui-slider .mui-slider-group select.mui-btn.mui-btn-block option { font-size: 16px; }
 
+.m-public { background-color: #F7F7F7; }
+
 /* About Module */
-.m-about { color: #666; background-color: #F7F7F7; }
-.m-about .mui-scroll-wrapper { top: 0; }
-.m-about .mui-content { background-color: #F7F7F7; }
+.m-about { color: #666; background-color: #f7f7f7; }
+.m-about .mui-scroll-wrapper { top: 0; background-color: #F7F7F7; }
 .m-about .m-appInfo { text-align: center; }
 .m-about .m-appInfo > div { height: 0.1px; }
 .m-about .m-appInfo img { display: block; margin: 20px auto; border-radius: 20px; }
@@ -206,5 +208,23 @@ h1, h2, h3, h4, h5, h6, .mui-h1, .mui-h2, .mui-h3, .mui-h4, .mui-h5, .mui-h6 { f
 /* Popup */
 .mui-popup { color: #333; }
 .mui-popup .mui-popup-button.mui-popup-button-bold { font-weight: normal; }
+
+.mui-bar-nav { box-sizing: content-box; }
+
+/* Login or Register Module */
+.m-login, .m-register { width: 100%; height: 100%; margin: 0; padding: 0; }
+.m-login .m-logo, .m-register .m-logo { padding: 20px; }
+.m-login .m-logo img, .m-register .m-logo img { display: block; margin: auto; border-radius: 20px; }
+.m-login .area, .m-register .area { margin: 20px auto 0; }
+.m-login .mui-input-group, .m-register .mui-input-group { width: 90%; margin: 20px auto; }
+.m-login .mui-input-group:first-child, .m-register .mui-input-group:first-child { margin-top: 20px; }
+.m-login .mui-checkbox input[type=checkbox], .m-login .mui-radio input[type=radio], .m-register .mui-checkbox input[type=checkbox], .m-register .mui-radio input[type=radio] { top: 6px; }
+.m-login .mui-content-padded, .m-register .mui-content-padded { margin-top: 25px; }
+.m-login .mui-btn, .m-register .mui-btn { padding: 10px; }
+.m-login .link-area, .m-register .link-area { display: block; margin-top: 25px; text-align: center; }
+.m-login .spliter, .m-register .spliter { color: #bbb; padding: 0 8px; }
+.m-login #regBtn, .m-register #regBtn { color: #ae3c5c; }
+.m-login #j-regSub, .m-register #j-regSub { background-color: #ae3c5c; }
+.m-login .mui-btn-block.mui-btn-blue, .m-register .mui-btn-block.mui-btn-blue { font-size: 20px; }
 
 /*# sourceMappingURL=global.css.map */

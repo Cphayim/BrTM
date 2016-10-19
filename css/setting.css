@@ -32,14 +32,15 @@ html, body {
 		}
 		.mui-navbar {
 			position: fixed;
+			box-sizing: content-box;
 			right: 0;
 			left: 0;
 			z-index: 10;
 			height: 44px;
-			background-color: #f7f7f8;
+			background-color: #2a3c54;
 		}
 		.mui-navbar .mui-bar {
-			position: absolute;
+			position: relative;
 			background: transparent;
 			text-align: center;
 		}

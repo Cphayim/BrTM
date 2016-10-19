@@ -130,8 +130,10 @@
 					li.parentNode.removeChild(li);
 					//删除空的父节点
 					if (isEmptyArray(dateList.querySelectorAll('.one'))) dateList.parentNode.removeChild(dateList);
-					billPanelLoad(); //刷新billPanel
-					plus.webview.getWebviewById('home.html').reload();//刷新webview
+					//刷新billPanel
+					billPanelLoad(); 
+					//刷新webview
+					reloadHomeWebview();
 				} else {
 					setTimeout(function() {
 						mui.swipeoutClose(li);

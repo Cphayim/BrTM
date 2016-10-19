@@ -67,16 +67,18 @@ var ajax = function(opts) {
  * 判断对象是否为空
  * @param {Object} obj 对象
  */
-function isEmptyObject(obj){
-    for(var n in obj){return false} 
-    return true; 
+function isEmptyObject(obj) {
+	for (var n in obj) {
+		return false
+	}
+	return true;
 }
 /**
  * 判断数组是否为空
  * @param {Object} arr 数组
  */
-function isEmptyArray(arr){
-	if(arr.length>0) return false;
+function isEmptyArray(arr) {
+	if (arr.length > 0) return false;
 	return true;
 }
 /**
@@ -153,4 +155,48 @@ function getClassTypeStr(str) {
 			result = "未分类";
 	}
 	return result;
+}
+
+/**
+ * 检查邮箱格式 
+ * @param {Object} mail
+ */
+function checkMail(mail) {
+	var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+	if (filter.test(mail)) return true;
+	else return false;
+}
+
+/**
+ * 创建webview
+ * @param {Object} url
+ */
+function createWebview(url) {
+	var styles = {};
+	// 在Android5以上设备，如果默认没有开启硬件加速，则强制设置开启
+	if (!plus.webview.defaultHardwareAccelerated() && parseInt(plus.os.version) >= 5) {
+		styles.hardwareAccelerated = true;
+	}
+	plus.webview.create(url, url, styles);
+}
+/**
+ * 刷新"home.html" webview
+ */
+function reloadHomeWebview() {
+	//关闭预加载的子webview
+	plus.webview.getWebviewById('record.html').close();
+	//刷新webview
+	plus.webview.getWebviewById('home.html').reload();
+}
+/**
+ * 刷新"home.html" webview
+ */
+function reloadBillWebview() {
+	plus.webview.getWebviewById('bill.html').reload();
+}
+/**
+ * 刷新 "user.html" webview
+ */
+function reloadUserWebview() {
+	plus.webview.getWebviewById('user.html').reload();
 }

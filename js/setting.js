@@ -19,8 +19,9 @@
 					importDataToLocalStorage();
 					setTimeout(function() {
 						//重载Webview
-						plus.webview.getWebviewById('home.html').reload();
-						plus.webview.getWebviewById('bill.html').reload();
+						reloadHomeWebview();
+						reloadBillWebview();
+						reloadUserWebview();
 						o.setTitle('正在注入数据');
 						setTimeout(function() {
 							o.setTitle('数据注入成功,正在Reload');
@@ -40,8 +41,9 @@
 					//删除数据
 					localStorage.removeItem('data');
 					//重载Webview
-					plus.webview.getWebviewById('home.html').reload();
-					plus.webview.getWebviewById('bill.html').reload();
+					reloadHomeWebview();
+					reloadBillWebview();
+					reloadUserWebview();
 					setTimeout(function() {
 						o.setTitle('已清空数据,正在Reload');
 						setTimeout(function() {

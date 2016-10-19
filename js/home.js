@@ -11,27 +11,21 @@
 			release: false
 		}
 	});
+	//开启轮播
 	mui('.mui-slider').slider({
 		interval: 5000
 	});
-	//创建新的webview并打开记录页
+	//预加载
+	document.addEventListener('plusready', function() {
+		createWebview('record.html');		
+	});
+	//打开预加载的record webview
 	function openRecord() {
-		mui.openWindow({
-			url: 'record.html',
-			id: 'record.html',
-			show: {
-				autoShow: true,
-				aniShow: 'slide-in-right',
-				duration: 200
-			},
-			waiting: {
-				autoShow: false
-			}
-		});
+		plus.webview.show("record.html", 'slide-in-right', 300); // 显示窗口
 	};
+	//记一笔按钮事件绑定
 	var recordBtn = document.getElementById('j-openRecord');
-	//事件绑定
-	recordBtn.addEventListener('tap', function() {
+	recordBtn.addEventListener('click', function() {
 		openRecord();
 	});
 	mui.plusReady(function() {
