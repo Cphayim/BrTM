@@ -131,7 +131,7 @@
 					//删除空的父节点
 					if (isEmptyArray(dateList.querySelectorAll('.one'))) dateList.parentNode.removeChild(dateList);
 					//刷新billPanel
-					billPanelLoad(); 
+					billPanelLoad();
 					//刷新webview
 					reloadHomeWebview();
 				} else {
@@ -142,4 +142,16 @@
 			});
 		});
 	});
+})();
+//同步
+(function() {
+	var syncBtn = document.getElementById('j-syncBtn');
+	syncBtn.addEventListener('click', function() {
+		//判断登录状态
+		if (localStorage.userInfo) {
+			mui.toast('客官稍等，PHP大神喂饱了同步立即上线');
+		}else{
+			mui.toast('客官，登录后才可以同步哦')
+		}
+	})
 })();

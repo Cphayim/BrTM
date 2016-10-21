@@ -23,7 +23,7 @@
 		}
 		//打开等待框
 		var w = plus.nativeUI.showWaiting('正在登录');
-		//发送请求
+		//发送登录请求
 		ajax({
 			url: 'https://api.yingfeng.me/br/login.php',
 			method: 'POST',
@@ -33,15 +33,20 @@
 			},
 			success: function(data) {
 				if (data == 'T') {
+					//登录成功
 					mui.toast('你好，' + username.value);
-
+					//创建登录信息
+					localStorage.setItem('userInfo',username.value+'&'+MD5(password.value));
+					console.log('登录信息保存成功');
+					reloadUserWebview();
 				} else if (data == 'F') {
+					//用户/密码错误
 					mui.toast('用户名或错误');
 				}
 				w.close();
 			},
 			error: function(error) {
-				mui.toast('登录失败：服务器状态异常');
+				mui.toast('网络或服务器状态异常');
 				w.close();
 			}
 		});

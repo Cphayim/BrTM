@@ -1,135 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 
 	<head>
-	<meta charset="utf-8">
+	<meta charset="UTF-8">
 	<title>设置</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-	<link rel="stylesheet" href="css/mui.min.css">
-	<link rel="stylesheet" href="css/setting.css" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link href="css/mui.min.css" rel="stylesheet" />
 	<link rel="stylesheet" href="css/global.css" />
-	<style>
-		.mui-scroll-wrapper {
-			top: 0;
-		}
-	</style>
 	</head>
-	<body class="mui-fullscreen">
-		<!--页面主结构开始-->
-		<div id="app" class="mui-views">
-			<div class="mui-view">
-				<div id="header" class="mui-navbar">
+
+	<body class="m-setting">
+		<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">设置</h1>
+		</header>
+		<div id="content" class="mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<div class="mui-content-padded">
+					<p>向本地数据库中注入部分数据用于测试，已登录用户为防止测试数据被上传同步，将禁用功能</p>
 				</div>
-				<div id="content" class="mui-pages">
+				<ul class="mui-table-view">
+					<li id="j-importData" class="mui-table-view-cell">
+						测试数据注入
+					</li>
+				</ul>
+				<div class="mui-content-padded">
+					<p>清空本地所有数据，已登录用户禁用该功能</p>
 				</div>
+				<ul class="mui-table-view">
+					<li id="j-emptyData" class="mui-table-view-cell">
+						清空本地数据库
+					</li>
+				</ul>
+				<button id="j-signOut" type="button" class="mui-btn mui-btn-red mui-btn-block" disabled>退出登录</button>
 			</div>
 		</div>
-		<!--页面主结构结束-->
-		<!--单页面开始-->
-		<div id="setting" class="mui-page">
-			<!--页面标题栏开始-->
-			<div class="mui-navbar-inner mui-bar mui-bar-nav">
-				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
-					<span class="mui-icon mui-icon-left-nav"></span>
-				</button>
-				<h1 class="mui-center mui-title">设置</h1>
-			</div>
-			<!--页面标题栏结束-->
-			<!--页面主内容区开始-->
-			<div class="mui-page-content">
-				<div class="mui-scroll-wrapper">
-					<div class="mui-scroll">
-						<ul class="mui-table-view mui-table-view-chevron">
-							<li class="mui-table-view-cell">
-								<a href="#notifications" class="mui-navigate-right">新消息通知</a>
-							</li>
-							<li class="mui-table-view-cell">
-								<a href="#general" class="mui-navigate-right">通用</a>
-							</li>
-						</ul>
-						<button type="button" class="mui-btn mui-btn-grey mui-btn-block" disabled>退出登录</button>
-					</div>
-				</div>
-			</div>
-			<!--页面主内容区结束-->
-		</div>
-		<!--单页面结束-->
-		<div id="notifications" class="mui-page">
-			<div class="mui-navbar-inner mui-bar mui-bar-nav">
-				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
-					<span class="mui-icon mui-icon-left-nav"></span>设置
-				</button>
-				<h1 class="mui-center mui-title">新消息通知</h1>
-			</div>
-			<div class="mui-page-content">
-				<div class="mui-scroll-wrapper">
-					<div class="mui-scroll">
-						<ul class="mui-table-view">
-							<li class="mui-table-view-cell">
-								<a>接收新消息通知<span class="mui-pull-right">已开启</span></a>
-							</li>
-						</ul>
-						<ul class="mui-table-view">
-							<li class="mui-table-view-cell">
-								声音
-								<div class="mui-switch mui-switch-mini">
-									<div class="mui-switch-handle"></div>
-								</div>
-							</li>
-							<li class="mui-table-view-cell">
-								震动
-								<div class="mui-switch mui-switch-mini">
-									<div class="mui-switch-handle"></div>
-								</div>
-							</li>
-						</ul>
-						<div class="mui-content-padded">
-							<p>应用推送时是否启用声音或震动提醒</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="general" class="mui-page">
-			<div class="mui-navbar-inner mui-bar mui-bar-nav">
-				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
-					<span class="mui-icon mui-icon-left-nav"></span>设置
-				</button>
-				<h1 class="mui-center mui-title">通用</h1>
-			</div>
-			<div class="mui-page-content">
-				<div class="mui-scroll-wrapper">
-					<div class="mui-scroll">
-						<ul class="mui-table-view">
-							<li id="j-importData" class="mui-table-view-cell">
-								测试数据注入
-							</li>
-						</ul>
-						<div class="mui-content-padded">
-							<p>向本地数据库中注入部分数据用于测试</p>
-						</div>
-						<ul class="mui-table-view">
-							<li id="j-emptyData" class="mui-table-view-cell">
-								清空本地数据库
-							</li>
-						</ul>
-						<div class="mui-content-padded">
-							<p>将清空本地所有数据</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</body>
-	<script src="js/immersed.js"></script>
+		<script src="js/immersed.js"></script>
 	<script src="js/mui.min.js "></script>
-	<script src="js/mui.view.js"></script>
 	<script src="js/tools.js"></script>
 	<script src="js/testData.js"></script>
 	<script src="js/setting.js"></script>
-	<script>
-	</script>
+	</body>
+
 </html>

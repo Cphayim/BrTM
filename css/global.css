@@ -158,7 +158,7 @@ h1, h2, h3, h4, h5, h6, .mui-h1, .mui-h2, .mui-h3, .mui-h4, .mui-h5, .mui-h6 { f
 /* User Module */
 .m-userPanel .u-picture { padding: 10px; }
 .m-userPanel .u-picture img { display: block; width: 120px; height: 120px; margin: auto; border-radius: 50%; background-color: #eee; }
-.m-userPanel .box-login { text-align: center; }
+.m-userPanel .box-login { text-align: center; padding-top: 15px; }
 .m-userPanel .box-login h4 { padding-bottom: 10px; color: #fff; }
 .m-userPanel .box-login .mui-btn-grey { width: 25%; height: 30px; line-height: 0; margin: 0 10px; border-color: #fff; background-color: #fff; color: #2a3c54; font-size: 16px; }
 
@@ -226,5 +226,8 @@ h1, h2, h3, h4, h5, h6, .mui-h1, .mui-h2, .mui-h3, .mui-h4, .mui-h5, .mui-h6 { f
 .m-login #regBtn, .m-register #regBtn { color: #ae3c5c; }
 .m-login #j-regSub, .m-register #j-regSub { background-color: #ae3c5c; }
 .m-login .mui-btn-block.mui-btn-blue, .m-register .mui-btn-block.mui-btn-blue { font-size: 20px; }
+
+/* Setting Module */
+.m-setting .mui-btn.mui-btn-red.mui-btn-block { margin-top: 30px; font-size: 20px; }
 
 /*# sourceMappingURL=global.css.map */

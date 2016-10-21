@@ -12,7 +12,7 @@
 		//获取当前webview
 		var self = plus.webview.currentWebview();
 		//设置入口不隐藏
-		self.setStyle({render:'always'});
+		self.setStyle({render:'always'});//解决部分Android下返回闪屏问题
 		for(var i = 0; i < 3; i++) {
 			var temp = {};
 			var sub = plus.webview.create(subpages[i], subpages[i], subpage_style);

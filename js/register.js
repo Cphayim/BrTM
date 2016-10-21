@@ -38,6 +38,8 @@
 			mui.toast('请输入正确的邮箱格式');
 			return;
 		}
+		var w = plus.nativeUI.showWaiting('正在注册');
+		//发送注册请求
 		ajax({
 			url: 'https://api.yingfeng.me/br/register.php',
 			method: 'POST',
@@ -49,10 +51,22 @@
 			success: function(data) {
 				var arg = data[0].split(',');
 				if (arg[0] == 'DB_R') {
+					//重名
 					mui.toast('用户名或邮箱已被注册');
 				} else if (arg[0] == 'DB_UNR' && arg[1] == 'RS') {
+					//注册成功
 					mui.toast(inputs[0].value + ',注册成功');
+					//创建登录信息
+					localStorage.setItem('userInfo',inputs[0].value+'&'+MD5(inputs[2].value));
+					reloadUserWebview();
+				} else {
+					mui.toast('表单存在无效字段');
 				}
+				w.close();
+			},
+			error: function(error) {
+				mui.toast('网络或服务器状态异常');
+				w.close();
 			}
 		});
 	});
