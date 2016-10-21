@@ -45,7 +45,7 @@
 						localStorage.setItem('balance', num);
 						mui.toast('设置成功');
 						//刷新webview
-						plus.webview.currentWebview().reload();
+						reloadHomeWebview();
 					}
 				}
 			});
