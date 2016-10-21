@@ -11,10 +11,12 @@
 	mui.plusReady(function() {
 		//获取当前webview
 		var self = plus.webview.currentWebview();
-		for (var i = 0; i < 3; i++) {
+		//设置入口不隐藏
+		self.setStyle({render:'always'});//解决部分Android下返回闪屏问题
+		for(var i = 0; i < 3; i++) {
 			var temp = {};
 			var sub = plus.webview.create(subpages[i], subpages[i], subpage_style);
-			if (i > 0) {
+			if(i > 0) {
 				sub.hide();
 			} else {
 				temp[subpages[i]] = 'true';
@@ -30,10 +32,10 @@
 	mui('.mui-bar-tab').on('tap', 'a', function(e) {
 		var targetTab = this.getAttribute('href');
 		//判断是否为当前选项卡页面
-		if (targetTab == activeTab) return;
+		if(targetTab == activeTab) return;
 		//显示目标选项卡
 		//若为iOS平台或非首次显示，则直接显示
-		if (mui.os.ios || aniShow[targetTab]) {
+		if(mui.os.ios || aniShow[targetTab]) {
 			plus.webview.show(targetTab);
 		} else {
 			//否则，使用fade-in动画，且保存变量
@@ -55,13 +57,13 @@
 		mui.trigger(defaultTab, 'tap');
 		//切换选项卡高亮
 		var current = document.querySelector(".mui-bar-tab>.mui-tab-item.mui-active");
-		if (defaultTab !== current) {
+		if(defaultTab !== current) {
 			current.classList.remove('mui-active');
 			defaultTab.classList.add('mui-active');
 		}
 	});
 	//判断是否初次打开
-	if (!localStorage.getItem('nextId')) {
+	if(!localStorage.getItem('nextId')) {
 		localStorage.setItem('nextId', '1100');
 	}
 })();

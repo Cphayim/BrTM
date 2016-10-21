@@ -130,8 +130,10 @@
 					li.parentNode.removeChild(li);
 					//删除空的父节点
 					if (isEmptyArray(dateList.querySelectorAll('.one'))) dateList.parentNode.removeChild(dateList);
-					billPanelLoad(); //刷新billPanel
-					plus.webview.getWebviewById('home.html').reload();//刷新webview
+					//刷新billPanel
+					billPanelLoad();
+					//刷新webview
+					reloadHomeWebview();
 				} else {
 					setTimeout(function() {
 						mui.swipeoutClose(li);
@@ -140,4 +142,16 @@
 			});
 		});
 	});
+})();
+//同步
+(function() {
+	var syncBtn = document.getElementById('j-syncBtn');
+	syncBtn.addEventListener('click', function() {
+		//判断登录状态
+		if (localStorage.userInfo) {
+			mui.toast('客官稍等，PHP大神喂饱了同步立即上线');
+		}else{
+			mui.toast('客官，登录后才可以同步哦')
+		}
+	})
 })();

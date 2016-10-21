@@ -1,8 +1,8 @@
-$bgColor: #45BCF9;
-$bgColor2: #45BCF9;
-//$bgColor:#2a3c54;
-//$bgColor2:#ae3c5c;
-$fontColor: #666666;
+//$bgColor: #45BCF9;
+//$bgColor2: #45BCF9;
+$bgColor: #2a3c54;
+$bgColor2: #ae3c5c;
+$fontColor: #2a3c54; //#666666
 @font-face {
     font-family: "iconfont";
     src: url('../fonts/iconfont.ttf') format('truetype');
@@ -223,15 +223,17 @@ h4 {
     }
 }
 /* Block button */
-.mui-btn.mui-btn-blue {
+.mui-btn-block {
     width: 95%;
     height: 50px;
     margin: 10px auto 0;
-    border-color: $bgColor2;
     border-radius: 8px;
-    background-color: $bgColor2;
     line-height: 0;
     font-size: 24px;
+    &.mui-btn-blue {
+        border-color: $bgColor;
+        background-color: $bgColor;
+    }
 }
 .mui-btn.mui-btn-grey {
     width: 95%;
@@ -240,6 +242,22 @@ h4 {
     border-radius: 8px;
     line-height: 0;
     font-size: 20px;
+}
+/* index Module */
+.m-index {
+    .mui-bar-tab {
+        //beta2
+        .mui-tab-item,
+        .mui-tab-item.mui-active {
+            color: #fff;
+        }
+        .mui-tab-item {
+            background-color: $bgColor;
+        }
+        .mui-tab-item.mui-active {
+            background-color: $bgColor2;
+        }
+    }
 }
 /* Home Module */
 %m-info-div {
@@ -313,110 +331,115 @@ h4 {
         }
     }
 }
-/* Panel Module*/
 .m-billPanel,
 .m-userPanel {
     height: 216px;
     background-color: $bgColor;
 }
-/* Bill Module */
-.m-billPanel {
-    display: flex;
-    align-items: center;
-    padding: 30px;
-    >div {
-        flex: 1;
+/* Panel Module*/
+.m-bill {
+    .mui-icon.mui-icon-loop.mui-pull-right {
+        font-weight: bold;
     }
-    label,
-    .u-in,
-    .u-out,
-    h3 {
-        display: block;
-        margin: 10px 0;
-        color: #fff;
-    }
-    label {
-        font-size: 16px;
-    }
-    .u-in,
-    .u-out {
-        font-size: 20px;
-    }
-    .m-surplus {
+    /* Bill Module */
+    .m-billPanel {
+        display: flex;
+        align-items: center;
+        padding: 30px;
+        >div {
+            flex: 1;
+        }
+        label,
+        .u-in,
+        .u-out,
+        h3 {
+            display: block;
+            margin: 10px 0;
+            color: #fff;
+        }
         label {
+            font-size: 16px;
+        }
+        .u-in,
+        .u-out {
             font-size: 20px;
         }
-        h3 {
-            font-size: 30px;
-        }
-    }
-}
-.listNull {
-    h1 {
-        line-height: 200px;
-        text-align: center;
-        font-size: 24px;
-        color: $fontColor;
-    };
-}
-.m-billList {
-    .mui-table-view {
-        &:before {
-            position: absolute;
-            right: 0;
-            left: 0;
-            height: 1px;
-            content: '';
-            -webkit-transform: scaleY(.5);
-            transform: scaleY(.5);
-            background-color: #c8c7cc;
-            top: -1px;
-        }
-        &:after {
-            position: absolute;
-            right: 0;
-            left: 0;
-            height: 1px;
-            content: '';
-            -webkit-transform: scaleY(.5);
-            transform: scaleY(.5);
-            background-color: #c8c7cc;
-            top: -1px;
-        }
-    }
-    .monthItem {}
-    .dateList {
-        display: flex;
-        .dateItem {
-            width: 20%;
-            min-height: 64px;
-            padding: 10px 20px;
-            background-color: #F3F3F3;
-            .date,
-            .day {
-                display: block;
-                color: $fontColor;
-            }
-            .date {
+        .m-surplus {
+            label {
                 font-size: 20px;
             }
-            .day {
-                font-size: 14px;
+            h3 {
+                font-size: 30px;
             }
         }
-        .oneList {
-            flex: 1;
-            width: 80%;
-            .one {
-                background-color: #fff;
+    }
+    .listNull {
+        h1 {
+            line-height: 200px;
+            text-align: center;
+            font-size: 24px;
+            color: $fontColor;
+        };
+    }
+    .m-billList {
+        .mui-table-view {
+            &:before {
+                position: absolute;
+                right: 0;
+                left: 0;
+                height: 1px;
+                content: '';
+                -webkit-transform: scaleY(.5);
+                transform: scaleY(.5);
+                background-color: #c8c7cc;
+                top: -1px;
             }
-            h4,
-            span {
-                display: inline-block;
-                font-size: 16px;
+            &:after {
+                position: absolute;
+                right: 0;
+                left: 0;
+                height: 1px;
+                content: '';
+                -webkit-transform: scaleY(.5);
+                transform: scaleY(.5);
+                background-color: #c8c7cc;
+                top: -1px;
             }
-            span {
-                float: right;
+        }
+        .monthItem {}
+        .dateList {
+            display: flex;
+            .dateItem {
+                width: 20%;
+                min-height: 64px;
+                padding: 10px 20px;
+                background-color: #F3F3F3;
+                .date,
+                .day {
+                    display: block;
+                    color: $fontColor;
+                }
+                .date {
+                    font-size: 20px;
+                }
+                .day {
+                    font-size: 14px;
+                }
+            }
+            .oneList {
+                flex: 1;
+                width: 80%;
+                .one {
+                    background-color: #fff;
+                }
+                h4,
+                span {
+                    display: inline-block;
+                    font-size: 16px;
+                }
+                span {
+                    float: right;
+                }
             }
         }
     }
@@ -434,8 +457,9 @@ h4 {
             background-color: #eee;
         }
     }
-    .m-login {
+    .box-login {
         text-align: center;
+        padding-top: 15px;
         h4 {
             padding-bottom: 10px;
             color: #fff;
@@ -443,7 +467,7 @@ h4 {
         .mui-btn-grey {
             width: 25%;
             height: 30px;
-            line-height: 14px;
+            line-height: 0;
             margin: 0 10px;
             border-color: #fff;
             background-color: #fff;
@@ -467,15 +491,17 @@ h4 {
     background-color: #f7f7f7;
     .mui-slider {
         height: auto;
+        background-color: #f7f7f7;
         .mui-slider-indicator.mui-segmented-control {}
         .mui-segmented-control.mui-segmented-control-inverted {
-            .mui-control-item {}
+            background-color: $bgColor;
+            .mui-control-item,
             .mui-control-item.mui-active {
-                color: $bgColor;
+                color: #FFFFFF;
             }
         }
         .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-progress-bar {
-            height: 2px;
+            height: 4px;
             background-color: $bgColor2;
         }
         .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item {
@@ -542,14 +568,15 @@ h4 {
         }
     }
 }
+.m-public {
+    background-color: #F7F7F7;
+}
 /* About Module */
 .m-about {
     color: #666;
+    background-color: #f7f7f7;
     .mui-scroll-wrapper {
         top: 0;
-    }
-    background-color: #F7F7F7;
-    .mui-content {
         background-color: #F7F7F7;
     }
     .mui-scroll {}
@@ -609,5 +636,71 @@ h4 {
     color: #333;
     .mui-popup-button.mui-popup-button-bold {
         font-weight: normal;
+    }
+}
+.mui-bar-nav {
+    box-sizing: content-box;
+}
+/* Login or Register Module */
+.m-login,
+.m-register {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    .m-logo {
+        padding: 20px;
+        img {
+            display: block;
+            margin: auto;
+            border-radius: 20px;
+        }
+    }
+    .area {
+        margin: 20px auto 0;
+    }
+    .mui-input-group {
+        width: 90%;
+        margin: 20px auto; //      border-radius: 10px;
+    }
+    .mui-input-group:first-child {
+        margin-top: 20px;
+    }
+    .mui-checkbox input[type=checkbox],
+    .mui-radio input[type=radio] {
+        top: 6px;
+    }
+    .mui-content-padded {
+        margin-top: 25px;
+    }
+    .mui-btn {
+        padding: 10px;
+    }
+    .link-area {
+        display: block;
+        margin-top: 25px;
+        text-align: center;
+    }
+    .spliter {
+        color: #bbb;
+        padding: 0 8px;
+    }
+    //<a> reg
+    #regBtn {
+        color: $bgColor2;
+    }
+    //regSub
+    #j-regSub{
+        background-color: $bgColor2;
+    }
+    .mui-btn-block.mui-btn-blue {
+        font-size: 20px;
+    }
+}
+/* Setting Module */
+.m-setting{
+    .mui-btn.mui-btn-red.mui-btn-block{
+        margin-top: 30px;
+        font-size: 20px;
     }
 }

@@ -9,69 +9,66 @@
 	<link rel="stylesheet" href="css/global.css" />
 	</head>
 
-	<body>
+	<body class="m-user">
 		<!--头部-->
-		<header class="mui-bar mui-bar-nav">
+		<header id="header" class="mui-bar mui-bar-nav">
 		<h1 class="mui-title" style="color: fff;">账户设置</h1>
 		</header>
 		<!--/头部-->
-		
-		<div class="mui-content">
-			<!--区域滚动容器-->
-			<div class="mui-scroll-wrapper">
-				<!--滚动区-->
-				<div class="mui-scroll">
-					<!--用户面板-->
-					<div class="m-userPanel">
-						<!--头像区-->
-						<div class="u-picture">
-							<img id="j-picture" src="img/defualtPicture.png" />
-						</div>
-						<!--/头像区-->
-						<!--登录注册-->
-						<div class="m-login">
-							<h4>未登录</h4>
-							<button id="j-loginBtn" type="button" class=" mui-btn mui-btn-grey">登录</button>
-							<button id="j-register" type="button" class=" mui-btn mui-btn-grey">注册</button>
-						</div>
-						<!--/登录注册-->
+		<!--区域滚动容器-->
+		<div id="content" class="mui-scroll-wrapper">
+			<!--滚动区-->
+			<div class="mui-scroll">
+				<!--用户面板-->
+				<div class="m-userPanel">
+					<!--头像区-->
+					<div class="u-picture">
+						<img id="j-picture" src="img/defualtPicture.png" />
 					</div>
-					<!--/用户面板-->
-					<!--列表-->
-					<ul class="m-userList mui-table-view">
-						<li class="mui-table-view-cell mui-media">
-							<a href="javascript:;" class="u-userRoom mui-navigate-right">
-								<i class="mui-media-object mui-pull-left iconfont icon-user"></i>
-								<div class="mui-media-body">
-									<h4>	个人中心</h4>
-								</div>
-							</a>
-						</li>
-						<li class="mui-table-view-cell mui-media">
-							<a href="javascript:;" class="u-setting mui-navigate-right">
-								<i class="mui-media-object mui-pull-left iconfont icon-setting"></i>
-								<div class="mui-media-body">
-									<h4>	设置</h4>
-								</div>
-							</a>
-						</li>
-						<li class="mui-table-view-cell mui-media">
-							<a href="javascript:;" class="u-about mui-navigate-right">
-								<i class="mui-media-object mui-pull-left iconfont icon-about"></i>
-								<div class="mui-media-body">
-									<h4>	关于</h4>
-								</div>
-							</a>
-						</li>
-					</ul>
-					<!--/列表-->
+					<!--/头像区-->
+					<!--登录注册-->
+					<div class="box-login">
+						<h4 style="display: none;" id="j-username"></h4>
+						<button style="display:  none;" id="j-loginBtn" type="button" class=" mui-btn mui-btn-grey">登录</button>
+					</div>
+					<!--/登录注册-->
 				</div>
-				<!--/滚动区-->
+				<!--/用户面板-->
+				<!--列表-->
+				<ul class="m-userList mui-table-view">
+					<li class="mui-table-view-cell mui-media">
+						<a href="javascript:;" class="u-userRoom mui-navigate-right">
+							<i class="mui-media-object mui-pull-left iconfont icon-user"></i>
+							<div class="mui-media-body">
+								<h4>	个人中心</h4>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media">
+						<a href="javascript:;" class="u-setting mui-navigate-right">
+							<i class="mui-media-object mui-pull-left iconfont icon-setting"></i>
+							<div class="mui-media-body">
+								<h4>	设置</h4>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media">
+						<a href="javascript:;" class="u-about mui-navigate-right">
+							<i class="mui-media-object mui-pull-left iconfont icon-about"></i>
+							<div class="mui-media-body">
+								<h4>	关于</h4>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<!--/列表-->
 			</div>
-			<!--/区域滚动容器-->
+			<!--/滚动区-->
 		</div>
-		<!--/主体-->
+		<!--/区域滚动容器-->
+		<script src="js/immersed.js"></script>
 		<script src="js/mui.min.js"></script>
+		<script src="js/tools.js"></script>
 		<script src="js/user.js"></script>
 	</body>
 </html>
