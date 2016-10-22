@@ -11,7 +11,8 @@
 			"bill.html",
 			"js/mui.js",
 			"js/index.js",
-			"js/md5.js"
+			"js/md5.js",
+			"chart.html"
 		],
 		"refer": [
 			"subpages/home.html",
@@ -19,7 +20,8 @@
 			"subpages/bill.html",
 			"bill.html",
 			"home.html",
-			"user.html"
+			"user.html",
+			"chart.html"
 		]
 	},
 	"subpages/home.html": {
@@ -169,7 +171,8 @@
 			"js/immersed.js",
 			"js/md5.js",
 			"js/md5.min.js"
-		]
+		],
+		"refer": []
 	},
 	"register.html": {
 		"resources": [
@@ -182,6 +185,21 @@
 			"js/immersed.js",
 			"fonts/mui.ttf",
 			"js/md5.min.js"
+		],
+		"refer": []
+	},
+	"chart.html": {
+		"resources": [
+			"js/echarts.js",
+			"js/mui.min.js",
+			"css/global.css",
+			"css/mui.min.css",
+			"js/immersed.js",
+			"fonts/mui.ttf",
+			"js/echarts-roma.js",
+			"js/chart.js",
+			"js/tools.js",
+			"js/echarts.min.js"
 		]
 	}
 }

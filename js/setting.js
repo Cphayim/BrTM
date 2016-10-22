@@ -5,16 +5,11 @@
 		deceleration: 0.001, //阻尼系数
 		bounce: false //是否回弹
 	});
-	//判断是否登录
-	var isLogin = (localStorage.userInfo) ? true : false;
-	console.log(isLogin);
 	mui.plusReady(function() {
 		//注入 or 清空数据
 		var importData = document.getElementById('j-importData'),
 			emptyData = document.getElementById('j-emptyData'),
 			signOut = document.getElementById('j-signOut');
-		//已登录则恢复退出按钮
-		if (isLogin) signOut.removeAttribute('disabled');
 		//注入
 		importData.addEventListener('tap', function() {
 			if (isLogin) {
@@ -30,6 +25,7 @@
 							reloadHomeWebview();
 							reloadBillWebview();
 							reloadUserWebview();
+							reloadChartWebview();
 							o.setTitle('正在注入数据');
 							setTimeout(function() {
 								o.setTitle('数据注入成功,正在Reload');
@@ -56,6 +52,7 @@
 						reloadHomeWebview();
 						reloadBillWebview();
 						reloadUserWebview();
+						reloadChartWebview();
 						setTimeout(function() {
 							o.setTitle('已清空数据,正在Reload');
 							setTimeout(function() {
@@ -66,12 +63,17 @@
 				});
 			}
 		});
+		//判断是否登录
+		var isLogin = (localStorage.loginInfo) ? true : false;
+		console.log(isLogin);
+		//已登录则恢复退出按钮
+		if (isLogin) signOut.removeAttribute('disabled');
 		//退出登录
 		signOut.addEventListener('tap', function() {
 			mui.confirm('确认退出登录？', '提示', ['确认', '取消'], function(e) {
 				if (e.index == 0) {
 					var w = plus.nativeUI.showWaiting('正在退出登录');
-					localStorage.removeItem('userInfo');
+					localStorage.removeItem('loginInfo');
 					w.close();
 					reloadUserWebview();
 					mui.back();

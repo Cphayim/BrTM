@@ -32,14 +32,21 @@
 				password: MD5(password.value)
 			},
 			success: function(data) {
-				if (data == 'T') {
-					//登录成功
-					mui.toast('你好，' + username.value);
-					//创建登录信息
-					localStorage.setItem('userInfo',username.value+'&'+MD5(password.value));
-					console.log('登录信息保存成功');
+				var arg = data[0].split(';'); //arg:[0]判断信息,[1]用户名,[2]头像URL,[3]授权信息
+				if (arg[0] == 'T') {
+					//登录成功,保存用户名
+					localStorage.setItem('username', arg[1]);
+					console.log('username'+localStorage.username);
+					mui.toast('你好，' + localStorage.username);
+					//保存登录授权信息
+					localStorage.setItem('loginInfo', arg[3]);
+					console.log('loginInfo'+localStorage.loginInfo);
+					//保存头像
+					localStorage.setItem('pictureURL', arg[2]);
+					console.log('pictureURL'+localStorage.pictureURL);
+					//返回并刷新
 					reloadUserWebview();
-				} else if (data == 'F') {
+				} else if (arg[0] == 'F') {
 					//用户/密码错误
 					mui.toast('用户名或错误');
 				}
@@ -51,9 +58,9 @@
 			}
 		});
 	});
-	
+
 	//前往注册页面
-	regBtn.addEventListener('click',function(){
-		plus.webview.show('register.html','slide-in-bottom',400);
+	regBtn.addEventListener('click', function() {
+		plus.webview.show('register.html', 'slide-in-bottom', 400);
 	});
 })();

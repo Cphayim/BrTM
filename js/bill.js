@@ -109,7 +109,8 @@
 		mui('#billList').on('tap', '.mui-btn', function(event) {
 			var elem = this;
 			var li = elem.parentNode.parentNode;
-			var dateList = li.parentNode.parentNode;
+			var dateList = li.parentNode.parentNode;//父级日列表
+			var monthList = dateList.parentNode;
 			mui.confirm('确认删除该条记录？', '提醒', ['确认', '取消'], function(e) {
 				if (e.index == 0) {
 					var id = li.id;
@@ -130,10 +131,12 @@
 					li.parentNode.removeChild(li);
 					//删除空的父节点
 					if (isEmptyArray(dateList.querySelectorAll('.one'))) dateList.parentNode.removeChild(dateList);
+					if (isEmptyArray(monthList.querySelectorAll('.dateList'))) monthList.parentNode.removeChild(monthList);
 					//刷新billPanel
 					billPanelLoad();
 					//刷新webview
 					reloadHomeWebview();
+					reloadChartWebview();
 				} else {
 					setTimeout(function() {
 						mui.swipeoutClose(li);
@@ -153,5 +156,5 @@
 		}else{
 			mui.toast('客官，登录后才可以同步哦')
 		}
-	})
+	});
 })();

@@ -124,7 +124,7 @@ function getDay(str) {
 }
 
 /**
- * 传入classType，返回中文分类字符串
+ * 传入classType，返回中文分类字符串,用于建表
  * @param {Object} str classType
  */
 function getClassTypeStr(str) {
@@ -148,15 +148,125 @@ function getClassTypeStr(str) {
 		case 'entertainment':
 			result = '休闲娱乐';
 			break;
+		case 'other0':
+			result = '其它支出';
+			break;
 		case 'wage':
-			result = '工资到手';
+			result = '工资收入';
+			break;
+		case 'investment':
+			result = '投资收入';
+			break;
+		case 'bonus':
+			result = '奖金';
+			break;
+		case 'other1':
+			result = '其它收入';
 			break;
 		default:
 			result = "未分类";
 	}
 	return result;
 }
+/**
+ * 返回中文分类字符串,用于建图
+ * @param {Object} i number
+ */
+function getOutClassTypeStr(i) {
+	var result;
+	switch (i) {
+		case 0:
+			result = '一日三餐';
+			break;
+		case 1:
+			result = '交通出行';
+			break;
+		case 2:
+			result = '衣服饰品';
+			break;
+		case 3:
+			result = '通讯社交';
+			break;
+		case 4:
+			result = '家居日用';
+			break;
+		case 5:
+			result = '休闲娱乐';
+			break;
+		case 6:
+			result = '其它支出';
+			break;
+	}
+	return result;
+}
 
+function getInClassTypeStr(i) {
+	var result;
+	switch (i) {
+		case 0:
+			result = '工资收入';
+			break;
+		case 1:
+			result = '投资收入';
+			break;
+		case 2:
+			result = '奖金';
+			break;
+		case 3:
+			result = '其它收入';
+			break;
+	}
+	return result;
+}
+/**
+ * 返回数组索引,用于建图
+ * @param {Object} str
+ */
+function getOutClassTypeIndex(str) {
+	var result;
+	switch (str) {
+		case 'food':
+			result = 0;
+			break;
+		case 'traffic':
+			result = 1;
+			break;
+		case 'clothing':
+			result = 2;
+			break;
+		case 'communication':
+			result = 3;
+			break;
+		case 'home':
+			result = 4;
+			break;
+		case 'entertainment':
+			result = 5;
+			break;
+		case 'other0':
+			result = 6;
+			break;
+	}
+	return result;
+}
+function getInClassTypeIndex(str) {
+	var result;
+	switch (str) {
+		case 'wage':
+			result = 0;
+			break;
+		case 'investment':
+			result = 1;
+			break;
+		case 'bonus':
+			result = 2;
+			break;
+		case 'other1':
+			result = 3;
+			break;
+	}
+	return result;
+}
 /**
  * 检查邮箱格式 
  * @param {Object} mail
@@ -193,6 +303,12 @@ function reloadHomeWebview() {
  */
 function reloadBillWebview() {
 	plus.webview.getWebviewById('bill.html').reload();
+}
+/**
+ * 刷新 "chart.html" webview
+ */
+function reloadChartWebview() {
+	plus.webview.getWebviewById('chart.html').reload();
 }
 /**
  * 刷新 "user.html" webview

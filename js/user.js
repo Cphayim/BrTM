@@ -29,7 +29,7 @@
 	});
 	//列表按钮事件绑定
 	mui('.mui-table-view-cell').on('tap', '.u-userRoom', function() {
-		if(localStorage.userInfo){
+		if(localStorage.loginInfo){
 			mui.toast('用户社区正在建设中');
 		}else{
 			mui.toast('请先登录');
@@ -50,9 +50,9 @@
 })();
 //登录信息验证
 (function(){
-	if(localStorage.userInfo){
+	if(localStorage.loginInfo){
 	//存在登录信息
-		var username = localStorage.userInfo.split('&')[0];
+		var username = localStorage.username;
 		document.getElementById('j-username').style.display = 'block'
 		document.getElementById('j-username').innerHTML = username;
 	}else{

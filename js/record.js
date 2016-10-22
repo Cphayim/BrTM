@@ -6,7 +6,7 @@
 	});
 	//修改返回事件
 	mui.back = function() {
-		plus.webview.hide('record.html', 'slide-out-right', 200);
+		plus.webview.hide('record.html', 'slide-out-right', 300);
 	};
 	//获取系统时间填充表单默认值
 	var date = new Date();
@@ -72,24 +72,25 @@
 	function reLoadWebview() {
 		reloadHomeWebview();
 		reloadBillWebview();
+		reloadChartWebview();
 	}
 	//等待plus初始化完毕(操作webview)
-	//	mui.plusReady(function() {
-	var saveOut = document.getElementById('j-save-out');
-	var saveIn = document.getElementById('j-save-in');
-	//事件绑定
-	saveOut.addEventListener('tap', function() {
-		save(0);
-		mui.toast('账单已保存');
-		reLoadWebview();
+	mui.plusReady(function() {
+		var saveOut = document.getElementById('j-save-out');
+		var saveIn = document.getElementById('j-save-in');
+		//事件绑定
+		saveOut.addEventListener('tap', function() {
+			save(0);
+			mui.toast('账单已保存');
+			reLoadWebview();
+		});
+		saveIn.addEventListener('tap', function() {
+			save(1);
+			mui.toast('账单已保存');
+			reLoadWebview();
+		});
+		mui('.mui-slider-group').on('tap', '.u-date', function() {
+			mui.toast('正在打开日期选择器');
+		});
 	});
-	saveIn.addEventListener('tap', function() {
-		save(1);
-		mui.toast('账单已保存');
-		reLoadWebview();
-	});
-	mui('.mui-slider-group').on('tap','.u-date',function(){
-		mui.toast('正在打开日期选择器');
-	});
-	//	});
 })();

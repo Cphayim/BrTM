@@ -19,14 +19,10 @@
 	document.addEventListener('plusready', function() {
 		createWebview('record.html');		
 	});
-	//打开预加载的record webview
-	function openRecord() {
-		plus.webview.show("record.html", 'slide-in-right', 300); // 显示窗口
-	};
 	//记一笔按钮事件绑定
 	var recordBtn = document.getElementById('j-openRecord');
 	recordBtn.addEventListener('click', function() {
-		openRecord();
+		plus.webview.show("record.html", 'slide-in-right', 300); // 显示窗口
 	});
 	mui.plusReady(function() {
 		var balance = '未设置';
@@ -45,7 +41,7 @@
 						localStorage.setItem('balance', num);
 						mui.toast('设置成功');
 						//刷新webview
-						plus.webview.currentWebview().reload();
+						reloadHomeWebview();
 					}
 				}
 			});
