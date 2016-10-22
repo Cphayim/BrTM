@@ -195,7 +195,8 @@
 					"fonts/iconfont.ttf",
 					"img/sprite.png",
 					"img/class-sprite.png",
-					"js/md5.js"
+					"js/md5.js",
+					"chart.html"
 				],
 				"priority": 0,
 				"refer": [
@@ -447,6 +448,22 @@
 					"js/immersed.js",
 					"fonts/mui.ttf",
 					"js/md5.min.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"chart.html": {
+				"resources": [
+					"js/echarts.js",
+					"js/mui.min.js",
+					"css/global.css",
+					"css/mui.min.css",
+					"js/immersed.js",
+					"fonts/mui.ttf",
+					"js/echarts-roma.js",
+					"js/chart.js",
+					"js/tools.js",
+					"js/echarts.min.js"
 				],
 				"refer": [],
 				"priority": 0

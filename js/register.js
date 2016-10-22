@@ -53,12 +53,48 @@
 				if (arg[0] == 'DB_R') {
 					//重名
 					mui.toast('用户名或邮箱已被注册');
+					w.close();
 				} else if (arg[0] == 'DB_UNR' && arg[1] == 'RS') {
 					//注册成功
 					mui.toast(inputs[0].value + ',注册成功');
-					//创建登录信息
-					localStorage.setItem('userInfo',inputs[0].value+'&'+MD5(inputs[2].value));
-					reloadUserWebview();
+					//自动登录
+					var w = plus.nativeUI.showWaiting('正在登录');
+					//发送登录请求
+					ajax({
+						url: 'https://api.yingfeng.me/br/login.php',
+						method: 'POST',
+						data: {
+							username: inputs[0].value,
+							password: MD5(inputs[2].value)
+						},
+						success: function(data) {
+							var arg = data[0].split(';'); //arg:[0]判断信息,[1]用户名,[2]头像URL,[3]授权信息
+							if (arg[0] == 'T') {
+								//登录成功,保存用户名
+								localStorage.setItem('username', arg[1]);
+								console.log('username' + localStorage.username);
+								mui.toast('你好，' + localStorage.username);
+								//保存登录授权信息
+								localStorage.setItem('loginInfo', arg[3]);
+								console.log('loginInfo' + localStorage.loginInfo);
+								//保存头像
+								localStorage.setItem('pictureURL', arg[2]);
+								console.log('pictureURL' + localStorage.pictureURL);
+								//返回并刷新
+								reloadUserWebview();
+							} else if (arg[0] == 'F') {
+								//用户/密码错误
+								mui.toast('用户名或错误');
+							}
+							plus.nativeUI.closeWaiting();
+						},
+						error: function(error) {
+							mui.toast('网络或服务器状态异常');
+							plus.nativeUI.closeWaiting();
+						}
+					});
+				} else if (arg[0] == 'DB_UNR' && arg[1] == 'DB_ERRO') {
+					mui.toast('服务器端数据库写入失败，请稍后尝试');
 				} else {
 					mui.toast('表单存在无效字段');
 				}

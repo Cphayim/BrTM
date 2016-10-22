@@ -65,7 +65,8 @@ $fontColor: #2a3c54; //#666666
     color: #FF3300;
 }
 /* Icon */
-.mui-icon-extra-people {
+.mui-icon-extra-people,
+.mui-icon-extra-trend {
     &:before {
         font-weight: bold;
     }
@@ -102,6 +103,9 @@ $fontColor: #2a3c54; //#666666
     background-position: -42px -42px;
 }
 .u-icon-class-entertainment {
+    background-position: -84px 0;
+}
+.u-icon-class-other0 {
     background-position: -84px 0;
 }
 .u-icon-class-communication {
@@ -336,12 +340,11 @@ h4 {
     height: 216px;
     background-color: $bgColor;
 }
-/* Panel Module*/
+/* Bill Module */
 .m-bill {
     .mui-icon.mui-icon-loop.mui-pull-right {
         font-weight: bold;
     }
-    /* Bill Module */
     .m-billPanel {
         display: flex;
         align-items: center;
@@ -430,7 +433,14 @@ h4 {
                 flex: 1;
                 width: 80%;
                 .one {
+                    height: 64px;
+                    padding: 0;
                     background-color: #fff;
+                    .mui-slider-handle a {
+                        height: 64px;
+                        display: block;
+                        padding: 10px;
+                    }
                 }
                 h4,
                 span {
@@ -690,17 +700,64 @@ h4 {
         color: $bgColor2;
     }
     //regSub
-    #j-regSub{
+    .mui-btn.mui-btn-block.mui-btn-red {
         background-color: $bgColor2;
+        border-color: $bgColor2;
     }
     .mui-btn-block.mui-btn-blue {
         font-size: 20px;
     }
 }
 /* Setting Module */
-.m-setting{
-    .mui-btn.mui-btn-red.mui-btn-block{
+.m-setting {
+    .mui-btn.mui-btn-red.mui-btn-block {
         margin-top: 30px;
         font-size: 20px;
+    }
+}
+/* Chart Module */
+.m-chart {
+    background-color: #F3F3F3;
+    .mui-scroll-wrapper {
+        background-color: #F3F3F3;
+        .chart{
+            margin-bottom: 50px;
+        }
+        .mui-content-padded {
+            height: 40px;
+            text-align: center;
+            margin: 0 0 20px;
+            background-color: #fff;
+            .mui-pagination {
+                display: block;
+                li a {
+                    color: $bgColor2;
+                    height: 40px;
+                    text-align: center;
+                    padding: 0 10px;
+                    border: none;
+                    border-radius: 0;
+                    line-height: 40px;
+                    font-size: 18px;
+                    color: $bgColor2;
+                }
+                .mui-previous a {
+                    margin-left: 20px;
+                }
+                .dateDisplay a {
+                    width: 100px;
+                }
+                .chartType {
+                    float: right;
+                    a {
+                        margin-right: 20px;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+        .mui-icon-down:after {
+            content: '\e581';
+        }
     }
 }
