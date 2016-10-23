@@ -15,7 +15,7 @@
 	//列表滚动属性
 	mui('.mui-scroll-wrapper').scroll({
 		deceleration: 0.001, //阻尼系数
-		bounce: false //是否回弹
+		bounce: true //是否回弹
 	});
 	//双击NavBar返回顶部
 	mui('.mui-bar').on('doubletap', 'h1', function() {

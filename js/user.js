@@ -43,8 +43,7 @@
 	});
 	mui('.box-login').on('tap', 'button', function(e) {
 		if (e.target.id == 'j-loginBtn') {
-			mui.toast('PHP工程师已醒，登录开放');
-			plus.webview.show('login.html', 'slide-in-bottom', 300);
+			plus.webview.show('login.html', 'slide-in-bottom', 400);
 		}
 	});
 })();

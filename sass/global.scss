@@ -147,6 +147,7 @@ h4 {
         color: #fff;
     }
 }
+
 .mui-bar.mui-bar-nav {
     background-color: $bgColor;
 }
@@ -161,10 +162,13 @@ h4 {
 }
 /* Tab */
 .mui-bar-tab {
-    background-color: #fff;
+    background-color: $bgColor;
 }
 .mui-bar-tab .mui-tab-item.mui-active {
     color: $bgColor;
+}
+.m-index{
+    background-color: $bgColor;
 }
 /* List */
 .mui-table-view-divider {
@@ -342,6 +346,7 @@ h4 {
 }
 /* Bill Module */
 .m-bill {
+    background-color: $bgColor;
     .mui-icon.mui-icon-loop.mui-pull-right {
         font-weight: bold;
     }
@@ -377,6 +382,9 @@ h4 {
         }
     }
     .listNull {
+        width: 100%;
+        height: 400px;
+        background-color: #F3F3F3;
         h1 {
             line-height: 200px;
             text-align: center;
@@ -720,7 +728,7 @@ h4 {
     background-color: #F3F3F3;
     .mui-scroll-wrapper {
         background-color: #F3F3F3;
-        .chart{
+        .chart {
             margin-bottom: 50px;
         }
         .mui-content-padded {
@@ -748,16 +756,50 @@ h4 {
                     width: 100px;
                 }
                 .chartType {
+                    position: relative;
                     float: right;
                     a {
                         margin-right: 20px;
                         font-size: 16px;
                     }
                 }
+                #j-typeSelector {
+                    position: absolute;
+                    top: 40px;
+                    right: 0;
+                    z-index: 900;
+                    width: 140px;
+                    height: 80px;
+                    background-color: #fff;
+                    color: $bgColor2;
+                    label{
+                        font-size: 16px;
+                    }
+                }
+                .mui-checkbox input[type=checkbox],
+                .mui-radio input[type=radio] {
+                    top: 8px;
+                    right: 30px;
+                    width: 20px;
+                    height: 20px;
+                }
+                .mui-radio input[type=radio]:before {
+                    width: 20px;
+                    height: 20px;
+                    font-size: 20px;
+                }
+                .mui-checkbox input[type=checkbox]:checked:before,
+                .mui-radio input[type=radio]:checked:before {
+                    //                  font-size: 20px;
+                    color: $bgColor2;
+                }
             }
         }
         .mui-icon-down:after {
             content: '\e581';
+        }
+        .mui-icon-up:after{
+            content: '\e580';
         }
     }
 }
