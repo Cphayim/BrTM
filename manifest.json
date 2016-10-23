@@ -3,7 +3,7 @@
 	"id": "H5EE6B4CE",/*应用的标识，创建应用时自动生成，勿手动修改*/
 	"name": "记个账",/*应用名称，程序桌面图标名称*/
 	"version": {
-		"name": "0.2.36",/*应用版本名称*/
+		"name": "0.2.47",/*应用版本名称*/
 		"code": "83"
 	},
 	"description": "",/*应用描述信息*/
@@ -45,12 +45,8 @@
             "description": "使用Native.js能力"
         },
         
-        "Orientation": {
-            "description": "访问方向感应器"
-        },
-        "Proximity": {
-            "description": "访问距离感应器"
-        },
+        
+        
         "Storage": {
             "description": "管理应用本地数据"
         },

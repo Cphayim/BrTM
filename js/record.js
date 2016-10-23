@@ -42,7 +42,7 @@
 		//时间数据处理 -> 格式 yyyymm, d or dd
 		var aDate = date[i].value.split('-');
 		var yyyymm = aDate[0] + format(aDate[1]),
-			d = aDate[2];
+			d = Number(aDate[2]);
 		obj = {
 			"type": i,
 			"money": money[i].value,
