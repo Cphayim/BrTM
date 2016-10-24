@@ -147,7 +147,6 @@ h4 {
         color: #fff;
     }
 }
-
 .mui-bar.mui-bar-nav {
     background-color: $bgColor;
 }
@@ -167,7 +166,7 @@ h4 {
 .mui-bar-tab .mui-tab-item.mui-active {
     color: $bgColor;
 }
-.m-index{
+.m-index {
     background-color: $bgColor;
 }
 /* List */
@@ -586,6 +585,93 @@ h4 {
         }
     }
 }
+/* Edit Module */
+.m-edit {
+    background-color: #f7f7f7;
+    .mui-icon-closeempty:before {
+        content: '\e460';
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .mui-slider {
+        height: auto;
+        background-color: #f7f7f7;
+        .mui-slider-indicator.mui-segmented-control {}
+        .mui-segmented-control.mui-segmented-control-inverted {
+            background-color: $bgColor;
+            .mui-control-item,
+            .mui-control-item.mui-active {
+                color: #FFFFFF;
+            }
+        }
+        .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-progress-bar {
+            height: 4px;
+            background-color: $bgColor2;
+        }
+        .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item {
+            border-bottom: none;
+            padding: 0 10px;
+        }
+        .mui-slider-item.mui-control-content {
+            background-color: #F7F7F7;
+        }
+        .mui-slider-group {
+            background-color: #F7F7F7;
+            label {
+                display: block;
+                padding: 10px 20px 0;
+                font-size: 16px;
+                line-height: 16px;
+                color: #888;
+            }
+            .select {
+                .mui-btn.mui-btn-block {
+                    color: $fontColor;
+                }
+            }
+            .mui-input-row {
+                border-bottom: 1px solid #CCCCCC;
+                label,
+                input {
+                    display: block;
+                    width: 100%;
+                }
+                label {
+                    padding: 10px 20px 0;
+                    font-size: 16px;
+                }
+                input {
+                    height: 60px;
+                    padding: 10px 20px;
+                    line-height: 40px;
+                    font-size: 20px;
+                    color: $fontColor;
+                }
+                .u-money {
+                    font-size: 30px;
+                }
+                .u-date {
+                    font-size: 20px;
+                }
+            }
+            .select {
+                border-bottom: 1px solid #CCCCCC;
+            }
+            select.mui-btn.mui-btn-block {
+                position: relative;
+                height: 60px;
+                padding: 10px 20px;
+                margin: 0;
+                background: none;
+                font-size: 20px;
+                line-height: 40px;
+                option {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
 .m-public {
     background-color: #F7F7F7;
 }
@@ -772,7 +858,7 @@ h4 {
                     height: 80px;
                     background-color: #fff;
                     color: $bgColor2;
-                    label{
+                    label {
                         font-size: 16px;
                     }
                 }
@@ -798,7 +884,7 @@ h4 {
         .mui-icon-down:after {
             content: '\e581';
         }
-        .mui-icon-up:after{
+        .mui-icon-up:after {
             content: '\e580';
         }
     }

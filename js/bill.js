@@ -12,6 +12,18 @@
 			release: false
 		}
 	});
+	//预加载
+	document.addEventListener('plusready', function() {
+		createWebview('edit.html');
+	});
+	//重新预加载edit
+	function loadEdit(){
+		createWebview('edit.html');
+	}
+	window.addEventListener('loadEdit',function(){
+		plus.webview.getWebviewById('edit.html').close();
+		loadEdit();
+	});
 	//列表滚动属性
 	mui('.mui-scroll-wrapper').scroll({
 		deceleration: 0.001, //阻尼系数
@@ -93,7 +105,7 @@
 						money = Number(detail.money).toFixed(2), //str->num+两位小数
 						classType = getClassTypeStr(detail.classType);
 					//向前插入内容(新字符串+原字符串)
-					oneList.innerHTML = '<li id="' + id + '" class="one mui-table-view-cell mui-media"><div class="mui-slider-right mui-disabled"><a class="mui-btn mui-btn-red">删除</a></div><div class="mui-slider-handle"><a href="javascript:;"><i class="mui-media-object mui-pull-left u-icon-class u-icon-class-' + detail.classType + '"></i><div class="mui-media-body"><h4>' + classType + '</h4><span class="u-' + type + '">￥' + money + '</span><p class="mui-ellipsis">' + detail.remark + '</p></div></a></div></li>' + oneList.innerHTML;
+					oneList.innerHTML = '<li id="' + id + '" class="one mui-table-view-cell mui-media"><div class="mui-slider-right mui-disabled"><a class="mui-btn mui-btn-red">删除</a></div><div class="mui-slider-handle"><a class="info" href="javascript:;"><i class="mui-media-object mui-pull-left u-icon-class u-icon-class-' + detail.classType + '"></i><div class="mui-media-body"><h4>' + classType + '</h4><span class="u-' + type + '">￥' + money + '</span><p class="mui-ellipsis">' + detail.remark + '</p></div></a></div></li>' + oneList.innerHTML;
 				}
 				dateList.appendChild(oneList);
 				//将日账单容器插入月份账单容器
@@ -104,46 +116,57 @@
 			billList.insertBefore(monthList, billList.childNodes[0]);
 		}
 	})();
-	mui.plusReady(function() {
-		//删除单条记录
-		mui('#billList').on('tap', '.mui-btn', function(event) {
-			var elem = this;
-			var li = elem.parentNode.parentNode;
-			var dateList = li.parentNode.parentNode;//父级日列表
-			var monthList = dateList.parentNode;
-			mui.confirm('确认删除该条记录？', '提醒', ['确认', '取消'], function(e) {
-				if (e.index == 0) {
-					var id = li.id;
-					var path = id.split('-');
-					//				console.log(path[0]+','+path[1]+','+path[2]);
-					//删除list中对应对象
-					delete list[path[0]][path[1]][path[2]];
-					//删除空的父对象
-					if (isEmptyObject(list[path[0]][path[1]])) {
-						delete list[path[0]][path[1]];
-						if (isEmptyObject(list[path[0]])) {
-							delete list[path[0]];
-						}
+	//删除单条记录
+	mui('#billList').on('tap', '.mui-btn', function(event) {
+		var elem = this;
+		var li = elem.parentNode.parentNode;
+		var dateList = li.parentNode.parentNode; //父级日列表
+		var monthList = dateList.parentNode;
+		mui.confirm('确认删除该条记录？', '提醒', ['确认', '取消'], function(e) {
+			if (e.index == 0) {
+				var id = li.id;
+				var path = id.split('-');
+				//				console.log(path[0]+','+path[1]+','+path[2]);
+				//删除list中对应对象
+				delete list[path[0]][path[1]][path[2]];
+				//删除空的父对象
+				if (isEmptyObject(list[path[0]][path[1]])) {
+					delete list[path[0]][path[1]];
+					if (isEmptyObject(list[path[0]])) {
+						delete list[path[0]];
 					}
-					//同步到本地数据库
-					localStorage.setItem('data', JSON.stringify(list));
-					//删除节点
-					li.parentNode.removeChild(li);
-					//删除空的父节点
-					if (isEmptyArray(dateList.querySelectorAll('.one'))) dateList.parentNode.removeChild(dateList);
-					if (isEmptyArray(monthList.querySelectorAll('.dateList'))) monthList.parentNode.removeChild(monthList);
-					//刷新billPanel
-					billPanelLoad();
-					//刷新webview
-					reloadHomeWebview();
-					reloadChartWebview();
-				} else {
-					setTimeout(function() {
-						mui.swipeoutClose(li);
-					}, 0);
 				}
-			});
+				//同步到本地数据库
+				localStorage.setItem('data', JSON.stringify(list));
+				//删除节点
+				li.parentNode.removeChild(li);
+				//删除空的父节点
+				if (isEmptyArray(dateList.querySelectorAll('.one'))) dateList.parentNode.removeChild(dateList);
+				if (isEmptyArray(monthList.querySelectorAll('.dateList'))) monthList.parentNode.removeChild(monthList);
+				//刷新billPanel
+				billPanelLoad();
+				//刷新webview
+				reloadHomeWebview();
+				reloadChartWebview();
+			} else {
+				setTimeout(function() {
+					mui.swipeoutClose(li);
+				}, 0);
+			}
 		});
+	});
+	//打开编辑单条记录
+	mui('#billList').on('tap','.one .info',function(e){
+		var elem = this;
+		var li = elem.parentNode.parentNode;
+		var arg = li.id.split('-');
+		var edit = plus.webview.getWebviewById('edit.html');
+		mui.fire(edit,'arg',{
+			path0:arg[0],
+			path1:arg[1],
+			path2:arg[2]
+		});
+		plus.webview.show('edit.html','slide-in-top',400);
 	});
 })();
 //同步
@@ -153,7 +176,7 @@
 		//判断登录状态
 		if (localStorage.userInfo) {
 			mui.toast('客官稍等，PHP大神喂饱了同步立即上线');
-		}else{
+		} else {
 			mui.toast('客官，登录后才可以同步哦')
 		}
 	});

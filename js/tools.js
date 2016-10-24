@@ -302,6 +302,7 @@ function reloadHomeWebview() {
  * 刷新"home.html" webview
  */
 function reloadBillWebview() {
+	plus.webview.getWebviewById('edit.html').close();
 	plus.webview.getWebviewById('bill.html').reload();
 }
 /**
