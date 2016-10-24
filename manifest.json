@@ -3,7 +3,7 @@
 	"id": "H5EE6B4CE",/*应用的标识，创建应用时自动生成，勿手动修改*/
 	"name": "记个账",/*应用名称，程序桌面图标名称*/
 	"version": {
-		"name": "0.2.51",/*应用版本名称*/
+		"name": "0.2.56",/*应用版本名称*/
 		"code": "83"
 	},
 	"description": "",/*应用描述信息*/
@@ -192,7 +192,9 @@
 					"img/sprite.png",
 					"img/class-sprite.png",
 					"js/md5.js",
-					"chart.html"
+					"chart.html",
+					"js/testData.js",
+					"js/tools.js"
 				],
 				"priority": 0,
 				"refer": [
@@ -312,7 +314,8 @@
 					"js/immersed.js"
 				],
 				"refer": [
-					"home.html"
+					"home.html",
+					"edit.html"
 				],
 				"priority": 0
 			},
@@ -460,6 +463,19 @@
 					"js/chart.js",
 					"js/tools.js",
 					"js/echarts.min.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"edit.html": {
+				"resources": [
+					"css/mui.min.css",
+					"js/tools.js",
+					"js/mui.min.js",
+					"css/global.css",
+					"fonts/mui.ttf",
+					"js/immersed.js",
+					"js/edit.js"
 				],
 				"refer": [],
 				"priority": 0

@@ -12,7 +12,9 @@
       "js/mui.js",
       "js/index.js",
       "js/md5.js",
-      "chart.html"
+      "chart.html",
+      "js/testData.js",
+      "js/tools.js"
     ],
     "refer": [
       "subpages/home.html",
@@ -69,7 +71,8 @@
       "js/immersed.js"
     ],
     "refer": [
-      "home.html"
+      "home.html",
+      "edit.html"
     ]
   },
   "user.html": {
@@ -200,6 +203,17 @@
       "js/chart.js",
       "js/tools.js",
       "js/echarts.min.js"
+    ]
+  },
+  "edit.html": {
+    "resources": [
+      "css/mui.min.css",
+      "js/tools.js",
+      "js/mui.min.js",
+      "css/global.css",
+      "fonts/mui.ttf",
+      "js/immersed.js",
+      "js/edit.js"
     ]
   }
 }

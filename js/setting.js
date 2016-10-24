@@ -65,7 +65,6 @@
 		});
 		//判断是否登录
 		var isLogin = (localStorage.loginInfo) ? true : false;
-		console.log(isLogin);
 		//已登录则恢复退出按钮
 		if (isLogin) signOut.removeAttribute('disabled');
 		//退出登录
