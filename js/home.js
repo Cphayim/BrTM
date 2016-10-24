@@ -1,5 +1,6 @@
 //初始化
 (function() {
+	console.log(localStorage.timestamp);
 	mui.init({
 		gestureConfig: {
 			tap: true,

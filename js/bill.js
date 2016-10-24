@@ -17,10 +17,10 @@
 		createWebview('edit.html');
 	});
 	//重新预加载edit
-	function loadEdit(){
+	function loadEdit() {
 		createWebview('edit.html');
 	}
-	window.addEventListener('loadEdit',function(){
+	window.addEventListener('loadEdit', function() {
 		plus.webview.getWebviewById('edit.html').close();
 		loadEdit();
 	});
@@ -153,29 +153,122 @@
 					mui.swipeoutClose(li);
 				}, 0);
 			}
+			setTimestamp(); //设置时间戳
 		});
 	});
 	//打开编辑单条记录
-	mui('#billList').on('tap','.one .info',function(e){
+	mui('#billList').on('tap', '.one .info', function(e) {
 		var elem = this;
 		var li = elem.parentNode.parentNode;
 		var arg = li.id.split('-');
 		var edit = plus.webview.getWebviewById('edit.html');
-		mui.fire(edit,'arg',{
-			path0:arg[0],
-			path1:arg[1],
-			path2:arg[2]
+		mui.fire(edit, 'arg', {
+			path0: arg[0],
+			path1: arg[1],
+			path2: arg[2]
 		});
-		plus.webview.show('edit.html','slide-in-top',400);
+		plus.webview.show('edit.html', 'slide-in-top', 400);
 	});
 })();
+console.log(localStorage.loginInfo);
 //同步
 (function() {
 	var syncBtn = document.getElementById('j-syncBtn');
 	syncBtn.addEventListener('click', function() {
 		//判断登录状态
-		if (localStorage.userInfo) {
-			mui.toast('客官稍等，PHP大神喂饱了同步立即上线');
+		if (localStorage.loginInfo) {
+			if (1) { //有时间戳
+				var userid = localStorage.loginInfo.split('&')[0];
+				var userkey = localStorage.loginInfo.split('&')[1];
+				var w = plus.nativeUI.showWaiting('正在发送时间戳');
+				ajax({
+					url: 'https://api.yingfeng.me/br/compare.php',
+					method: 'POST',
+					data: {
+						user_id: userid,
+						user_key: userkey,
+						time: Number(localStorage.timestamp)
+					},
+					success: function(data) {
+						console.log('localStorage.timestamp='+localStorage.timestamp)
+						var arg = data[0].split(';');
+						if (arg[0] == 'T') {
+							//授权码正确
+							if (arg[1] == 'upload') {
+								//上传数据表
+								w.setTitle('正在上传');
+								ajax({
+									url: 'https://api.yingfeng.me/br/upload.php',
+									method: 'POST',
+									data: {
+										user_id: userid,
+										user_key: userkey,
+										data: localStorage.data,
+										time: Number(localStorage.timestamp)
+									},
+									success: function(data) {
+										var arg = data[0].split(';');
+										if (arg[0] == 'T') {
+											if (arg[1] == 'S') mui.toast('同步成功');
+											else mui.toast('服务器写入失败');
+											w.close();
+										} else {
+											mui.toast('登录信息过期，请重新登录');
+											w.close();
+										}
+									},
+									error: function(data) {
+										mui.toast('上传数据失败' + data);
+										w.close();
+									}
+								});
+							} else if (arg[1] == 'download') {
+								//下载数据表
+								w.setTitle('正在下载');
+								ajax({
+									url: 'https://api.yingfeng.me/br/download.php',
+									method: 'GET',
+									data: {
+										user_id: userid,
+										user_key: userkey
+									},
+									success: function(data) {
+										console.log(data);
+										var arg = data[0].split(';');
+										if (arg[0] == 'T') {
+											mui.toast('同步成功');
+											localStorage.data = arg[1];
+											localStorage.timestamp = arg[2];
+											reloadBillWebview();
+											reloadHomeWebview();
+											reloadChartWebview();
+											w.close();
+										} else {
+											mui.toast('登录信息过期，请重新登录');
+											w.close();
+										}
+									},
+									error: function(data) {
+										mui.toast('下载数据失败' + data);
+										w.close();
+									}
+								});
+							} else if (arg[1] == 'same') {
+								mui.toast('数据一致无需同步');
+								w.close();
+							}
+						} else {
+							//授权码错误
+							mui.toast('登录信息过期，请重新登录');
+							w.close();
+						}
+					},
+					error: function(data) {
+						mui.toast('网络异常，无法同步');
+						w.close();
+					}
+				});
+			}
 		} else {
 			mui.toast('客官，登录后才可以同步哦')
 		}

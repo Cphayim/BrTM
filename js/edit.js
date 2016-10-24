@@ -136,11 +136,13 @@ var target; //目标对象，用于数据库对象目标记录
 	//事件绑定
 	saveOut.addEventListener('tap', function() {
 		save(0);
+		setTimestamp();//时间戳
 		mui.toast('账单已保存');
 		reLoadWebview();
 	});
 	saveIn.addEventListener('tap', function() {
 		save(1);
+		setTimestamp();//时间戳
 		mui.toast('账单已保存');
 		reLoadWebview();
 	});

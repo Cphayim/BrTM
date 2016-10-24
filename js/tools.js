@@ -249,6 +249,7 @@ function getOutClassTypeIndex(str) {
 	}
 	return result;
 }
+
 function getInClassTypeIndex(str) {
 	var result;
 	switch (str) {
@@ -318,4 +319,13 @@ function reloadUserWebview() {
 	plus.webview.getWebviewById('login.html').close();
 	plus.webview.getWebviewById('register.html').close();
 	plus.webview.getWebviewById('user.html').reload();
+}
+
+/**
+ * 设置时间戳
+ */
+function setTimestamp() {
+	var date = new Date();
+	var timestamp = date.getTime();
+	localStorage.timestamp = timestamp;
 }
