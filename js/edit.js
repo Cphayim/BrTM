@@ -16,7 +16,7 @@ var target; //目标对象，用于数据库对象目标记录
 	mui('#slider').slider().setStopped(true)
 		//修改返回事件
 	mui.back = function() {
-		mui.confirm('确定取消本次编辑吗？', '提示', ['取消编辑', '继续编辑'], function(e) {
+		mui.confirm('确定取消本次编辑吗？', '提示', ['确认', '继续编辑'], function(e) {
 			if (e.index == 0) {
 				plus.webview.hide('edit.html', 'slide-out-top', 400);
 				var bill = plus.webview.getWebviewById('bill.html')
@@ -49,6 +49,9 @@ var target; //目标对象，用于数据库对象目标记录
 			//如果类型为1跳转到收入Tab
 			mui('#slider').slider({}).gotoItem(1);
 			i = 1;
+		} else {
+			mui('#slider').slider({}).gotoItem(0);
+			i = 0;
 		}
 		//初始化表单数据
 		mui('.u-money')[i].value = money;
@@ -91,7 +94,7 @@ var target; //目标对象，用于数据库对象目标记录
 			list[path0][path1][path2].account = account[i].value;
 		} else {
 			//用户改变了日期
-			delete list[path0][path1][path2];//删除原对象
+			delete list[path0][path1][path2]; //删除原对象
 			var obj = {}; //临时存储数据对象
 			//时间数据处理 -> 格式 yyyymm, d or dd
 			var aDate = date[i].value.split('-');
