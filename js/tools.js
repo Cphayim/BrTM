@@ -249,6 +249,7 @@ function getOutClassTypeIndex(str) {
 	}
 	return result;
 }
+
 function getInClassTypeIndex(str) {
 	var result;
 	switch (str) {
@@ -283,7 +284,7 @@ function checkMail(mail) {
  */
 function createWebview(url) {
 	var styles = {};
-	// 在Android5以上设备，如果默认没有开启硬件加速，则强制设置开启
+	// 在Android5以上设备，强制开启硬件加速
 	if (!plus.webview.defaultHardwareAccelerated() && parseInt(plus.os.version) >= 5) {
 		styles.hardwareAccelerated = true;
 	}
@@ -318,4 +319,13 @@ function reloadUserWebview() {
 	plus.webview.getWebviewById('login.html').close();
 	plus.webview.getWebviewById('register.html').close();
 	plus.webview.getWebviewById('user.html').reload();
+}
+
+/**
+ * 设置时间戳
+ */
+function setTimestamp() {
+	var date = new Date();
+	var timestamp = date.getTime();
+	localStorage.timestamp = timestamp;
 }

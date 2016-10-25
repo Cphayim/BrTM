@@ -73,6 +73,8 @@
 				if (e.index == 0) {
 					var w = plus.nativeUI.showWaiting('正在退出登录');
 					localStorage.removeItem('loginInfo');
+					localStorage.timestamp = ''; //删除时间戳
+					console.log(localStorage.timestamp)
 					w.close();
 					reloadUserWebview();
 					mui.back();

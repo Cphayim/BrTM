@@ -1,5 +1,6 @@
 //初始化
 (function() {
+	console.log(localStorage.timestamp);
 	mui.init({
 		gestureConfig: {
 			tap: true,
@@ -15,12 +16,13 @@
 	mui('.mui-slider').slider({
 		interval: 5000
 	});
-	//预加载
+	//预加载record
 	document.addEventListener('plusready', function() {
 		createWebview('record.html');		
 	});
-	//记一笔按钮事件绑定
+	
 	var recordBtn = document.getElementById('j-openRecord');
+	//事件绑定
 	recordBtn.addEventListener('click', function() {
 		plus.webview.show("record.html", 'slide-in-right', 300); // 显示窗口
 	});

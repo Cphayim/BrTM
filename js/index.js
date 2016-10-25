@@ -77,40 +77,10 @@
 	 * 版本提示信息
 	 */
 	mui.plusReady(function() {
-		if (localStorage.tip != 'v0.2.57') {
-			mui.confirm('重要提示：\n      前端更换了部分数据库存储格式，用户点击"确定"后系统将自动清空本地数据并加入新格式的测试数据\n     老版用户若有重要数据未保存请点击"取消"自行备份后前往"设置"清空数据，之后可使用注入功能重新注入测试数据或正常使用。"数据同步"功能将很快上线，感谢！\n\n版本更新:\nv0.2.57\n - 修复了一个导致编辑界面Tab自动定向失败的Bug\nv0.2.56\n - 完善了图表模块功能\n - 添加了编辑功能，流水页点击单条记录即可编辑', 'V0.2.57 版本提示', ['确定', '取消'], function(e) {
-				if (e.index == 0) {
-					mui.confirm('是否要清空本地数据并导入新的测试数据', '二次确认', ['确定', '取消'], function(e) {
-						if (e.index == 0) {
-							var o = plus.nativeUI.showWaiting('正在清空数据');
-							//删除数据
-							localStorage.removeItem('data');
-							setTimeout(function() {
-								o.setTitle('已清空数据');
-								setTimeout(function() {
-									o.setTitle('正在调取数据');
-									importDataToLocalStorage();
-									setTimeout(function() {
-										//重载Webview
-										reloadHomeWebview();
-										reloadBillWebview();
-										reloadUserWebview();
-										reloadChartWebview();
-										o.setTitle('正在注入数据');
-										setTimeout(function() {
-											o.setTitle('数据注入成功,正在Reload');
-											setTimeout(function() {
-												o.close();
-											}, 2000)
-										}, 2000);
-									}, 1000);
-								}, 1000);
-							}, 1000);
-						}
-					});
-				}
+		if (localStorage.tip != 'v0.2.63') {
+			mui.confirm('版本更新:\nv0.2.63\n - 数据同步功能上线，登录后点击流水账单界面右上角即可同步 \nv0.2.57\n - 修复了一个导致编辑界面Tab自动定向失败的Bug\nv0.2.56\n - 完善了图表模块功能\n - 添加了编辑功能，流水页点击单条记录即可编辑', 'V0.2.63 版本提示', ['确定', '取消'], function(e) {
 			});
-			localStorage.tip = 'v0.2.57';
+			localStorage.tip = 'v0.2.63';
 		}
 	});
 })();

@@ -392,6 +392,8 @@ h4 {
         };
     }
     .m-billList {
+        background-color: #F3F3F3;
+        min-height: 500px;
         .mui-table-view {
             &:before {
                 position: absolute;
