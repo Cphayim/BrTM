@@ -284,7 +284,7 @@ function checkMail(mail) {
  */
 function createWebview(url) {
 	var styles = {};
-	// 在Android5以上设备，如果默认没有开启硬件加速，则强制设置开启
+	// 在Android5以上设备，强制开启硬件加速
 	if (!plus.webview.defaultHardwareAccelerated() && parseInt(plus.os.version) >= 5) {
 		styles.hardwareAccelerated = true;
 	}
