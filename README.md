@@ -19,16 +19,11 @@
 
 ####Cphayim &nbsp;&nbsp;&nbsp;&nbsp; 前端开发工程师 
 * 负责用户界面，交互与本地数据操作业务逻辑的编码，以及前后端联调。
+* 前端代码 本仓库
  
 ####迎風别葉index &nbsp;&nbsp;&nbsp;&nbsp; PHP开发工程师 
 * 负责该项目服务器端的编码，用户社区，以及前后端联调，实现同步功能。
-* https://yingfeng.me
-
-####守心 &nbsp;&nbsp;&nbsp;&nbsp; Android工程师 
-* 负责端茶送水。
-
-####永恒 &nbsp;&nbsp;&nbsp;&nbsp; Java工程师 
-* 负责捶背捏肩。
+* 后端代码 https://github.com/yingfeng-studio/BillRecords_Server
 
 ##0x04 版本迭代
 v0.2.63
