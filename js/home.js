@@ -18,9 +18,9 @@
 	});
 	//预加载record
 	document.addEventListener('plusready', function() {
-		createWebview('record.html');		
+		createWebview('record.html');
 	});
-	
+
 	var recordBtn = document.getElementById('j-openRecord');
 	//事件绑定
 	recordBtn.addEventListener('click', function() {
@@ -38,7 +38,9 @@
 					//判断用户输入是否非法
 					if (isNaN(num)) {
 						mui.toast('设置失败，请输入数字！');
-					} else if (num == 0) {} else {
+					} else if (num < 0 || num > 1000000) {
+						mui.toast('请输入[0,100,0000]区间内的数字');
+					} else {
 						//保存设置到localStorage
 						localStorage.setItem('balance', num);
 						mui.toast('设置成功');
