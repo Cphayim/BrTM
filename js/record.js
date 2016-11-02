@@ -10,7 +10,7 @@
 	};
 	//获取系统时间填充表单默认值
 	var date = new Date();
-	var currentDate = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+	var currentDate = date.getFullYear() + '-' + format(date.getMonth() + 1) + '-' + format(date.getDate());
 	var aDate = document.querySelectorAll('.u-date');
 	for (var i = 0; i < aDate.length; i++) {
 		aDate[i].value = currentDate;

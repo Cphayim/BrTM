@@ -3,7 +3,7 @@
 	"id": "H5EE6B4CE",/*应用的标识，创建应用时自动生成，勿手动修改*/
 	"name": "记个账",/*应用名称，程序桌面图标名称*/
 	"version": {
-		"name": "0.2.63",/*应用版本名称*/
+		"name": "0.2.68",/*应用版本名称*/
 		"code": "83"
 	},
 	"description": "",/*应用描述信息*/
@@ -158,9 +158,9 @@
 				"android": {
 					"mdpi": "", /*普通屏启动图片，分辨率：240x282*/
 					"ldpi": "", /*大屏启动图片，分辨率：320x442*/
-					"hdpi": "/Users/Cphayim/GitHub/starII480.png", /*高分屏启动图片，分辨率：480x762*/
-					"xhdpi": "/Users/Cphayim/GitHub/starII720.png", /*720P高分屏启动图片，分辨率：720x1242*/
-					"xxhdpi": "/Users/Cphayim/GitHub/starII1080.png"
+					 /*高分屏启动图片，分辨率：480x762*/
+					"xhdpi": "/Users/Cphayim/GitHub/记个账App各版本apk/star_720.png", /*720P高分屏启动图片，分辨率：720x1242*/
+					"xxhdpi": "/Users/Cphayim/GitHub/记个账App各版本apk/star_1080.png"
 				}
 			},"debug":false
 		}
