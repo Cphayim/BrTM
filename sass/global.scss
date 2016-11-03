@@ -1,8 +1,10 @@
-//$bgColor: #45BCF9;
-//$bgColor2: #45BCF9;
-$bgColor: #2a3c54;
-$bgColor2: #ae3c5c;
-$fontColor: #2a3c54; //#666666
+$bgColor: #f5f5f5;
+$fontColor: #24454c;
+$mainColor: #69c0d1;
+$mainColor2: #24454c;
+$tabFontColor: #69c0d1;
+$tabColor: #f3f3f3;
+$tabColorActive: #69c0d1;
 @font-face {
     font-family: "iconfont";
     src: url('../fonts/iconfont.ttf') format('truetype');
@@ -148,7 +150,7 @@ h4 {
     }
 }
 .mui-bar.mui-bar-nav {
-    background-color: $bgColor;
+    background-color: $mainColor;
 }
 /* Nav */
 .mui-bar-nav {
@@ -161,13 +163,13 @@ h4 {
 }
 /* Tab */
 .mui-bar-tab {
-    background-color: $bgColor;
+    background-color: $tabColor;
 }
 .mui-bar-tab .mui-tab-item.mui-active {
-    color: $bgColor;
+    color: $tabColor;
 }
 .m-index {
-    background-color: $bgColor;
+    background-color: $tabColor;
 }
 /* List */
 .mui-table-view-divider {
@@ -204,31 +206,6 @@ h4 {
 .mui-scroll-wrapper {
     top: 44px;
 }
-/* Slider */
-.mui-slider {
-    width: 100%;
-    height: 282px;
-    img {
-        height: 282px;
-    }
-    .m-display {
-        position: absolute;
-        bottom: 0;
-        margin: 15px;
-        div {
-            float: left;
-            margin-right: 20px;
-            h3,
-            span {
-                color: #fff;
-                font-weight: normal;
-            }
-            span {
-                font-size: 16px;
-            }
-        }
-    }
-}
 /* Block button */
 .mui-btn-block {
     width: 95%;
@@ -238,8 +215,8 @@ h4 {
     line-height: 0;
     font-size: 24px;
     &.mui-btn-blue {
-        border-color: $bgColor;
-        background-color: $bgColor;
+        border-color: $mainColor;
+        background-color: $mainColor;
     }
 }
 .mui-btn.mui-btn-grey {
@@ -254,98 +231,135 @@ h4 {
 .m-index {
     .mui-bar-tab {
         //beta2
-        .mui-tab-item,
+        .mui-tab-item {
+            color: $tabFontColor;
+        }
         .mui-tab-item.mui-active {
             color: #fff;
         }
         .mui-tab-item {
-            background-color: $bgColor;
+            background-color: $tabColor;
         }
         .mui-tab-item.mui-active {
-            background-color: $bgColor2;
+            background-color: $tabColorActive;
         }
     }
 }
 /* Home Module */
-%m-info-div {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 80px;
-    border-bottom: 1px solid #ccc;
-}
-%border {
-    position: absolute;
-    right: 0;
-    left: 0;
-    height: 1px;
-    content: '';
-    -webkit-transform: scaleY(.5);
-    transform: scaleY(.5);
-    background-color: #c8c7cc;
-}
-.m-info {
-    position: relative;
-    margin: 10px 0;
-    padding: 0 10px;
-    background-color: #FFF;
-    &::before,
-    &::after {
-        @extend %border;
-    }
-    &::before {
-        top: 0;
-    }
-    &::after {
-        bottom: 0;
-    }
-    i,
-    h3 {
-        flex: 0.5;
-        color: $fontColor;
-        font-size: 24px;
-    }
-    i {
-        width: 50px;
-        max-width: 50px;
-        height: 50px;
-        margin: 0 2px 0 30px;
-        line-height: 50px;
-        font-size: 35px;
-    }
-    div {
-        flex: 1;
-    };
-    .m-info-today {
-        @extend %m-info-div;
-    }
-    .m-info-month {
-        @extend %m-info-div;
-        border: none;
-    }
-    .m-info-wrap {
-        width: 200px;
-        max-width: 200px;
-        height: 60px;
-        div {
-            box-sizing: border-box;
-            height: 30px;
-            padding: 5px 10px;
+.m-home {
+    .mui-slider {
+        width: 100%;
+        height: 282px;
+        img {
+            height: 282px;
         }
-        span {
-            float: right;
-            line-height: 20px;
+        .m-display {
+            position: absolute;
+            bottom: 0;
+            margin: 15px;
+            div {
+                float: left;
+                margin-right: 20px;
+                h3,
+                span {
+                    color: #fff;
+                    font-weight: normal;
+                }
+                span {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+    %m-info-div {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 80px;
+        border-bottom: 1px solid #ccc;
+    }
+    %border {
+        position: absolute;
+        right: 0;
+        left: 0;
+        height: 1px;
+        content: '';
+        -webkit-transform: scaleY(.5);
+        transform: scaleY(.5);
+        background-color: #c8c7cc;
+    }
+    .m-info {
+        position: relative;
+        margin: 10px 0;
+        padding: 0 10px;
+        background-color: #FFF;
+        &::before,
+        &::after {
+            @extend %border;
+        }
+        &::before {
+            top: 0;
+        }
+        &::after {
+            bottom: 0;
+        }
+        i,
+        h3 {
+            flex: 0.5;
+            color: $fontColor;
+            font-size: 24px;
+        }
+        i {
+            width: 50px;
+            max-width: 50px;
+            height: 50px;
+            margin: 0 2px 0 30px;
+            line-height: 50px;
+            font-size: 35px;
+        }
+        div {
+            flex: 1;
+        };
+        .m-info-today {
+            @extend %m-info-div;
+        }
+        .m-info-month {
+            @extend %m-info-div;
+            border: none;
+        }
+        .m-info-wrap {
+            width: 200px;
+            max-width: 200px;
+            height: 60px;
+            div {
+                box-sizing: border-box;
+                height: 30px;
+                padding: 5px 10px;
+            }
+            span {
+                float: right;
+                line-height: 20px;
+            }
         }
     }
 }
 .m-billPanel,
 .m-userPanel {
     height: 216px;
-    background-color: $bgColor;
+    background-color: $mainColor;
 }
 /* Bill Module */
 .m-bill {
     background-color: $bgColor;
+    .u-baseColor{
+        position: absolute;
+        width: 100%;
+        height: 300px;
+        background-color: $mainColor;
+    }
+    .mui-scroll{
+        background-color: $bgColor;
+    }
     .mui-icon.mui-icon-loop.mui-pull-right {
         font-weight: bold;
     }
@@ -383,7 +397,7 @@ h4 {
     .listNull {
         width: 100%;
         height: 400px;
-        background-color: #F3F3F3;
+        background-color: $bgColor;
         h1 {
             line-height: 200px;
             text-align: center;
@@ -392,7 +406,7 @@ h4 {
         };
     }
     .m-billList {
-        background-color: #F3F3F3;
+        background-color: $bgColor;
         min-height: 500px;
         .mui-table-view {
             &:before {
@@ -425,7 +439,7 @@ h4 {
                 width: 20%;
                 min-height: 64px;
                 padding: 10px 20px;
-                background-color: #F3F3F3;
+                background-color: $bgColor;
                 .date,
                 .day {
                     display: block;
@@ -473,7 +487,7 @@ h4 {
             height: 120px;
             margin: auto;
             border-radius: 50%;
-            background-color: #eee;
+            background-color: $bgColor;
         }
     }
     .box-login {
@@ -490,7 +504,7 @@ h4 {
             margin: 0 10px;
             border-color: #fff;
             background-color: #fff;
-            color: $bgColor;
+            color: $mainColor;
             font-size: 16px;
         }
     }
@@ -507,13 +521,13 @@ h4 {
 }
 /* Record Module */
 .m-record {
-    background-color: #f7f7f7;
+    background-color: $bgColor;
     .mui-slider {
         height: auto;
-        background-color: #f7f7f7;
+        background-color: $bgColor;
         .mui-slider-indicator.mui-segmented-control {}
         .mui-segmented-control.mui-segmented-control-inverted {
-            background-color: $bgColor;
+            background-color: $mainColor;
             .mui-control-item,
             .mui-control-item.mui-active {
                 color: #FFFFFF;
@@ -521,17 +535,17 @@ h4 {
         }
         .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-progress-bar {
             height: 4px;
-            background-color: $bgColor2;
+            background-color: $mainColor2;
         }
         .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item {
             border-bottom: none;
             padding: 0 10px;
         }
         .mui-slider-item.mui-control-content {
-            background-color: #F7F7F7;
+            background-color: $bgColor;
         }
         .mui-slider-group {
-            background-color: #F7F7F7;
+            background-color: $bgColor;
             label {
                 display: block;
                 padding: 10px 20px 0;
@@ -589,7 +603,7 @@ h4 {
 }
 /* Edit Module */
 .m-edit {
-    background-color: #f7f7f7;
+    background-color: $bgColor;
     .mui-icon-closeempty:before {
         content: '\e460';
         font-size: 30px;
@@ -597,10 +611,10 @@ h4 {
     }
     .mui-slider {
         height: auto;
-        background-color: #f7f7f7;
+        background-color: $bgColor;
         .mui-slider-indicator.mui-segmented-control {}
         .mui-segmented-control.mui-segmented-control-inverted {
-            background-color: $bgColor;
+            background-color: $mainColor;
             .mui-control-item,
             .mui-control-item.mui-active {
                 color: #FFFFFF;
@@ -608,17 +622,17 @@ h4 {
         }
         .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-progress-bar {
             height: 4px;
-            background-color: $bgColor2;
+            background-color: $mainColor2;
         }
         .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item {
             border-bottom: none;
             padding: 0 10px;
         }
         .mui-slider-item.mui-control-content {
-            background-color: #F7F7F7;
+            background-color: $bgColor;
         }
         .mui-slider-group {
-            background-color: #F7F7F7;
+            background-color: $bgColor;
             label {
                 display: block;
                 padding: 10px 20px 0;
@@ -675,15 +689,15 @@ h4 {
     }
 }
 .m-public {
-    background-color: #F7F7F7;
+    background-color: $bgColor;
 }
 /* About Module */
 .m-about {
     color: #666;
-    background-color: #f7f7f7;
+    background-color: $bgColor;
     .mui-scroll-wrapper {
         top: 0;
-        background-color: #F7F7F7;
+        background-color: $bgColor;
     }
     .mui-scroll {}
     .m-appInfo {
@@ -793,12 +807,13 @@ h4 {
     }
     //<a> reg
     #regBtn {
-        color: $bgColor2;
+        color: $mainColor2;
     }
     //regSub
     .mui-btn.mui-btn-block.mui-btn-red {
-        background-color: $bgColor2;
-        border-color: $bgColor2;
+        background-color: #E57B85;
+        border-color: #E57B85;
+        font-size: 20px;
     }
     .mui-btn-block.mui-btn-blue {
         font-size: 20px;
@@ -813,9 +828,9 @@ h4 {
 }
 /* Chart Module */
 .m-chart {
-    background-color: #F3F3F3;
+    background-color: $bgColor;
     .mui-scroll-wrapper {
-        background-color: #F3F3F3;
+        background-color: $bgColor;
         .chart {
             margin-bottom: 50px;
         }
@@ -827,7 +842,7 @@ h4 {
             .mui-pagination {
                 display: block;
                 li a {
-                    color: $bgColor2;
+                    color: $mainColor2;
                     height: 40px;
                     text-align: center;
                     padding: 0 10px;
@@ -835,7 +850,7 @@ h4 {
                     border-radius: 0;
                     line-height: 40px;
                     font-size: 18px;
-                    color: $bgColor2;
+                    color: $mainColor2;
                 }
                 .mui-previous a {
                     margin-left: 20px;
@@ -859,7 +874,7 @@ h4 {
                     width: 140px;
                     height: 80px;
                     background-color: #fff;
-                    color: $bgColor2;
+                    color: $mainColor2;
                     label {
                         font-size: 16px;
                     }
@@ -879,7 +894,7 @@ h4 {
                 .mui-checkbox input[type=checkbox]:checked:before,
                 .mui-radio input[type=radio]:checked:before {
                     //                  font-size: 20px;
-                    color: $bgColor2;
+                    color: $mainColor2;
                 }
             }
         }

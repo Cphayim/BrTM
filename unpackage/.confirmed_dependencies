@@ -23,7 +23,8 @@
       "bill.html",
       "home.html",
       "user.html",
-      "chart.html"
+      "chart.html",
+      "edit.html"
     ]
   },
   "subpages/home.html": {
@@ -52,7 +53,8 @@
       "js/mui.js",
       "js/tools.js",
       "js/home.js",
-      "fonts/iconfont.ttf"
+      "fonts/iconfont.ttf",
+      "fonts/mui.ttf"
     ],
     "refer": [
       "record.html"
@@ -68,11 +70,13 @@
       "js/bill.js",
       "js/tools.js",
       "fonts/mui.ttf",
-      "js/immersed.js"
+      "js/immersed.js",
+      "index.html"
     ],
     "refer": [
       "home.html",
-      "edit.html"
+      "edit.html",
+      "index.html"
     ]
   },
   "user.html": {
@@ -89,7 +93,8 @@
       "js/user.js",
       "fonts/iconfont.ttf",
       "js/immersed.js",
-      "js/tools.js"
+      "js/tools.js",
+      "img/defualtPicture.jpg"
     ],
     "refer": [
       "about.html",
@@ -173,7 +178,8 @@
       "img/iconBeta2.png",
       "js/immersed.js",
       "js/md5.js",
-      "js/md5.min.js"
+      "js/md5.min.js",
+      "img/icon.png"
     ],
     "refer": []
   },

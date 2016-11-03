@@ -13,9 +13,9 @@
 		}
 	});
 	//开启轮播
-	mui('.mui-slider').slider({
-		interval: 5000
-	});
+//	mui('.mui-slider').slider({
+//		interval: 5000
+//	});
 	//预加载record
 	document.addEventListener('plusready', function() {
 		createWebview('record.html');
