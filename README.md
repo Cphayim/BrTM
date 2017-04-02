@@ -28,11 +28,11 @@
 * 后端代码仓库 https://github.com/yingfeng-studio/BillRecords_Server
 * 个人博客站点: https://yingfeng.me
 
-## 0x04 版本迭代 (2016.10.30)
+## 0x04 版本迭代 
 
-目前该项目停止更新
+###目前该项目停止更新
 ---
-### Beta 3
+### Beta 3 (2016.10.30)
 
 v0.3.71
  * Beta 3项目开启，更换了Sass全局UI配色
