@@ -1,0 +1,8 @@
+<!--
+  index 页面结构
+  Create by Cphayim at 2018-03-30 00:18
+-->
+
+<view class="p-index">
+  page: index
+</view>

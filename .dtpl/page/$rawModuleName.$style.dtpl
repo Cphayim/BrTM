@@ -1,0 +1,10 @@
+/**
+ * $rawModuleName 页面样式
+ * Create by Cphayim at $datetime
+ */
+
+@import '../../styles/style-config.scss';
+
+.p-$rawModuleName {
+
+}

@@ -1,0 +1,10 @@
+/**
+ * $rawModuleName 组件样式
+ * Create by Cphayim at $datetime
+ */
+
+@import '../../../styles/style/style-config.scss';
+
+.m-$rawModuleName {
+
+}

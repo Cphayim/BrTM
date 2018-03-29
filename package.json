@@ -1,0 +1,22 @@
+{
+  "name": "billrecords",
+  "version": "0.0.1",
+  "description": "微信小程序-记特喵的账",
+  "scripts": {
+    "test": "echo 0",
+    "clear": "remove-all dist",
+    "dev": "minapp dev",
+    "build": "minapp build --publicPath http://your.static.server/"
+  },
+  "author": "Cphayim<admin@cphayim.me>",
+  "license": "MIT",
+  "dependencies": {
+    "@minapp/component-demo": "^1.0.3",
+    "@minapp/core": "^1.0.3",
+    "babel-runtime": "^6.24.0",
+    "mora-scripts": "^1.6.21"
+  },
+  "devDependencies": {
+    "@minapp/cli": "^1.0.7"
+  }
+}

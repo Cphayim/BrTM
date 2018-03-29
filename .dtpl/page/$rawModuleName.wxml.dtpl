@@ -1,0 +1,8 @@
+<!--
+  $rawModuleName 页面结构
+  Create by Cphayim at $datetime
+-->
+
+<view class="p-$rawModuleName">
+  page: $rawModuleName
+</view>

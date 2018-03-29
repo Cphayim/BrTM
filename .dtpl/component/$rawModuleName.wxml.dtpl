@@ -1,0 +1,8 @@
+<!--
+  $rawModuleName 组件结构
+  Create by Cphayim at $datetime
+-->
+
+<view class="m-$rawModuleName">
+  component: $rawModuleName
+</view>

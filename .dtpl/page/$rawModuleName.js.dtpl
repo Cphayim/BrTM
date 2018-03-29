@@ -1,0 +1,17 @@
+/**
+ * $rawModuleName 页面逻辑
+ * Create by Cphayim at $datetime
+ */
+
+import {pagify, MyPage, wxp} from 'base/'
+
+@pagify()
+export default class extends MyPage {
+  data = {
+
+  }
+
+  async onLoad(options) {
+    console.log(await wxp.getUserInfo())
+  }
+}

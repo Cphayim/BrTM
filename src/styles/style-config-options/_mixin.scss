@@ -1,0 +1,47 @@
+/**
+ * 这里定义项目的所有混合宏
+ * by: Cphayim
+ */
+
+// 插入背景图(默认居中铺满)
+@mixin image($data: '', $size: 100% 100%, $position: 50% 50%, $repeat: no-repeat) {
+    background-image: $data;
+    background-size: $size;
+    background-position: $position;
+    background-repeat: $repeat;
+}
+
+@mixin font($fs:$f_small, $c:$c_f2, $fw:normal) {
+    font-size: $fs;
+    color: $c;
+    font-weight: $fw;
+}
+
+// 遮罩层
+@mixin mask($zIndex: 999, $bc:rgba(0, 0, 0, 0.5)) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: $zIndex;
+    width: 100%;
+    height: 100%;
+    background-color: $bc;
+}
+
+// 单行文字溢出修剪(使用前请先在样式上定义 width 或 max-width)
+@mixin text-clip-single() {
+    overflow: hidden;
+    white-space: nowrap; // 单行溢出部分转为 ...
+    text-overflow: ellipsis;
+}
+
+// 多行文字溢出修剪
+@mixin text-clip-multi($rows: 2) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $rows;
+}

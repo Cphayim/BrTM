@@ -1,0 +1,17 @@
+/**
+ * 说明:
+ * style-config 文件引用了整个项目所需的 scss 配置文件
+ * 在你的 scss 文件中引用该文件即可使用所有 预设变量、函数、混合宏
+ *
+ * 需要更改配置请到指定 scss 配置模块中修改
+ * 
+ * @Author: Cphayim 
+ * @Date: 2017-10-16 16:35:44 
+ * @Last Modified by: Cphayim
+ * @Last Modified time: 2017-10-16 17:53:26
+ */
+
+
+@import './style-config-options/_color.scss';
+@import './style-config-options/_font.scss';
+@import './style-config-options/_mixin.scss';

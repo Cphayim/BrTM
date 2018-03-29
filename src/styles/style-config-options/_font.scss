@@ -1,0 +1,19 @@
+/**
+ * 这里定义项目的所有字体相关变量
+ *
+ * @Author: Cphayim 
+ * @Date: 2017-10-16 16:34:09 
+ * @Last Modified by: wsq
+ * @Last Modified time: 2018-03-27 18:23:45
+ */
+
+@function r($r) {
+    @return $r + rpx;
+}
+
+$f_nano : 24rpx; // 迷你
+$f_small : 28rpx; // 小号
+$f_normal: 32rpx; // 正常
+$f_big : 40rpx; // 大号
+$f_large : 52rpx; // 特大
+$f_line_height: 1.3; // 行高
