@@ -2,7 +2,8 @@
 
 小程序项目待开工。。。
 
-> 注：2016版“记个账”App项目转移至
-> billrecords-mui-beta1
-> billrecords-mui-beta2
+> 注：<br/>
+> 2016版“记个账”App项目转移至<br/>
+> billrecords-mui-beta1<br/>
+> billrecords-mui-beta2<br/>
 > 两个分支中
