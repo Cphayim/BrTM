@@ -1,6 +1,6 @@
 /**
  * $rawModuleName 组件逻辑
- * Create by Cphayim at $datetime
+ * Create by $user at $datetime
  */
 
 import {MyComponent, comify} from 'base'
