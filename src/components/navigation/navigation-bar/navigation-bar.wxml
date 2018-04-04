@@ -1,0 +1,17 @@
+<!--
+  navigation-bar 组件结构
+  Create by Cphayim at 2018-04-03 23:09
+-->
+
+<view class="m-navigation-bar {{platform}} {{hasBorder ? 'bb' : ''}}" 
+  style="{{componentStyle}}">
+  <!-- 状态栏 -->
+  <view class="status-bar" style="{{statusBarStyle}}"></view>
+  <!-- /状态栏 -->
+  <!-- 导航栏 -->
+  <view class="navigation-bar" style="{{navigationBarStyle}}">
+    <view class="back-btn"></view>
+    <view class="title">{{title}}</view>
+  </view>
+  <!-- /导航栏 -->
+</view>
