@@ -22,7 +22,7 @@ module.exports = function (source) {
       {
         // 当在 components 目录下新建一个文件夹时，向这个文件夹内注入 .dtpl/component 下的文件
         matches: () => {
-          return source.isDirectory && /\/components\/(biz|common)$/.test(source.basicData.dirPath);
+          return source.isDirectory && /\/components\/([-\w]+)$/.test(source.basicData.dirPath);
         },
         name: './component/'
       }
