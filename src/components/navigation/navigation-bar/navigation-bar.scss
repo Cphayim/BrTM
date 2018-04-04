@@ -5,10 +5,14 @@
 
 @import '../../../styles/style-config.scss';
 .m-navigation-bar {
-  &.bb{
+  &.bb {
     border-bottom: r(2) solid $c_b;
   }
 }
+
+/**
+ * 基础样式
+ */
 
 .status-bar {}
 
@@ -16,22 +20,89 @@
   position: relative;
   display: flex;
   align-items: center;
-  .back-btn {}
+  padding: 0 r(25);
   .title {
-    font-weight: 800;
+    width: r(400);
+    font-weight: 500;
+    @include text-clip-single();
   }
 }
+
+/*
+ * 主题差异样式
+ */
+
+.dark {
+  color: #000;
+}
+
+.light {
+  color: #fff;
+}
+
+/*
+ * 平台差异化样式
+ */
 
 .ios {
-  .navigation-bar {
+  .back-btn {
+    position: absolute;
+    top: 50%;
+    left: r(25);
+    width: width('./icons/back-ios-dark.png');
+    height: height('./icons/back-ios-dark.png');
+    transform: translateY(-50%);
+  }
+  .title {
+    flex: 1;
+    text-align: center;
+  }
+  &.dark {
     .back-btn {
-      position: absolute;
+      @include image(data('./icons/back-ios-dark.png'));
+      /* iPhone 4, iPhone 5, iPhone 6, iPhone 7, iPhone 8 */
+      @media (-webkit-min-device-pixel-ratio: 2) {
+        @include image(data('./icons/back-ios-dark@2x.png'));
+      }
+      /* iPhone 6 Plus, iPhone 7 Plus, iPhone 8 Plus, iPhone X */
+      @media (-webkit-min-device-pixel-ratio: 3) {
+        @include image(data('./icons/back-ios-dark@3x.png'));
+      }
     }
-    .title {
-      flex: 1;
-      text-align: center;
+  }
+  &.light {
+    .back-btn {
+      @include image(data('./icons/back-ios-light.png'));
+      /* iPhone 4, iPhone 5, iPhone 6, iPhone 7, iPhone 8 */
+      @media (-webkit-min-device-pixel-ratio: 2) {
+        @include image(data('./icons/back-ios-light@2x.png'));
+      }
+      /* iPhone 6 Plus, iPhone 7 Plus, iPhone 8 Plus, iPhone X */
+      @media (-webkit-min-device-pixel-ratio: 3) {
+        @include image(data('./icons/back-ios-light@3x.png'));
+      }
     }
   }
 }
 
-.android {}
+.android {
+  .back-btn {
+    margin-right: r(25);
+    flex: 0 0 auto;
+    width: width('./icons/back-android-dark.png');
+    height: height('./icons/back-android-dark.png');
+  }
+  .title {
+    flex: 1;
+  }
+  &.dark{
+    .back-btn {
+      @include image(data('./icons/back-android-dark.png'));
+    }
+  }
+  &.light{
+    .back-btn {
+      @include image(data('./icons/back-android-light.png'));
+    }
+  }
+}
