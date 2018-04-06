@@ -6,7 +6,13 @@
 import {MyComponent, comify} from 'base'
 
 @comify()
-export default class extends MyComponent {
+export default class ${ModuleName}Component extends MyComponent {
+
+  /**
+   * 组件名
+   */
+  componentName = '$rawModuleName'
+
   /**
    * 组件的属性列表
    */
@@ -25,7 +31,18 @@ export default class extends MyComponent {
    * 组件属性值有更新时会调用此函数，不需要在 properties 中设置 observer 函数
    */
   onPropUpdate(prop, newValue, oldValue) {
+    switch (prop) {
+      default: break
+    }
+  }
 
+  /**
+   * 初始化组件
+   * 重写父类的 _init()
+   * 异步调用栈 onAttached -> _origin -> _init
+   */
+  async _init(){
+  
   }
 }
 
