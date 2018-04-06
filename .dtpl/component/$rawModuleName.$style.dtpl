@@ -1,9 +1,9 @@
 /**
  * $rawModuleName 组件样式
- * Create by Cphayim at $datetime
+ * Create by $user at $datetime
  */
 
-@import '../../../styles/style/style-config.scss';
+@import '../../../styles/style-config.scss';
 
 .m-$rawModuleName {
 
