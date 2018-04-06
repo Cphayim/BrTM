@@ -11,6 +11,7 @@
 
     /*# INJECT_START {"key": "page"} #*/
     "pages/index/index",
+    "pages/guide/guide",
     /*# INJECT_END #*/
   ],
   "window": {
