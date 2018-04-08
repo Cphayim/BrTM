@@ -3,7 +3,7 @@
  * @Author: Cphayim 
  * @Date: 2018-04-07 00:17:32 
  * @Last Modified by: Cphayim
- * @Last Modified time: 2018-04-08 13:41:03
+ * @Last Modified time: 2018-04-08 13:45:59
  */
 import { BaseComponent } from '@minapp/core'
 
@@ -25,7 +25,11 @@ export class MyComponent extends BaseComponent {
    * @memberof MyComponent
    */
   async _origin() {
-
+    try {
+      await _init()  
+    } catch (error) {
+      errorHandle(error)
+    }
   }
 
   /**
