@@ -2,7 +2,7 @@
  * @Author: Cphayim 
  * @Date: 2018-04-07 01:01:53 
  * @Last Modified by: Cphayim
- * @Last Modified time: 2018-04-07 01:09:16
+ * @Last Modified time: 2018-04-07 01:47:47
  */
 
 import { modal } from "utils/notice";
@@ -14,6 +14,7 @@ import { modal } from "utils/notice";
  */
 export function errorHandle(error) {
   if (!(error instanceof Error)) return
+  console.warn(error)
   /**
    * 如果是自定义错误向用户展示错误消息
    * 注：

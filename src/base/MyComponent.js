@@ -3,7 +3,7 @@
  * @Author: Cphayim 
  * @Date: 2018-04-07 00:17:32 
  * @Last Modified by: Cphayim
- * @Last Modified time: 2018-04-07 01:18:10
+ * @Last Modified time: 2018-04-08 13:45:59
  */
 import { BaseComponent } from '@minapp/core'
 
@@ -25,7 +25,11 @@ export class MyComponent extends BaseComponent {
    * @memberof MyComponent
    */
   async _origin() {
-
+    try {
+      await _init()  
+    } catch (error) {
+      errorHandle(error)
+    }
   }
 
   /**
@@ -61,9 +65,9 @@ export class MyComponent extends BaseComponent {
       const { type, currentTarget: { dataset } } = e
       const methodName = dataset[type]
       if (!methodName) {
-        console.warn(`${this.pageName}: 节点没有设置 data-${type} 属性指定处理 "${type}" 事件的方法名`)
+        console.warn(`${this.componentName}: 节点没有设置 data-${type} 属性指定处理 "${type}" 事件的方法名`)
       } else if (typeof this[methodName] !== 'function') {
-        console.warn(`${this.pageName}: 实例没有找到 data-${type} 所指定处理 "${type}" 事件的 "${methodName}" 方法.`)
+        console.warn(`${this.componentName}: 实例没有找到 data-${type} 所指定处理 "${type}" 事件的 "${methodName}" 方法.`)
       } else {
         await this[methodName](e)
       }
