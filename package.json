@@ -1,22 +1,39 @@
 {
-  "name": "billrecords",
+  "name": "brtm-yolk",
+  "private": true,
   "version": "0.0.1",
   "description": "微信小程序-记特喵的账",
   "scripts": {
     "test": "echo 0",
-    "clear": "remove-all dist",
     "dev": "minapp dev",
-    "build": "minapp build --publicPath http://your.static.server/"
+    "build": "minapp build --publicPath http://your.static.server/",
+    "lint": "tslint src/**/*.ts",
+    "clear": "minapp clear dist"
   },
   "author": "Cphayim<admin@cphayim.me>",
   "license": "MIT",
+  "husky": {
+    "hooks": {
+      "commit-msg": "validate-commit-msg"
+    }
+  },
   "dependencies": {
-    "@minapp/component-demo": "^1.0.3",
-    "@minapp/core": "^1.0.3",
-    "babel-runtime": "^6.24.0",
-    "mora-scripts": "^1.6.21"
+    "@minapp/component-demo": "^2.0.0",
+    "@minapp/component-toast": "^2.0.0",
+    "@minapp/core": "^2.0.0",
+    "@minapp/mobx": "^2.0.0",
+    "@minapp/wx": "latest",
+    "mobx": "^3.5.1",
+    "tslib": "^1.9.0"
   },
   "devDependencies": {
-    "@minapp/cli": "^1.0.7"
+    "@types/node": "^8.0.0",
+    "husky": "^1.0.0-rc.13",
+    "node-sass": "^4.9.2",
+    "sass-loader": "^7.0.3",
+    "ts-lint": "^4.5.1",
+    "ts-loader": "^4.0.0",
+    "typescript": "^2.7.1",
+    "validate-commit-msg": "^2.14.0"
   }
 }

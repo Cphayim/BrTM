@@ -11,15 +11,14 @@
 
     /*# INJECT_START {"key": "page"} #*/
     "pages/index/index",
-    "pages/guide/guide",
-    "pages/setting/setting",
+    "pages/logs/logs",
+    // "pages/echart/echart",
     /*# INJECT_END #*/
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "记特喵的账",
-    "navigationBarTextStyle": "black",
-    "navigationStyle": "custom"
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
   }
 }
