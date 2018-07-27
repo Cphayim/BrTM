@@ -1,6 +1,6 @@
 <!--
   $rawModuleName 页面结构
-  Create by $user at $datetime
+  Created by $user at $datetime
 -->
 
 <view class="p-$rawModuleName">

@@ -1,9 +1,9 @@
 /**
  * $rawModuleName 页面样式
- * Create by $user at $datetime
+ * Created by $user at $datetime
  */
 
-@import '../../styles/style-config.scss';
+@import '../../assets/styles/helper.scss';
 
 .p-$rawModuleName {
 
