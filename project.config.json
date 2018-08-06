@@ -10,10 +10,15 @@
 	},
 	"miniprogramRoot": "./dist/",
 	"compileType": "miniprogram",
-	"libVersion": "1.9.1",
+	"libVersion": "2.0.1",
 	"appid": "wx561b09146fe96582",
 	"projectname": "%E8%AE%B0%E7%89%B9%E5%96%B5%E7%9A%84%E8%B4%A6",
 	"isGameTourist": false,
+	"scripts": {
+		"beforeCompile": "",
+		"beforePreview": "",
+		"beforeUpload": ""
+	},
 	"condition": {
 		"search": {
 			"current": -1,
