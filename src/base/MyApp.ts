@@ -1,7 +1,7 @@
-/******************************************************************
-MIT License http://www.opensource.org/licenses/mit-license.php
-Author Mora <qiuzhongleiabc@126.com> (https://github.com/qiu8310)
-*******************************************************************/
+/**
+ * Created by Cphayim at 2018-07-27 15:23
+ * => /src/base/MyApp.ts
+ */
 
 import { Url } from '@minapp/core'
 import { MobxApp } from '@minapp/mobx'
@@ -20,7 +20,9 @@ export class MyApp extends MobxApp<MyStore> {
     /*# INJECT_START {"key": "pagesMap"} #*/
     index: Url
     logs: Url
-    echart: Url
+    // echart: Url
+    bills: Url
+    entry: Url
     /*# INJECT_END #*/
   }
 }
