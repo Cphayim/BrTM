@@ -1,17 +1,17 @@
 // 此文件是由模板文件 ".dtpl/page/$rawModuleName.ts.dtpl" 生成的，你可以自行修改模板
-import { pagify, MyPage, wxp } from 'base/'
+import { pagify, MyPage } from 'base'
 import { initChart, chart } from './initChart'
 
 @pagify()
-export default class extends MyPage {
+export default class EchartPage extends MyPage {
   data = {
     ec: {
       onInit: initChart
     }
   }
 
-  async onLoad(options: any) {
-    console.log(await wxp.getUserInfo())
+  onLoad() {
+    // console.log(await wxp.getUserInfo())
   }
 
   onReady() {
@@ -20,4 +20,6 @@ export default class extends MyPage {
       console.log(chart)
     }, 2000)
   }
+
+  protected async _init() {}
 }
