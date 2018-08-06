@@ -1,0 +1,12 @@
+/**
+ * entry 页面配置
+ * Created by Cphayim at 2018-08-05 03:47
+ */
+
+{
+  "$schema": "https://raw.githubusercontent.com/qiu8310/minapp/master/schema/page.json",
+  "navigationBarTitleText": "entry",
+  "usingComponents": {
+
+  }
+}
