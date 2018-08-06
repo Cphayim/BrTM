@@ -40,10 +40,10 @@ module.exports = function(source) {
         // 自动注入组件模板
         name: './component/',
         matches: () => {
-          child.execSync(`echo ${source.basicData.dirPath} > ~/demo/dtpl`)
+          // child.execSync(`echo ${source.basicData.dirPath} > ~/dtpl/log`)
           return (
             source.isDirectory &&
-            /components(\/|\\)(layout|content|feature)$/.test(source.basicData.dirPath)
+            /components(\/|\\)[\w-]+$/.test(source.basicData.dirPath)
           )
         }
       },
