@@ -272,6 +272,11 @@
   resolved "http://registry.npm.taobao.org/@types/lodash/download/@types/lodash-4.14.120.tgz#cf265d06f6c7a710db087ed07523ab8c1a24047b"
   integrity sha1-zyZdBvbHpxDbCH7QdSOrjBokBHs=
 
+"@types/node@^11.9.0":
+  version "11.9.0"
+  resolved "http://registry.npm.taobao.org/@types/node/download/@types/node-11.9.0.tgz#35fea17653490dab82e1d5e69731abfdbf13160d"
+  integrity sha1-Nf6hdlNJDauC4dXmlzGr/b8TFg0=
+
 "@types/prop-types@*":
   version "15.5.8"
   resolved "http://registry.npm.taobao.org/@types/prop-types/download/@types/prop-types-15.5.8.tgz#8ae4e0ea205fe95c3901a5a1df7f66495e3a56ce"
@@ -1001,6 +1006,14 @@ babel-plugin-transform-async-to-generator@^6.22.0:
     babel-helper-remap-async-to-generator "^6.24.1"
     babel-plugin-syntax-async-functions "^6.8.0"
     babel-runtime "^6.22.0"
+
+babel-plugin-transform-builtin-extend@^1.1.2:
+  version "1.1.2"
+  resolved "http://registry.npm.taobao.org/babel-plugin-transform-builtin-extend/download/babel-plugin-transform-builtin-extend-1.1.2.tgz#5e96fecf58b8fa1ed74efcad88475b2af3c9116e"
+  integrity sha1-Xpb+z1i4+h7XTvytiEdbKvPJEW4=
+  dependencies:
+    babel-runtime "^6.2.0"
+    babel-template "^6.3.0"
 
 babel-plugin-transform-class-properties@^6.24.1:
   version "6.24.1"

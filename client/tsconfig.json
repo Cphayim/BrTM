@@ -15,12 +15,14 @@
     "sourceMap": true,
     "baseUrl": ".",
     "rootDir": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
     "jsx": "preserve",
     "jsxFactory": "Taro.createElement",
     "allowJs": true,
-    "typeRoots": [
-      "node_modules/@types"
-    ]
+    "typeRoots": ["node_modules/@types"]
   },
-  "compileOnSave": false
+  "compileOnSave": false,
+  "exclude": ["dist"]
 }

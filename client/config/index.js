@@ -1,3 +1,5 @@
+const path = require('path')
+
 const config = {
   projectName: 'yolk',
   date: '2019-2-12',
@@ -12,23 +14,25 @@ const config = {
   plugins: {
     babel: {
       sourceMap: true,
-      presets: [
-        'env'
-      ],
+      presets: ['env'],
       plugins: [
         'transform-decorators-legacy',
         'transform-class-properties',
-        'transform-object-rest-spread'
+        'transform-object-rest-spread',
+        ['transform-builtin-extend', { globals: ['Error', 'Array'] }]
       ]
     }
   },
-  defineConstants: {
+  defineConstants: {},
+  alias: {
+    '@': path.resolve(__dirname, '..', 'src'),
+    '@components': path.resolve(__dirname, '..', 'src/components'),
+    '@apis': path.resolve(__dirname, '..', 'src/apis'),
+    '@router': path.resolve(__dirname, '..', 'src/router')
   },
   copy: {
-    patterns: [
-    ],
-    options: {
-    }
+    patterns: [],
+    options: {}
   },
   weapp: {
     module: {
@@ -36,18 +40,12 @@ const config = {
         autoprefixer: {
           enable: true,
           config: {
-            browsers: [
-              'last 3 versions',
-              'Android >= 4.1',
-              'ios >= 8'
-            ]
+            browsers: ['last 3 versions', 'Android >= 4.1', 'ios >= 8']
           }
         },
         pxtransform: {
           enable: true,
-          config: {
-
-          }
+          config: {}
         },
         url: {
           enable: true,
@@ -73,11 +71,7 @@ const config = {
         autoprefixer: {
           enable: true,
           config: {
-            browsers: [
-              'last 3 versions',
-              'Android >= 4.1',
-              'ios >= 8'
-            ]
+            browsers: ['last 3 versions', 'Android >= 4.1', 'ios >= 8']
           }
         },
         cssModules: {
@@ -92,7 +86,7 @@ const config = {
   }
 }
 
-module.exports = function (merge) {
+module.exports = function(merge) {
   if (process.env.NODE_ENV === 'development') {
     return merge({}, config, require('./dev'))
   }
