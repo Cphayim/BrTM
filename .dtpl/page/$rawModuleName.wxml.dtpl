@@ -1,8 +1,0 @@
-<!--
-  $rawModuleName 页面结构
-  Created by $user at $datetime
--->
-
-<view class="p-$rawModuleName">
-  page: $rawModuleName
-</view>
