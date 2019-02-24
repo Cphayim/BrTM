@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+
+  app:
+    volumes:
+      - .:/code
+    environment:
+      FLASK_ENV: development
+    command: python twig.py
