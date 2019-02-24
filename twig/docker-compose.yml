@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+
+  app:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      FLASK_ENV: production
+    # 生产环境使用 gunicorn 基于 wsgi 协议部署
+    command: gunicorn twig:app -c ./gunicorn.conf.py
