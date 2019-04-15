@@ -13,6 +13,6 @@
 
 ## TWIG
 
-[![pipeline status](http://ci.cphayim.top/twig/master/pipeline.svg)](http://ci.cphayim.top/twig/master/pipeline.svg) ![Python version](https://img.shields.io/badge/python->=3.6-blue.svg) ![Docker version](https://img.shields.io/badge/db-postgresql | redis-red.svg) ![Docker version](https://img.shields.io/badge/docker ce->=18-blue.svg) ![Docker version](https://img.shields.io/badge/docker compose->=1.23-blue.svg)
+[![pipeline status](http://ci.cphayim.top/twig/master/pipeline.svg)](http://ci.cphayim.top/twig/master/pipeline.svg) ![Python version](https://img.shields.io/badge/python->=3.6-blue.svg) ![Docker version](https://img.shields.io/badge/db-postgresql%20%7C%20redis-red.svg) ![Docker version](https://img.shields.io/badge/docker%20ce-%3E=18-blue.svg) ![Docker version](https://img.shields.io/badge/docker%20compose-%3E=1.23-blue.svg)
 
 [传送门](https://gitlab.com/Cphayim/twig/)
